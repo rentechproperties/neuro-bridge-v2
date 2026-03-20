@@ -16,3 +16,38 @@
   --text-main: var(--mc-gray);
   --btn-primary: var(--mc-orange);
 }
+
+/* Apply Brand to the specific elements you found */
+body {
+    background-color: var(--mc-warm) !important;
+    color: var(--mc-gray) !important;
+}
+
+nav, footer {
+    background-color: var(--mc-black) !important;
+    color: white !important;
+}
+
+.glass-card, .pillar-card, .video-card, .feature-card, .problem-card, .who-card, .slide-card, .ksl-feature {
+    border-top: 4px solid var(--mc-orange) !important;
+    background: white !important;
+    transition: transform 0.3s ease;
+}
+
+/* The "Everywhere Gradient" for Buttons */
+button, .btn, .cta-button {
+    background: var(--mc-gradient) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* Fix that error red you found in the script */
+.notification-error {
+    background-color: var(--mc-red) !important;
+}
