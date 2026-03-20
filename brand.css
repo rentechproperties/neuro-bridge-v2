@@ -133,3 +133,41 @@ nav .container, nav .container-fluid {
     padding-top: 100px !important;
     margin-top: 0 !important;
 }
+/* Force Logo Display */
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    min-width: 200px !important;
+    height: 60px !important;
+}
+
+/* This creates a backup if the <img> tag is empty */
+.navbar-brand::before {
+    content: "" !important;
+    display: block !important;
+    width: 180px !important;
+    height: 50px !important;
+    background: url('logo.png') no-repeat center !important;
+    background-size: contain !important;
+}
+
+/* Hide the broken <img> tag if it's showing an 'X' */
+.navbar-brand img {
+    display: none !important;
+}
+/* App-Style Layout Cleanup */
+header, nav {
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+}
+
+main, section:first-of-type {
+    margin-top: 20px !important;
+    padding-top: 80px !important;
+}
+
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
