@@ -114,3 +114,22 @@ nav {
     -webkit-text-fill-color: transparent;
     font-weight: 800;
 }
+/* Fix Logo & Header Layout */
+.navbar-brand img {
+    height: 50px !important;
+    width: auto !important;
+    display: block !important;
+    filter: none !important; /* Ensures logo colors stay original */
+}
+
+nav .container, nav .container-fluid {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Fix any overlapping issues from the previous replace */
+.app-style-hero {
+    padding-top: 100px !important;
+    margin-top: 0 !important;
+}
