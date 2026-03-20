@@ -1,231 +1,237 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF8">
-    <meta name="viewport" content="width=devicewidth, initialscale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroBridge Africa | Closing the Learning Gap for Neurodivergent & Deaf Learners</title>
     
-    <! Primary Meta Tags >
+    <!-- Primary Meta Tags -->
     <meta name="description" content="NeuroBridge Africa: Inclusive EdTech platform for neurodivergent and deaf learners across Kenya. KSL integration, sensory tools, CBC curriculum, and caregiver support. Mastercard Foundation EdTech Fellow.">
     <meta name="keywords" content="neurodivergent, autism, ADHD, dyslexia, deaf education, Kenyan Sign Language, KSL, inclusive education, Kenya, Mastercard Foundation, Ability Inclusion Alliance">
     <meta name="author" content="Ability Inclusion Alliance">
     <meta name="robots" content="index, follow">
     
-    <! Open Graph / Facebook >
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://neurobridge.co.ke">
     <meta property="og:title" content="NeuroBridge Africa | Inclusive EdTech for Neurodivergent & Deaf Learners">
     <meta property="og:description" content="Closing the learning gap for neurodivergent and deaf learners across Africa. Kenyan Sign Language, sensory tools, and caregiver support.">
-    <meta property="og:image" content="https://neurobridge.co.ke/ogimage.jpg">
+    <meta property="og:image" content="https://neurobridge.co.ke/og-image.jpg">
     
-    <! Twitter >
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://neurobridge.co.ke">
     <meta property="twitter:title" content="NeuroBridge Africa | Inclusive EdTech">
     <meta property="twitter:description" content="Closing the learning gap for neurodivergent and deaf learners across Africa.">
-    <meta property="twitter:image" content="https://neurobridge.co.ke/ogimage.jpg">
+    <meta property="twitter:image" content="https://neurobridge.co.ke/og-image.jpg">
     
-    <! Fonts & Icons >
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* ===== ROOT VARIABLES  VIBRANT CORPORATE SYSTEM ===== */
+        /* ===== ROOT VARIABLES - VIBRANT CORPORATE SYSTEM ===== */
         :root {
-    primary: #FF5F00;
-    primarydark: #EB001B;
-    primarylight: #F79E1B;
-    accent: #F59E0B;
-    success: #10B981;
-    alertred: #EF4444;
-    alertpink: #EC4899;
-    mcred: #EB001B;
-    mcorange: #F79E1B;
-    bgdark: #0F0F0F;
-    bgcard: #1A1A1A;
-    bglight: #2A2A2A;
-    textprimary: #FFFFFF;
-    textsecondary: #D1D5DB;
-    textmuted: #9CA3AF;
-    border: #2A2A2A;
-    shadowsm: 0 4px 6px rgba(0,0,0,0.3);
-    shadowmd: 0 10px 15px rgba(0,0,0,0.4);
-    shadowlg: 0 20px 25px rgba(0,0,0,0.5);
-    shadowglow: 0 0 30px rgba(255,95,0,0.3);
-    shadowhover: 0 30px 35px rgba(255,95,0,0.2);
-    transitionspeed: 0.3s;
-    animationenabled: 1;
-}
+            /* Mastercard Foundation Colors */
+            --mc-red: #EB001B;
+            --mc-orange: #F79E1B;
+            --mc-yellow: #FDB913;
+            --mc-dark: #0A0A0A;
+            --light-bg: #FFFFFF;
+            
+            /* Vibrant Accent Colors */
+            --accent-yellow: #F1C40F;
+            --accent-blue: #3498DB;
+            --accent-purple: #9B59B6;
+            --accent-green: #27AE60;
+            --accent-teal: #1ABC9C;
+            --accent-pink: #E83E8C;
+            
+            /* UI Colors */
+            --card-bg: #FFFFFF;
+            --border-light: #E2E8F0;
+            --text-primary: #0A0A0A;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.03);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.04);
+            --shadow-hover: 0 30px 50px rgba(235,0,27,0.08);
+            
+            /* Sensory Mode Variables */
+            --transition-speed: 0.3s;
+            --animation-enabled: 1;
+        }
 
         * {
             margin: 0;
             padding: 0;
-            boxsizing: borderbox;
+            box-sizing: border-box;
         }
 
         html {
-            scrollbehavior: smooth;
+            scroll-behavior: smooth;
         }
 
         body {
-            background: var(lightbg);
-            color: var(textprimary);
-            fontfamily: 'Inter', sansserif;
-            lineheight: 1.6;
-            overflowx: hidden;
+            background: var(--light-bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
-            fontfamily: 'Playfair Display', serif;
-            fontweight: 800;
-            letterspacing: 0.02em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .container {
-            maxwidth: 1400px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
         /* ===== GLASSMORPHISM & CARD SYSTEMS ===== */
-        .glasscard {
-            background: var(cardbg);
-            border: 1px solid var(borderlight);
-            borderradius: 24px;
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
             padding: 30px;
-            boxshadow: var(shadowmd);
-            transition: all var(transitionspeed) cubicbezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
 
-        .glasscard:hover {
-            transform: translateY(6px);
-            boxshadow: var(shadowhover);
-            bordercolor: transparent;
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
         }
 
-        .glasscard::before {
+        .glass-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: lineargradient(90deg, var(primary), var(accent));
+            background: linear-gradient(90deg, var(--mc-red), var(--mc-orange));
             opacity: 0;
-            transition: opacity var(transitionspeed);
+            transition: opacity var(--transition-speed);
         }
 
-        .glasscard:hover::before {
+        .glass-card:hover::before {
             opacity: 1;
         }
 
-        /* Colorcoded card borders */
-        .cardred { bordertop: 4px solid var(primary); }
-        .cardorange { bordertop: 4px solid var(accent); }
-        .cardyellow { bordertop: 4px solid var(accentyellow); }
-        .cardblue { bordertop: 4px solid var(accentblue); }
-        .cardpurple { bordertop: 4px solid var(accentpurple); }
-        .cardgreen { bordertop: 4px solid var(accentgreen); }
-        .cardteal { bordertop: 4px solid var(accentteal); }
-        .cardpink { bordertop: 4px solid var(accentpink); }
+        /* Color-coded card borders */
+        .card-red { border-top: 4px solid var(--mc-red); }
+        .card-orange { border-top: 4px solid var(--mc-orange); }
+        .card-yellow { border-top: 4px solid var(--accent-yellow); }
+        .card-blue { border-top: 4px solid var(--accent-blue); }
+        .card-purple { border-top: 4px solid var(--accent-purple); }
+        .card-green { border-top: 4px solid var(--accent-green); }
+        .card-teal { border-top: 4px solid var(--accent-teal); }
+        .card-pink { border-top: 4px solid var(--accent-pink); }
 
         /* ===== HEADER & NAVIGATION ===== */
         .navbar {
             background: white;
-            borderbottom: 1px solid var(borderlight);
+            border-bottom: 1px solid var(--border-light);
             padding: 20px 5%;
             position: sticky;
             top: 0;
-            zindex: 1000;
-            backdropfilter: blur(10px);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
             background: rgba(255,255,255,0.95);
         }
 
-        .navcontainer {
-            maxwidth: 1400px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
-            alignitems: center;
-            justifycontent: spacebetween;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             display: flex;
-            alignitems: center;
+            align-items: center;
             gap: 10px;
-            textdecoration: none;
+            text-decoration: none;
         }
 
-        .logoicon {
+        .logo-icon {
             width: 45px;
             height: 45px;
-            background: lineargradient(135deg, var(primary), var(accent));
-            borderradius: 12px;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 12px;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             color: white;
-            fontweight: 800;
+            font-weight: 800;
         }
 
-        .logotext {
+        .logo-text {
             display: flex;
-            flexdirection: column;
+            flex-direction: column;
         }
 
-        .logomain {
-            fontsize: 1.4rem;
-            fontweight: 800;
-            color: var(textprimary);
-            lineheight: 1.2;
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.2;
         }
 
-        .logosub {
-            fontsize: 0.8rem;
-            color: var(accent);
-            letterspacing: 1px;
-            texttransform: uppercase;
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--mc-orange);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .navlinks {
+        .nav-links {
             display: flex;
             gap: 30px;
-            liststyle: none;
+            list-style: none;
         }
 
-        .navlinks a {
-            textdecoration: none;
-            color: var(textsecondary);
-            fontweight: 500;
-            fontsize: 0.95rem;
-            transition: color var(transitionspeed);
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition-speed);
         }
 
-        .navlinks a:hover {
-            color: var(primary);
+        .nav-links a:hover {
+            color: var(--mc-red);
         }
 
-        .navcta {
-            background: lineargradient(135deg, var(primary), var(accent));
+        .nav-cta {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             color: white !important;
             padding: 10px 25px;
-            borderradius: 50px;
-            fontweight: 600;
+            border-radius: 50px;
+            font-weight: 600;
         }
 
-        .navcta:hover {
-            transform: translateY(2px);
-            boxshadow: 0 10px 20px rgba(255,95,0,0.2);
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(235,0,27,0.2);
         }
 
         .hamburger {
             display: none;
-            flexdirection: column;
+            flex-direction: column;
             gap: 5px;
             background: none;
             border: none;
@@ -235,14 +241,14 @@
         .hamburger span {
             width: 25px;
             height: 2px;
-            background: var(textprimary);
-            transition: all var(transitionspeed);
+            background: var(--text-primary);
+            transition: all var(--transition-speed);
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
             padding: 100px 5%;
-            background: lineargradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
+            background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
             position: relative;
             overflow: hidden;
         }
@@ -250,16 +256,16 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 50%;
-            right: 50%;
+            top: -50%;
+            right: -50%;
             width: 200%;
             height: 200%;
-            background: radialgradient(circle, rgba(255,95,0,0.02) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(235,0,27,0.02) 0%, transparent 70%);
             animation: rotate 40s linear infinite;
-            animationplaystate: running;
+            animation-play-state: running;
         }
 
-        body.lowstimulation .hero::before {
+        body.low-stimulation .hero::before {
             animation: none;
         }
 
@@ -268,142 +274,142 @@
             to { transform: rotate(360deg); }
         }
 
-        .herogrid {
+        .hero-grid {
             display: grid;
-            gridtemplatecolumns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
-            alignitems: center;
+            align-items: center;
             position: relative;
-            zindex: 2;
+            z-index: 2;
         }
 
-        .herocontent {
-            maxwidth: 600px;
+        .hero-content {
+            max-width: 600px;
         }
 
-        .herobadge {
-            display: inlineblock;
-            background: rgba(255,95,0,0.1);
-            color: var(primary);
+        .hero-badge {
+            display: inline-block;
+            background: rgba(235,0,27,0.1);
+            color: var(--mc-red);
             padding: 8px 20px;
-            borderradius: 50px;
-            fontweight: 600;
-            fontsize: 0.9rem;
-            marginbottom: 20px;
-            border: 1px solid rgba(255,95,0,0.2);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(235,0,27,0.2);
         }
 
-        .herotitle {
-            fontsize: clamp(2.5rem, 5vw, 4rem);
-            marginbottom: 20px;
-            lineheight: 1.1;
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
 
-        .herogradienttext {
-            background: lineargradient(135deg, var(primary), var(accent), var(primarylight));
-            webkitbackgroundclip: text;
-            webkittextfillcolor: transparent;
-            backgroundclip: text;
+        .hero-gradient-text {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .herosubtitle {
-            fontsize: 1.2rem;
-            color: var(textsecondary);
-            marginbottom: 30px;
-            lineheight: 1.8;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
         }
 
-        .herobuttons {
+        .hero-buttons {
             display: flex;
             gap: 15px;
-            flexwrap: wrap;
+            flex-wrap: wrap;
         }
 
-        .heroimage {
-            background: lineargradient(135deg, var(primary), var(accent));
-            borderradius: 30px;
+        .hero-image {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 30px;
             padding: 50px 40px;
             color: white;
-            textalign: center;
-            boxshadow: var(shadowlg);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
         }
 
-        .heroimage::before {
+        .hero-image::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: -50%;
+            left: -50%;
             width: 200%;
             height: 200%;
-            background: radialgradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
 
-        .heroimage i {
-            fontsize: 5rem;
-            marginbottom: 20px;
+        .hero-image i {
+            font-size: 5rem;
+            margin-bottom: 20px;
             position: relative;
-            zindex: 2;
+            z-index: 2;
         }
 
-        .heroimage h3 {
+        .hero-image h3 {
             color: white;
-            fontsize: 2rem;
-            marginbottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 15px;
             position: relative;
-            zindex: 2;
+            z-index: 2;
         }
 
-        .heroimage p {
+        .hero-image p {
             opacity: 0.9;
-            fontsize: 1.1rem;
+            font-size: 1.1rem;
             position: relative;
-            zindex: 2;
+            z-index: 2;
         }
 
-        .herolocation {
-            margintop: 30px;
-            paddingtop: 20px;
-            bordertop: 1px solid rgba(255,255,255,0.2);
-            fontsize: 0.95rem;
+        .hero-location {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
         }
 
         /* ===== TRUST STRIP ===== */
-        .truststrip {
+        .trust-strip {
             background: white;
             padding: 40px 5%;
-            bordertop: 1px solid var(borderlight);
-            borderbottom: 1px solid var(borderlight);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .trustgrid {
+        .trust-grid {
             display: grid;
-            gridtemplatecolumns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
-            maxwidth: 1400px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .trustitem {
-            textalign: center;
+        .trust-item {
+            text-align: center;
         }
 
-        .trustnumber {
-            fontsize: 2.8rem;
-            fontweight: 800;
-            background: lineargradient(135deg, var(primary), var(accent));
-            webkitbackgroundclip: text;
-            webkittextfillcolor: transparent;
-            lineheight: 1.2;
-            marginbottom: 5px;
+        .trust-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin-bottom: 5px;
         }
 
-        .trustlabel {
-            color: var(textsecondary);
-            fontsize: 0.95rem;
-            fontweight: 500;
+        .trust-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         /* ===== SECTION STYLES ===== */
@@ -411,819 +417,819 @@
             padding: 100px 5%;
         }
 
-        .sectionlight {
+        .section-light {
             background: #F8FAFC;
         }
 
-        .sectiontitle {
-            fontsize: clamp(2rem, 4vw, 3rem);
-            marginbottom: 20px;
-            textalign: center;
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .sectionsubtitle {
-            color: var(textsecondary);
-            textalign: center;
-            maxwidth: 700px;
+        .section-subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 700px;
             margin: 0 auto 60px;
-            fontsize: 1.2rem;
-            lineheight: 1.8;
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
 
         /* ===== BUTTONS ===== */
         .btn {
-            display: inlineblock;
+            display: inline-block;
             padding: 14px 35px;
-            borderradius: 50px;
-            fontweight: 600;
-            textdecoration: none;
-            transition: all var(transitionspeed);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-speed);
             border: none;
             cursor: pointer;
-            fontsize: 1rem;
+            font-size: 1rem;
         }
 
-        .btnprimary {
-            background: lineargradient(135deg, var(primary), var(accent));
+        .btn-primary {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             color: white;
-            boxshadow: 0 10px 25px rgba(255,95,0,0.2);
+            box-shadow: 0 10px 25px rgba(235,0,27,0.2);
         }
 
-        .btnprimary:hover {
-            transform: translateY(3px);
-            boxshadow: 0 15px 35px rgba(255,95,0,0.3);
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(235,0,27,0.3);
         }
 
-        .btnsecondary {
+        .btn-secondary {
             background: transparent;
-            border: 2px solid var(primary);
-            color: var(textprimary);
+            border: 2px solid var(--mc-red);
+            color: var(--text-primary);
         }
 
-        .btnsecondary:hover {
-            background: var(primary);
+        .btn-secondary:hover {
+            background: var(--mc-red);
             color: white;
         }
 
-        .btnoutline {
+        .btn-outline {
             background: transparent;
-            border: 2px solid var(primary);
-            color: var(primary);
+            border: 2px solid var(--mc-red);
+            color: var(--mc-red);
             padding: 12px 30px;
         }
 
-        .btnoutline:hover {
-            background: var(primary);
+        .btn-outline:hover {
+            background: var(--mc-red);
             color: white;
         }
 
-        .btnwhite {
+        .btn-white {
             background: white;
-            color: var(primary);
+            color: var(--mc-red);
         }
 
-        .btnwhite:hover {
-            background: var(accent);
+        .btn-white:hover {
+            background: var(--mc-orange);
             color: white;
         }
 
-        .btnwhiteoutline {
+        .btn-white-outline {
             background: transparent;
             border: 2px solid white;
             color: white;
         }
 
-        .btnwhiteoutline:hover {
+        .btn-white-outline:hover {
             background: white;
-            color: var(primary);
+            color: var(--mc-red);
         }
 
         /* ===== PROBLEM GRID ===== */
-        .problemgrid {
+        .problem-grid {
             display: grid;
-            gridtemplatecolumns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin: 50px 0;
         }
 
-        .problemcard {
+        .problem-card {
             background: white;
             padding: 40px 30px;
-            borderradius: 20px;
-            textalign: center;
-            boxshadow: var(shadowsm);
-            border: 1px solid var(borderlight);
-            transition: all var(transitionspeed);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-speed);
         }
 
-        .problemcard:hover {
-            transform: translateY(5px);
-            boxshadow: var(shadowhover);
-            bordercolor: var(primary);
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--mc-red);
         }
 
-        .problemicon {
-            fontsize: 3rem;
-            marginbottom: 20px;
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
-        .problemcard h3 {
-            fontsize: 1.2rem;
-            marginbottom: 15px;
+        .problem-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
 
-        .problemcard p {
-            color: var(textsecondary);
-            fontsize: 0.95rem;
-            lineheight: 1.6;
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* ===== FEATURES GRID ===== */
-        .featuresgrid {
+        .features-grid {
             display: grid;
-            gridtemplatecolumns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margintop: 50px;
+            margin-top: 50px;
         }
 
-        .featurecard {
+        .feature-card {
             background: white;
             padding: 40px 30px;
-            borderradius: 20px;
-            boxshadow: var(shadowsm);
-            border: 1px solid var(borderlight);
-            transition: all var(transitionspeed);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-speed);
         }
 
-        .featurecard:hover {
-            transform: translateY(5px);
-            boxshadow: var(shadowhover);
-            bordercolor: var(primary);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--mc-red);
         }
 
-        .featureicon {
+        .feature-icon {
             width: 70px;
             height: 70px;
-            background: rgba(255,95,0,0.1);
-            borderradius: 16px;
+            background: rgba(235,0,27,0.1);
+            border-radius: 16px;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 2rem;
-            color: var(primary);
-            marginbottom: 25px;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--mc-red);
+            margin-bottom: 25px;
         }
 
-        .featurecard h3 {
-            fontsize: 1.3rem;
-            marginbottom: 15px;
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
 
-        .featurecard p {
-            color: var(textsecondary);
-            lineheight: 1.7;
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        /* ===== 6PILLAR DASHBOARD ===== */
-        .pillargrid {
+        /* ===== 6-PILLAR DASHBOARD ===== */
+        .pillar-grid {
             display: grid;
-            gridtemplatecolumns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin: 60px 0;
         }
 
-        .pillarcard {
-            background: var(cardbg);
-            border: 1px solid var(borderlight);
-            borderradius: 24px;
+        .pillar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
             padding: 35px;
-            transition: all var(transitionspeed);
+            transition: all var(--transition-speed);
             cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
-        .pillarcard:hover {
-            transform: translateY(8px);
-            boxshadow: var(shadowhover);
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
         }
 
-        .pillarcard::after {
+        .pillar-card::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: lineargradient(90deg, var(primary), var(accent));
+            background: linear-gradient(90deg, var(--mc-red), var(--mc-orange));
             transform: scaleX(0);
-            transition: transform var(transitionspeed);
+            transition: transform var(--transition-speed);
         }
 
-        .pillarcard:hover::after {
+        .pillar-card:hover::after {
             transform: scaleX(1);
         }
 
-        .pillaricon {
+        .pillar-icon {
             width: 70px;
             height: 70px;
-            borderradius: 20px;
+            border-radius: 20px;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 2rem;
-            marginbottom: 25px;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
         }
 
-        .pillarcard.blue .pillaricon { background: rgba(52,152,219,0.1); color: var(accentblue); }
-        .pillarcard.purple .pillaricon { background: rgba(155,89,182,0.1); color: var(accentpurple); }
-        .pillarcard.yellow .pillaricon { background: rgba(241,196,15,0.1); color: var(accentyellow); }
-        .pillarcard.green .pillaricon { background: rgba(39,174,96,0.1); color: var(accentgreen); }
-        .pillarcard.red .pillaricon { background: rgba(255,95,0,0.1); color: var(primary); }
-        .pillarcard.gradient .pillaricon { 
-            background: lineargradient(135deg, rgba(255,95,0,0.1), rgba(247,158,27,0.1)); 
-            color: var(primary);
+        .pillar-card.blue .pillar-icon { background: rgba(52,152,219,0.1); color: var(--accent-blue); }
+        .pillar-card.purple .pillar-icon { background: rgba(155,89,182,0.1); color: var(--accent-purple); }
+        .pillar-card.yellow .pillar-icon { background: rgba(241,196,15,0.1); color: var(--accent-yellow); }
+        .pillar-card.green .pillar-icon { background: rgba(39,174,96,0.1); color: var(--accent-green); }
+        .pillar-card.red .pillar-icon { background: rgba(235,0,27,0.1); color: var(--mc-red); }
+        .pillar-card.gradient .pillar-icon { 
+            background: linear-gradient(135deg, rgba(235,0,27,0.1), rgba(247,158,27,0.1)); 
+            color: var(--mc-red);
         }
 
-        .pillarcard h3 {
-            fontsize: 1.4rem;
-            marginbottom: 15px;
+        .pillar-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
         }
 
-        .pillarcard p {
-            color: var(textsecondary);
-            fontsize: 0.95rem;
-            marginbottom: 25px;
-            lineheight: 1.7;
+        .pillar-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
 
-        .pillartag {
-            display: inlineblock;
+        .pillar-tag {
+            display: inline-block;
             padding: 6px 15px;
             background: #F8FAFC;
-            border: 1px solid var(borderlight);
-            borderradius: 50px;
-            fontsize: 0.8rem;
-            color: var(textsecondary);
+            border: 1px solid var(--border-light);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
         }
 
         /* ===== KSL VIDEO SECTION ===== */
-        .kslsection {
+        .ksl-section {
             margin: 80px 0;
         }
 
-        .sectionheader {
-            textalign: center;
-            marginbottom: 50px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .sectionheader h2 {
-            fontsize: 2.5rem;
-            marginbottom: 15px;
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
-        .sectionheader p {
-            color: var(textsecondary);
-            maxwidth: 700px;
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 700px;
             margin: 0 auto;
-            fontsize: 1.1rem;
+            font-size: 1.1rem;
         }
 
-        .kslgrid {
+        .ksl-grid {
             display: grid;
-            gridtemplatecolumns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin: 40px 0;
         }
 
-        .videocard {
+        .video-card {
             background: white;
-            border: 1px solid var(borderlight);
-            borderradius: 20px;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
             overflow: hidden;
-            transition: all var(transitionspeed);
+            transition: all var(--transition-speed);
             cursor: pointer;
         }
 
-        .videocard:hover {
-            transform: translateY(5px);
-            boxshadow: var(shadowhover);
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
-        .videothumb {
+        .video-thumb {
             height: 180px;
-            background: lineargradient(135deg, var(accentblue), var(accentpurple));
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 4rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
             color: white;
             position: relative;
         }
 
-        .videothumb::after {
-            content: '–¶';
+        .video-thumb::after {
+            content: '▶';
             position: absolute;
             width: 60px;
             height: 60px;
             background: rgba(255,255,255,0.3);
-            borderradius: 50%;
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 1.5rem;
-            backdropfilter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            backdrop-filter: blur(5px);
             opacity: 0;
-            transition: opacity var(transitionspeed);
+            transition: opacity var(--transition-speed);
         }
 
-        .videocard:hover .videothumb::after {
+        .video-card:hover .video-thumb::after {
             opacity: 1;
         }
 
-        .videoinfo {
+        .video-info {
             padding: 20px;
         }
 
-        .videotitle {
-            fontweight: 600;
-            fontsize: 1.1rem;
-            marginbottom: 8px;
+        .video-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
-        .videometa {
+        .video-meta {
             display: flex;
-            justifycontent: spacebetween;
-            color: var(textsecondary);
-            fontsize: 0.85rem;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
-        .videometa i {
-            marginright: 5px;
+        .video-meta i {
+            margin-right: 5px;
         }
 
-        .kslfeatures {
+        .ksl-features {
             display: grid;
-            gridtemplatecolumns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margintop: 40px;
+            margin-top: 40px;
         }
 
-        .kslfeature {
-            textalign: center;
+        .ksl-feature {
+            text-align: center;
             padding: 25px;
             background: #F8FAFC;
-            borderradius: 16px;
-            transition: all var(transitionspeed);
+            border-radius: 16px;
+            transition: all var(--transition-speed);
         }
 
-        .kslfeature:hover {
+        .ksl-feature:hover {
             background: white;
-            boxshadow: var(shadowhover);
+            box-shadow: var(--shadow-hover);
         }
 
-        .kslfeature i {
-            fontsize: 2.2rem;
-            color: var(accentpurple);
-            marginbottom: 15px;
+        .ksl-feature i {
+            font-size: 2.2rem;
+            color: var(--accent-purple);
+            margin-bottom: 15px;
         }
 
-        .kslfeature h4 {
-            fontsize: 1.1rem;
-            marginbottom: 8px;
+        .ksl-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
-        .kslfeature p {
-            fontsize: 0.85rem;
-            color: var(textsecondary);
+        .ksl-feature p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
         }
 
         /* ===== WHO WE SERVE GRID ===== */
-        .whogrid {
+        .who-grid {
             display: grid;
-            gridtemplatecolumns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin: 50px 0;
         }
 
-        .whocard {
-            textalign: center;
+        .who-card {
+            text-align: center;
             padding: 40px 30px;
             background: white;
-            borderradius: 20px;
-            border: 1px solid var(borderlight);
-            transition: all var(transitionspeed);
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-speed);
         }
 
-        .whocard:hover {
-            transform: translateY(5px);
-            boxshadow: var(shadowhover);
-            bordercolor: var(primary);
+        .who-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--mc-red);
         }
 
-        .whoicon {
-            fontsize: 3.5rem;
-            marginbottom: 20px;
+        .who-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
         }
 
-        .whocard h3 {
-            fontsize: 1.3rem;
-            marginbottom: 10px;
+        .who-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
 
-        .whocard p {
-            color: var(textsecondary);
-            fontsize: 0.95rem;
+        .who-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         /* ===== WHY NEUROBRIDGE GRID ===== */
-        .whygrid {
+        .why-grid {
             display: grid;
-            gridtemplatecolumns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin: 50px 0;
         }
 
-        .whycard {
+        .why-card {
             background: white;
             padding: 35px;
-            borderradius: 20px;
-            borderleft: 4px solid var(primary);
-            boxshadow: var(shadowsm);
-            transition: all var(transitionspeed);
+            border-radius: 20px;
+            border-left: 4px solid var(--mc-red);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-speed);
         }
 
-        .whycard:hover {
+        .why-card:hover {
             transform: translateX(5px);
-            boxshadow: var(shadowhover);
+            box-shadow: var(--shadow-hover);
         }
 
-        .whycard h3 {
-            fontsize: 1.3rem;
-            marginbottom: 10px;
-            color: var(primary);
+        .why-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--mc-red);
         }
 
-        .whycard p {
-            color: var(textsecondary);
-            lineheight: 1.7;
+        .why-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* ===== FOUNDER SECTION ===== */
         .founder {
-            background: lineargradient(135deg, var(primary), var(accent));
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             color: white;
             padding: 100px 5%;
         }
 
-        .foundergrid {
+        .founder-grid {
             display: grid;
-            gridtemplatecolumns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
-            alignitems: center;
-            maxwidth: 1400px;
+            align-items: center;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .foundercontent h2 {
+        .founder-content h2 {
             color: white;
-            fontsize: 2.5rem;
-            marginbottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        .founderquote {
-            fontsize: 1.6rem;
-            fontstyle: italic;
+        .founder-quote {
+            font-size: 1.6rem;
+            font-style: italic;
             margin: 30px 0;
             opacity: 0.95;
-            lineheight: 1.5;
-            fontfamily: 'Playfair Display', serif;
+            line-height: 1.5;
+            font-family: 'Playfair Display', serif;
         }
 
-        .foundername {
-            fontweight: 700;
-            fontsize: 1.3rem;
-            marginbottom: 5px;
+        .founder-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
-        .foundertitle {
+        .founder-title {
             opacity: 0.9;
-            fontsize: 1rem;
+            font-size: 1rem;
         }
 
-        .foundermission {
-            margintop: 30px;
-            fontsize: 1.2rem;
+        .founder-mission {
+            margin-top: 30px;
+            font-size: 1.2rem;
             padding: 20px;
             background: rgba(255,255,255,0.1);
-            borderradius: 16px;
-            borderleft: 4px solid white;
+            border-radius: 16px;
+            border-left: 4px solid white;
         }
 
-        .founderimage {
+        .founder-image {
             width: 350px;
             height: 350px;
             background: rgba(255,255,255,0.2);
-            borderradius: 50%;
+            border-radius: 50%;
             margin: 0 auto;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 7rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
             border: 4px solid rgba(255,255,255,0.3);
-            boxshadow: var(shadowlg);
+            box-shadow: var(--shadow-lg);
         }
 
         /* ===== SLIDES SECTION ===== */
-        .slidesgrid {
+        .slides-grid {
             display: grid;
-            gridtemplatecolumns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin: 50px 0;
         }
 
-        .slidecard {
+        .slide-card {
             background: white;
             padding: 30px;
-            borderradius: 20px;
-            boxshadow: var(shadowsm);
-            border: 1px solid var(borderlight);
-            transition: all var(transitionspeed);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-speed);
             height: 100%;
             display: flex;
-            flexdirection: column;
+            flex-direction: column;
         }
 
-        .slidecard:hover {
-            transform: translateY(5px);
-            boxshadow: var(shadowhover);
-            bordercolor: var(primary);
+        .slide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--mc-red);
         }
 
-        .slidenumber {
-            display: inlineblock;
-            background: var(primary);
+        .slide-number {
+            display: inline-block;
+            background: var(--mc-red);
             color: white;
             width: 35px;
             height: 35px;
-            borderradius: 50%;
-            textalign: center;
-            lineheight: 35px;
-            fontweight: 700;
-            marginbottom: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
-        .slidecard h3 {
-            fontsize: 1.3rem;
-            marginbottom: 15px;
-            color: var(primary);
+        .slide-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--mc-red);
         }
 
-        .slidecard ul {
-            liststyle: none;
+        .slide-card ul {
+            list-style: none;
             flex: 1;
         }
 
-        .slidecard li {
-            marginbottom: 12px;
-            paddingleft: 25px;
+        .slide-card li {
+            margin-bottom: 12px;
+            padding-left: 25px;
             position: relative;
-            color: var(textsecondary);
+            color: var(--text-secondary);
         }
 
-        .slidecard li:before {
-            content: "‘‰";
+        .slide-card li:before {
+            content: "👉";
             position: absolute;
             left: 0;
-            color: var(primary);
+            color: var(--mc-red);
         }
 
-        .slidecard p {
-            color: var(textsecondary);
-            lineheight: 1.7;
+        .slide-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        .slidecard strong {
-            color: var(textprimary);
+        .slide-card strong {
+            color: var(--text-primary);
         }
 
         /* ===== DEMO SECTION ===== */
-        .demosection {
-            background: var(mcdark);
+        .demo-section {
+            background: var(--mc-dark);
             color: white;
             padding: 80px 5%;
         }
 
-        .demosection h2 {
+        .demo-section h2 {
             color: white;
-            textalign: center;
-            marginbottom: 50px;
-            fontsize: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
         }
 
-        .demogrid {
+        .demo-grid {
             display: grid;
-            gridtemplatecolumns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
-            maxwidth: 1400px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .demostep {
-            marginbottom: 35px;
+        .demo-step {
+            margin-bottom: 35px;
         }
 
-        .demostep h4 {
-            color: var(accent);
-            marginbottom: 10px;
-            fontsize: 1.3rem;
+        .demo-step h4 {
+            color: var(--mc-orange);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
-        .demostep p {
+        .demo-step p {
             opacity: 0.9;
-            lineheight: 1.7;
+            line-height: 1.7;
         }
 
-        .demonote {
-            color: var(accent);
-            fontsize: 0.95rem;
-            margintop: 5px;
+        .demo-note {
+            color: var(--mc-orange);
+            font-size: 0.95rem;
+            margin-top: 5px;
         }
 
-        .demosecret {
+        .demo-secret {
             background: rgba(255,255,255,0.1);
             padding: 40px;
-            borderradius: 20px;
+            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .demosecret h4 {
-            color: var(accent);
-            fontsize: 1.5rem;
-            marginbottom: 20px;
+        .demo-secret h4 {
+            color: var(--mc-orange);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
 
-        .demosecret p {
-            fontsize: 1.3rem;
-            fontstyle: italic;
-            color: var(accent);
-            lineheight: 1.6;
+        .demo-secret p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--mc-orange);
+            line-height: 1.6;
         }
 
         /* ===== TESTING SECTION ===== */
-        .testingbox {
-            background: lineargradient(135deg, #F8FAFC, white);
+        .testing-box {
+            background: linear-gradient(135deg, #F8FAFC, white);
             padding: 50px;
-            borderradius: 30px;
+            border-radius: 30px;
             margin: 50px 0;
-            border: 1px solid var(borderlight);
-            boxshadow: var(shadowlg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
         }
 
-        .testingbox h3 {
-            fontsize: 1.8rem;
-            marginbottom: 25px;
-            color: var(primary);
+        .testing-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--mc-red);
         }
 
-        .testingbox p {
-            color: var(textsecondary);
-            marginbottom: 20px;
-            lineheight: 1.8;
-            fontsize: 1.05rem;
+        .testing-box p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
 
-        .testimonialbox {
-            background: var(primary);
+        .testimonial-box {
+            background: var(--mc-red);
             color: white;
             padding: 50px;
-            borderradius: 30px;
-            textalign: center;
+            border-radius: 30px;
+            text-align: center;
             margin: 50px 0;
         }
 
-        .testimonialbox i {
-            fontsize: 3rem;
+        .testimonial-box i {
+            font-size: 3rem;
             opacity: 0.3;
-            marginbottom: 20px;
+            margin-bottom: 20px;
         }
 
-        .testimonialbox p {
-            fontsize: 1.4rem;
-            maxwidth: 800px;
+        .testimonial-box p {
+            font-size: 1.4rem;
+            max-width: 800px;
             margin: 0 auto;
-            lineheight: 1.6;
-            fontstyle: italic;
+            line-height: 1.6;
+            font-style: italic;
         }
 
         /* ===== VISION SECTION ===== */
-        .visionsection {
-            background: lineargradient(135deg, var(mcdark), #1A1A1A);
+        .vision-section {
+            background: linear-gradient(135deg, var(--mc-dark), #1A1A1A);
             color: white;
             padding: 100px 5%;
-            textalign: center;
+            text-align: center;
         }
 
-        .visiontitle {
-            fontsize: 2.8rem;
-            marginbottom: 30px;
+        .vision-title {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
         }
 
-        .visiontext {
-            fontsize: 1.8rem;
-            maxwidth: 900px;
+        .vision-text {
+            font-size: 1.8rem;
+            max-width: 900px;
             margin: 0 auto;
-            lineheight: 1.5;
-            fontfamily: 'Playfair Display', serif;
+            line-height: 1.5;
+            font-family: 'Playfair Display', serif;
         }
 
         /* ===== CTA SECTION ===== */
-        .cta {\n        border: 2px solid rgba(235,0,27,0.3);
-            background: lineargradient(135deg, var(primary), var(accent));
+        .cta {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             color: white;
             padding: 100px 5%;
-            textalign: center;
+            text-align: center;
         }
 
         .cta h2 {
             color: white;
-            fontsize: 3rem;
-            marginbottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .cta p {
-            fontsize: 1.3rem;
+            font-size: 1.3rem;
             opacity: 0.95;
-            maxwidth: 700px;
+            max-width: 700px;
             margin: 0 auto 40px;
         }
 
-        .ctabuttons {
+        .cta-buttons {
             display: flex;
             gap: 20px;
-            justifycontent: center;
-            flexwrap: wrap;
-            marginbottom: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
-        .ctanote {
-            fontsize: 1rem;
+        .cta-note {
+            font-size: 1rem;
             opacity: 0.9;
         }
 
         /* ===== SENSORY TOGGLE ===== */
-        .sensorytoggle {
+        .sensory-toggle {
             display: flex;
-            alignitems: center;
+            align-items: center;
             gap: 15px;
             padding: 20px 30px;
-            background: lineargradient(135deg, #F8FAFC, white);
-            borderradius: 100px;
+            background: linear-gradient(135deg, #F8FAFC, white);
+            border-radius: 100px;
             margin: 30px 0;
-            border: 1px solid var(borderlight);
-            boxshadow: var(shadowsm);
-            maxwidth: 600px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            max-width: 600px;
         }
 
-        .toggleswitch {
+        .toggle-switch {
             width: 70px;
             height: 34px;
-            background: var(borderlight);
-            borderradius: 34px;
+            background: var(--border-light);
+            border-radius: 34px;
             position: relative;
             cursor: pointer;
-            transition: all var(transitionspeed);
-            flexshrink: 0;
+            transition: all var(--transition-speed);
+            flex-shrink: 0;
         }
 
-        .toggleswitch.active {
-            background: lineargradient(135deg, var(primary), var(accent));
+        .toggle-switch.active {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
         }
 
-        .toggleslider {
+        .toggle-slider {
             width: 30px;
             height: 30px;
             background: white;
-            borderradius: 50%;
+            border-radius: 50%;
             position: absolute;
             top: 2px;
             left: 2px;
-            transition: all var(transitionspeed);
-            boxshadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .toggleswitch.active .toggleslider {
+        .toggle-switch.active .toggle-slider {
             left: 38px;
         }
 
-        .togglelabel {
-            fontweight: 500;
-            color: var(textprimary);
+        .toggle-label {
+            font-weight: 500;
+            color: var(--text-primary);
         }
 
-        .toggledescription {
-            color: var(textsecondary);
-            fontsize: 0.95rem;
+        .toggle-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             flex: 1;
         }
 
@@ -1234,343 +1240,343 @@
             padding: 80px 5% 30px;
         }
 
-        .footergrid {
+        .footer-grid {
             display: grid;
-            gridtemplatecolumns: 2fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             gap: 40px;
-            maxwidth: 1400px;
+            max-width: 1400px;
             margin: 0 auto 50px;
         }
 
-        .footercol h4 {
-            color: var(accent);
-            marginbottom: 25px;
-            fontsize: 1.1rem;
-            letterspacing: 1px;
-            texttransform: uppercase;
+        .footer-col h4 {
+            color: var(--mc-orange);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .footercol ul {
-            liststyle: none;
+        .footer-col ul {
+            list-style: none;
         }
 
-        .footercol ul li {
-            marginbottom: 12px;
+        .footer-col ul li {
+            margin-bottom: 12px;
         }
 
-        .footercol ul li a {
+        .footer-col ul li a {
             color: #D1D5DB;
-            textdecoration: none;
-            transition: color var(transitionspeed);
-            fontsize: 0.95rem;
+            text-decoration: none;
+            transition: color var(--transition-speed);
+            font-size: 0.95rem;
         }
 
-        .footercol ul li a:hover {
-            color: var(accent);
-            paddingleft: 5px;
+        .footer-col ul li a:hover {
+            color: var(--mc-orange);
+            padding-left: 5px;
         }
 
-        .footerlogo {
+        .footer-logo {
             display: flex;
-            alignitems: center;
+            align-items: center;
             gap: 10px;
-            marginbottom: 20px;
+            margin-bottom: 20px;
         }
 
-        .footerlogoicon {
+        .footer-logo-icon {
             width: 50px;
             height: 50px;
-            background: lineargradient(135deg, var(primary), var(accent));
-            borderradius: 12px;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 12px;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
-        .footerlogotext {
-            fontweight: 700;
-            fontsize: 1.3rem;
+        .footer-logo-text {
+            font-weight: 700;
+            font-size: 1.3rem;
         }
 
-        .footerlogotext span {
-            color: var(accent);
+        .footer-logo-text span {
+            color: var(--mc-orange);
         }
 
-        .footerdescription {
+        .footer-description {
             color: #D1D5DB;
-            lineheight: 1.8;
+            line-height: 1.8;
             margin: 20px 0;
-            fontsize: 0.95rem;
+            font-size: 0.95rem;
         }
 
-        .sociallinks {
+        .social-links {
             display: flex;
             gap: 15px;
-            margintop: 25px;
+            margin-top: 25px;
         }
 
-        .sociallink {
+        .social-link {
             width: 40px;
             height: 40px;
             background: rgba(255,255,255,0.1);
-            borderradius: 50%;
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
+            align-items: center;
+            justify-content: center;
             color: white;
-            textdecoration: none;
-            transition: all var(transitionspeed);
-            fontsize: 1.2rem;
+            text-decoration: none;
+            transition: all var(--transition-speed);
+            font-size: 1.2rem;
         }
 
-        .sociallink:hover {
-            background: var(accent);
-            transform: translateY(3px);
+        .social-link:hover {
+            background: var(--mc-orange);
+            transform: translateY(-3px);
         }
 
-        .footerbottom {
-            textalign: center;
-            paddingtop: 40px;
-            margintop: 40px;
-            bordertop: 1px solid rgba(255,255,255,0.1);
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             color: #D1D5DB;
-            fontsize: 0.95rem;
-            maxwidth: 1400px;
-            marginleft: auto;
-            marginright: auto;
+            font-size: 0.95rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .footerbottom a {
-            color: var(accent);
-            textdecoration: none;
+        .footer-bottom a {
+            color: var(--mc-orange);
+            text-decoration: none;
             margin: 0 10px;
         }
 
-        .footerbottom a:hover {
-            textdecoration: underline;
+        .footer-bottom a:hover {
+            text-decoration: underline;
         }
 
         /* ===== FLOATING ELEMENTS ===== */
-        .chatbubble {
+        .chat-bubble {
             position: fixed;
             bottom: 100px;
             right: 28px;
-            zindex: 9999;
+            z-index: 9999;
             width: 70px;
             height: 70px;
-            background: lineargradient(135deg, var(primary), var(accent));
-            borderradius: 50%;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
+            align-items: center;
+            justify-content: center;
             color: white;
-            fontsize: 2rem;
+            font-size: 2rem;
             cursor: pointer;
-            boxshadow: 0 10px 25px rgba(255,95,0,0.3);
-            transition: all var(transitionspeed);
+            box-shadow: 0 10px 25px rgba(235,0,27,0.3);
+            transition: all var(--transition-speed);
             border: none;
         }
 
-        .chatbubble:hover {
-            transform: scale(1.1) translateY(5px);
-            boxshadow: 0 15px 35px rgba(255,95,0,0.4);
+        .chat-bubble:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(235,0,27,0.4);
         }
 
-        .whatsappfloat {
+        .whatsapp-float {
             position: fixed;
             bottom: 190px;
             right: 28px;
-            zindex: 9999;
+            z-index: 9999;
             width: 70px;
             height: 70px;
             background: #25D366;
-            borderradius: 50%;
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
+            align-items: center;
+            justify-content: center;
             color: white;
-            fontsize: 2.2rem;
+            font-size: 2.2rem;
             cursor: pointer;
-            boxshadow: 0 10px 25px rgba(37,211,102,0.3);
-            transition: all var(transitionspeed);
-            textdecoration: none;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            transition: all var(--transition-speed);
+            text-decoration: none;
         }
 
-        .whatsappfloat:hover {
-            transform: scale(1.1) translateY(5px);
-            boxshadow: 0 15px 35px rgba(37,211,102,0.4);
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
         }
 
-        .scrollup {
+        .scroll-up {
             position: fixed;
             bottom: 100px;
             left: 28px;
-            zindex: 9999;
+            z-index: 9999;
             width: 60px;
             height: 60px;
-            background: lineargradient(135deg, var(primary), var(accent));
-            borderradius: 50%;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
+            align-items: center;
+            justify-content: center;
             color: white;
-            fontsize: 1.5rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            boxshadow: 0 4px 15px rgba(255,95,0,0.3);
-            transition: all var(transitionspeed);
+            box-shadow: 0 4px 15px rgba(235,0,27,0.3);
+            transition: all var(--transition-speed);
             border: none;
             opacity: 0;
             visibility: hidden;
         }
 
-        .scrollup.visible {
+        .scroll-up.visible {
             opacity: 1;
             visibility: visible;
         }
 
-        .scrollup:hover {
-            transform: scale(1.1) translateY(5px);
-            boxshadow: 0 8px 25px rgba(255,95,0,0.5);
+        .scroll-up:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(235,0,27,0.5);
         }
 
         /* ===== CHAT PANEL ===== */
-        .chatpanel {
+        .chat-panel {
             position: fixed;
             bottom: 190px;
             right: 28px;
             width: 380px;
             background: white;
-            borderradius: 24px;
-            boxshadow: 0 25px 50px rgba(0,0,0,0.15);
-            zindex: 10000;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            z-index: 10000;
             overflow: hidden;
-            border: 1px solid var(borderlight);
+            border: 1px solid var(--border-light);
             display: none;
         }
 
-        .chatheader {
-            background: lineargradient(135deg, var(primary), var(accent));
+        .chat-header {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             padding: 20px;
             color: white;
             display: flex;
-            justifycontent: spacebetween;
-            alignitems: center;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .chatheader h4 {
+        .chat-header h4 {
             color: white;
             margin: 0;
-            fontsize: 1.2rem;
+            font-size: 1.2rem;
         }
 
-        .chatheader h4 i {
-            marginright: 8px;
+        .chat-header h4 i {
+            margin-right: 8px;
         }
 
-        .chatclose {
+        .chat-close {
             background: none;
             border: none;
             color: white;
             cursor: pointer;
-            fontsize: 1.3rem;
+            font-size: 1.3rem;
             opacity: 0.8;
-            transition: opacity var(transitionspeed);
+            transition: opacity var(--transition-speed);
         }
 
-        .chatclose:hover {
+        .chat-close:hover {
             opacity: 1;
         }
 
-        .chatmessages {
+        .chat-messages {
             padding: 20px;
             height: 300px;
-            overflowy: auto;
+            overflow-y: auto;
             background: #F8FAFC;
         }
 
-        .chatmessage {
-            marginbottom: 20px;
+        .chat-message {
+            margin-bottom: 20px;
             display: flex;
-            flexdirection: column;
+            flex-direction: column;
         }
 
-        .chatmessage.bot {
-            alignitems: flexstart;
+        .chat-message.bot {
+            align-items: flex-start;
         }
 
-        .chatmessage.user {
-            alignitems: flexend;
+        .chat-message.user {
+            align-items: flex-end;
         }
 
-        .messagebubble {
-            maxwidth: 80%;
+        .message-bubble {
+            max-width: 80%;
             padding: 15px 18px;
-            borderradius: 18px;
-            fontsize: 0.95rem;
-            lineheight: 1.5;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        .bot .messagebubble {
+        .bot .message-bubble {
             background: white;
-            border: 1px solid var(borderlight);
-            borderbottomleftradius: 5px;
+            border: 1px solid var(--border-light);
+            border-bottom-left-radius: 5px;
         }
 
-        .user .messagebubble {
-            background: var(primary);
+        .user .message-bubble {
+            background: var(--mc-red);
             color: white;
-            borderbottomrightradius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
-        .messagetime {
-            fontsize: 0.7rem;
-            color: var(textsecondary);
-            margintop: 5px;
-            marginleft: 5px;
-            marginright: 5px;
+        .message-time {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
         }
 
-        .chatinputarea {
+        .chat-input-area {
             padding: 20px;
-            bordertop: 1px solid var(borderlight);
+            border-top: 1px solid var(--border-light);
             display: flex;
             gap: 10px;
             background: white;
         }
 
-        .chatinputarea input {
+        .chat-input-area input {
             flex: 1;
             padding: 12px 18px;
-            border: 1px solid var(borderlight);
-            borderradius: 25px;
+            border: 1px solid var(--border-light);
+            border-radius: 25px;
             outline: none;
-            fontsize: 0.95rem;
-            transition: all var(transitionspeed);
+            font-size: 0.95rem;
+            transition: all var(--transition-speed);
         }
 
-        .chatinputarea input:focus {
-            bordercolor: var(primary);
-            boxshadow: 0 0 0 3px rgba(255,95,0,0.1);
+        .chat-input-area input:focus {
+            border-color: var(--mc-red);
+            box-shadow: 0 0 0 3px rgba(235,0,27,0.1);
         }
 
-        .chatsend {
+        .chat-send {
             width: 50px;
             height: 50px;
-            background: var(primary);
+            background: var(--mc-red);
             color: white;
             border: none;
-            borderradius: 50%;
+            border-radius: 50%;
             cursor: pointer;
-            transition: all var(transitionspeed);
+            transition: all var(--transition-speed);
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 1.2rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
-        .chatsend:hover {
-            background: var(accent);
+        .chat-send:hover {
+            background: var(--mc-orange);
             transform: scale(1.05);
         }
 
@@ -1583,72 +1589,72 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
-            zindex: 20000;
-            alignitems: center;
-            justifycontent: center;
-            backdropfilter: blur(5px);
+            z-index: 20000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .modal.active {
             display: flex;
         }
 
-        .modalcontent {
+        .modal-content {
             background: white;
-            borderradius: 30px;
-            maxwidth: 550px;
+            border-radius: 30px;
+            max-width: 550px;
             width: 90%;
             padding: 50px;
             position: relative;
-            boxshadow: 0 30px 60px rgba(0,0,0,0.3);
-            textalign: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            text-align: center;
         }
 
-        .modalclose {
+        .modal-close {
             position: absolute;
             top: 20px;
             right: 20px;
             background: none;
             border: none;
-            fontsize: 1.8rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: var(textsecondary);
-            transition: color var(transitionspeed);
+            color: var(--text-secondary);
+            transition: color var(--transition-speed);
         }
 
-        .modalclose:hover {
-            color: var(primary);
+        .modal-close:hover {
+            color: var(--mc-red);
         }
 
-        .modalicon {
+        .modal-icon {
             width: 90px;
             height: 90px;
-            background: rgba(255,95,0,0.1);
-            borderradius: 50%;
+            background: rgba(235,0,27,0.1);
+            border-radius: 50%;
             display: flex;
-            alignitems: center;
-            justifycontent: center;
-            fontsize: 3rem;
-            color: var(primary);
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--mc-red);
             margin: 0 auto 25px;
         }
 
         .modal h3 {
-            marginbottom: 15px;
-            fontsize: 2rem;
+            margin-bottom: 15px;
+            font-size: 2rem;
         }
 
         .modal p {
-            color: var(textsecondary);
-            marginbottom: 30px;
-            lineheight: 1.8;
-            fontsize: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
-        .modalbuttons {
+        .modal-buttons {
             display: flex;
             gap: 15px;
-            justifycontent: center;
+            justify-content: center;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1668,9 +1674,9 @@
         }
 
         @keyframes pulse {
-            0% { boxshadow: 0 0 0 0 rgba(255,95,0,0.4); }
-            70% { boxshadow: 0 0 0 15px rgba(255,95,0,0); }
-            100% { boxshadow: 0 0 0 0 rgba(255,95,0,0); }
+            0% { box-shadow: 0 0 0 0 rgba(235,0,27,0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(235,0,27,0); }
+            100% { box-shadow: 0 0 0 0 rgba(235,0,27,0); }
         }
 
         .pulse {
@@ -1678,100 +1684,100 @@
         }
 
         /* ===== LOW STIMULATION MODE ===== */
-        body.lowstimulation {
-            transitionspeed: 0s;
-            animationenabled: 0;
+        body.low-stimulation {
+            --transition-speed: 0s;
+            --animation-enabled: 0;
         }
 
-        body.lowstimulation * {
+        body.low-stimulation * {
             animation: none !important;
             transition: none !important;
         }
 
-        body.lowstimulation .glasscard:hover,
-        body.lowstimulation .pillarcard:hover,
-        body.lowstimulation .videocard:hover,
-        body.lowstimulation .featurecard:hover,
-        body.lowstimulation .problemcard:hover,
-        body.lowstimulation .whocard:hover,
-        body.lowstimulation .slidecard:hover {
+        body.low-stimulation .glass-card:hover,
+        body.low-stimulation .pillar-card:hover,
+        body.low-stimulation .video-card:hover,
+        body.low-stimulation .feature-card:hover,
+        body.low-stimulation .problem-card:hover,
+        body.low-stimulation .who-card:hover,
+        body.low-stimulation .slide-card:hover {
             transform: none;
         }
 
-        body.lowstimulation .hero::before {
+        body.low-stimulation .hero::before {
             animation: none;
         }
 
-        body.lowstimulation .heroimage::before {
+        body.low-stimulation .hero-image::before {
             animation: none;
         }
 
         /* ===== MOBILE RESPONSIVE ===== */
-        @media (maxwidth: 1200px) {
-            .footergrid {
-                gridtemplatecolumns: repeat(3, 1fr);
+        @media (max-width: 1200px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
-            .kslfeatures {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .ksl-features {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (maxwidth: 1024px) {
-            .herogrid {
-                gridtemplatecolumns: 1fr;
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .herocontent {
-                maxwidth: 100%;
-                textalign: center;
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
             }
             
-            .herobuttons {
-                justifycontent: center;
+            .hero-buttons {
+                justify-content: center;
             }
             
-            .trustgrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .problemgrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .problem-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .featuresgrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .pillargrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .kslgrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .ksl-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .whogrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .who-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .slidesgrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .slides-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .foundergrid {
-                gridtemplatecolumns: 1fr;
-                textalign: center;
+            .founder-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
             
-            .demogrid {
-                gridtemplatecolumns: 1fr;
+            .demo-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (maxwidth: 968px) {
-            .navlinks {
+        @media (max-width: 968px) {
+            .nav-links {
                 display: none;
             }
             
@@ -1779,98 +1785,98 @@
                 display: flex;
             }
             
-            .footergrid {
-                gridtemplatecolumns: repeat(2, 1fr);
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (maxwidth: 768px) {
+        @media (max-width: 768px) {
             .section {
                 padding: 60px 5%;
             }
             
-            .herotitle {
-                fontsize: 2.5rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .trustgrid {
-                gridtemplatecolumns: 1fr;
+            .trust-grid {
+                grid-template-columns: 1fr;
                 gap: 30px;
             }
             
-            .problemgrid {
-                gridtemplatecolumns: 1fr;
+            .problem-grid {
+                grid-template-columns: 1fr;
             }
             
-            .featuresgrid {
-                gridtemplatecolumns: 1fr;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
             
-            .pillargrid {
-                gridtemplatecolumns: 1fr;
+            .pillar-grid {
+                grid-template-columns: 1fr;
             }
             
-            .kslgrid {
-                gridtemplatecolumns: 1fr;
+            .ksl-grid {
+                grid-template-columns: 1fr;
             }
             
-            .kslfeatures {
-                gridtemplatecolumns: 1fr;
+            .ksl-features {
+                grid-template-columns: 1fr;
             }
             
-            .whogrid {
-                gridtemplatecolumns: 1fr;
+            .who-grid {
+                grid-template-columns: 1fr;
             }
             
-            .whygrid {
-                gridtemplatecolumns: 1fr;
+            .why-grid {
+                grid-template-columns: 1fr;
             }
             
-            .slidesgrid {
-                gridtemplatecolumns: 1fr;
+            .slides-grid {
+                grid-template-columns: 1fr;
             }
             
-            .footergrid {
-                gridtemplatecolumns: 1fr;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
             
-            .ctabuttons {
-                flexdirection: column;
+            .cta-buttons {
+                flex-direction: column;
                 gap: 15px;
             }
             
-            .ctabuttons .btn {
+            .cta-buttons .btn {
                 width: 100%;
             }
             
-            .sensorytoggle {
-                flexdirection: column;
-                alignitems: flexstart;
-                borderradius: 20px;
+            .sensory-toggle {
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 20px;
             }
             
-            .chatpanel {
+            .chat-panel {
                 width: 300px;
                 right: 15px;
             }
             
-            .modalcontent {
+            .modal-content {
                 padding: 40px 20px;
             }
             
-            .modalbuttons {
-                flexdirection: column;
+            .modal-buttons {
+                flex-direction: column;
             }
         }
 
         /* ===== PRINT STYLES ===== */
         @media print {
-            .chatbubble,
-            .whatsappfloat,
-            .scrollup,
-            .chatpanel,
+            .chat-bubble,
+            .whatsapp-float,
+            .scroll-up,
+            .chat-panel,
             .hamburger,
-            .navcta {
+            .nav-cta {
                 display: none !important;
             }
             
@@ -1879,63 +1885,57 @@
             }
             
             .hero::before,
-            .heroimage::before {
+            .hero-image::before {
                 display: none;
             }
         }
 
         /* ===== UTILITY CLASSES ===== */
-        .textcenter { textalign: center; }
-        .mt1 { margintop: 10px; }
-        .mt2 { margintop: 20px; }
-        .mt3 { margintop: 30px; }
-        .mt4 { margintop: 40px; }
-        .mt5 { margintop: 50px; }
-        .mb1 { marginbottom: 10px; }
-        .mb2 { marginbottom: 20px; }
-        .mb3 { marginbottom: 30px; }
-        .mb4 { marginbottom: 40px; }
-        .mb5 { marginbottom: 50px; }
-        .p1 { padding: 10px; }
-        .p2 { padding: 20px; }
-        .p3 { padding: 30px; }
-        .p4 { padding: 40px; }
-        .p5 { padding: 50px; }
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 10px; }
+        .mt-2 { margin-top: 20px; }
+        .mt-3 { margin-top: 30px; }
+        .mt-4 { margin-top: 40px; }
+        .mt-5 { margin-top: 50px; }
+        .mb-1 { margin-bottom: 10px; }
+        .mb-2 { margin-bottom: 20px; }
+        .mb-3 { margin-bottom: 30px; }
+        .mb-4 { margin-bottom: 40px; }
+        .mb-5 { margin-bottom: 50px; }
+        .p-1 { padding: 10px; }
+        .p-2 { padding: 20px; }
+        .p-3 { padding: 30px; }
+        .p-4 { padding: 40px; }
+        .p-5 { padding: 50px; }
         
-        .gradienttext {
-            background: lineargradient(135deg, var(primary), var(accent));
-            webkitbackgroundclip: text;
-            webkittextfillcolor: transparent;
-            backgroundclip: text;
+        .gradient-text {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
-<style>section, div, header, footer { backgroundcolor: #0F0F0F !important; color: white !important; }</style><style>
-    :root {
-        --mc-red: #EB001B;
-        --mc-orange: #FF5F00;
-        --mc-yellow: #F79E1B;
-        --bg-dark: #0F0F0F;
-    }
-    body, html { background-color: #0F0F0F !important; color: #FFFFFF !important; margin: 0; padding: 0; }
-    section, header, footer, div.hero, div.about { background-color: #0F0F0F !important; }
-    .logo img { height: 90px !important; width: auto; display: block; }
-    .mcf-banner { background: linear-gradient(90deg, #EB001B, #FF5F00, #F79E1B); color: white; padding: 12px; text-align: center; font-weight: bold; width: 100%; position: relative; z-index: 9999; }
-</style></head>
+</head>
 <body>
-    <! ===== NAVIGATION ===== >
-    <div style="background:linear-gradient(90deg,#EB001B,#FF5F00,#F79E1B);padding:10px 5%;text-align:center;font-size:0.82rem;font-weight:700;color:white;"> Applying  Mastercard Foundation EdTech Fellowship Kenya Cohort 4  iHUB Kenya  Deadline April 10, 2026</div>
-<nav class="navbar">
-        <div class="navcontainer">
-            <a href="/" class="logo" style="display:flex; alignitems:center; padding: 10px 0;"><img src="logo.png" alt="NeuroBridge Africa" style="height:85px; width:auto;"></a>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">🧠</div>
+                <div class="logo-text">
+                    <span class="logo-main">NEUROBRIDGE</span>
+                    <span class="logo-sub">AFRICA</span>
+                </div>
+            </a>
             
-            <ul class="navlinks">
+            <ul class="nav-links">
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#founder">Founder</a></li>
                 <li><a href="#slides">Pitch</a></li>
                 <li><a href="#demo">Demo</a></li>
-                <li><a href="/app" class="navcta">Try Demo</a></li>
+                <li><a href="/app" class="nav-cta">Try Demo</a></li>
             </ul>
             
             <button class="hamburger" onclick="toggleMobileMenu()">
@@ -1946,189 +1946,189 @@
         </div>
     </nav>
 
-    <! ===== HERO SECTION ===== >
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
-        <div class="container herogrid">
-            <div class="herocontent">
-                <div class="herobadge">”¥ Built from Lived Experience</div>
-                <h1 class="herotitle">
-                    <span class="herogradienttext">Closing the Learning Gap</span><br>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">🔥 Built from Lived Experience</div>
+                <h1 class="hero-title">
+                    <span class="hero-gradient-text">Closing the Learning Gap</span><br>
                     for Neurodivergent & Deaf Learners
                 </h1>
-                <p class="herosubtitle">Inclusive technology built for Africa €” designed for how learners truly think, process, and communicate. Kenyan Sign Language, sensory tools, and caregiver support in one platform.</p>
-                <div class="herobuttons">
-                    <a href="/app" class="btn btnprimary"><i class="fas farocket"></i> Try the Demo</a>
-                    <a href="#join" class="btn btnsecondary"><i class="fas fausers"></i> Join the Pilot</a>
+                <p class="hero-subtitle">Inclusive technology built for Africa — designed for how learners truly think, process, and communicate. Kenyan Sign Language, sensory tools, and caregiver support in one platform.</p>
+                <div class="hero-buttons">
+                    <a href="/app" class="btn btn-primary"><i class="fas fa-rocket"></i> Try the Demo</a>
+                    <a href="#join" class="btn btn-secondary"><i class="fas fa-users"></i> Join the Pilot</a>
                 </div>
             </div>
-            <div class="heroimage">
-                <i class="fas fahands"></i>
+            <div class="hero-image">
+                <i class="fas fa-hands"></i>
                 <h3>Inclusive Learning for All</h3>
-                <p>KSLintegrated · Neurodivergentfriendly · Offlinefirst</p>
-                <p class="herolocation"><i class="fas famapmarkeralt"></i> Nairobi · Garissa · Mombasa</p>
+                <p>KSL-integrated · Neurodivergent-friendly · Offline-first</p>
+                <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Nairobi · Garissa · Mombasa</p>
             </div>
         </div>
     </section>
 
-    <! ===== SENSORY TOGGLE ===== >
+    <!-- ===== SENSORY TOGGLE ===== -->
     <div class="container">
-        <div class="sensorytoggle">
-            <i class="fas famoon" style="color: var(primary); fontsize: 1.3rem;"></i>
-            <span class="togglelabel"><strong>LowStimulation Mode:</strong></span>
-            <span class="toggledescription">Reduces animations for sensory sensitivity</span>
-            <div class="toggleswitch" id="sensoryToggle" onclick="toggleSensoryMode()">
-                <div class="toggleslider"></div>
+        <div class="sensory-toggle">
+            <i class="fas fa-moon" style="color: var(--mc-red); font-size: 1.3rem;"></i>
+            <span class="toggle-label"><strong>Low-Stimulation Mode:</strong></span>
+            <span class="toggle-description">Reduces animations for sensory sensitivity</span>
+            <div class="toggle-switch" id="sensoryToggle" onclick="toggleSensoryMode()">
+                <div class="toggle-slider"></div>
             </div>
         </div>
     </div>
 
-    <! ===== TRUST / IMPACT STRIP ===== >
-    <section class="truststrip">
-        <div class="trustgrid">
-            <div class="trustitem">
-                <div class="trustnumber">950+</div>
-                <div class="trustlabel">learners reached through pilot programs and community testing</div>
+    <!-- ===== TRUST / IMPACT STRIP ===== -->
+    <section class="trust-strip">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">950+</div>
+                <div class="trust-label">learners reached through pilot programs and community testing</div>
             </div>
-            <div class="trustitem">
-                <div class="trustnumber">300+</div>
-                <div class="trustlabel">app downloads across early users</div>
+            <div class="trust-item">
+                <div class="trust-number">300+</div>
+                <div class="trust-label">app downloads across early users</div>
             </div>
-            <div class="trustitem">
-                <div class="trustnumber">200k+</div>
-                <div class="trustlabel">community reach through advocacy and awareness</div>
+            <div class="trust-item">
+                <div class="trust-number">200k+</div>
+                <div class="trust-label">community reach through advocacy and awareness</div>
             </div>
-            <div class="trustitem">
-                <div class="trustnumber">24+</div>
-                <div class="trustlabel">Kenyan Sign Language (KSL) modules developed</div>
+            <div class="trust-item">
+                <div class="trust-number">24+</div>
+                <div class="trust-label">Kenyan Sign Language (KSL) modules developed</div>
             </div>
         </div>
     </section>
 
-    <! ===== WHAT IS NEUROBRIDGE ===== >
+    <!-- ===== WHAT IS NEUROBRIDGE ===== -->
     <section class="section">
         <div class="container">
-            <h2 class="sectiontitle">What is NeuroBridge?</h2>
-            <p class="sectionsubtitle">NeuroBridge is an inclusive digital learning platform designed for neurodivergent and Deaf learners who are often excluded from traditional education systems.</p>
+            <h2 class="section-title">What is NeuroBridge?</h2>
+            <p class="section-subtitle">NeuroBridge is an inclusive digital learning platform designed for neurodivergent and Deaf learners who are often excluded from traditional education systems.</p>
             
-            <div class="featuresgrid" style="margintop: 30px;">
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fabrain"></i></div>
+            <div class="features-grid" style="margin-top: 30px;">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h3>Different Learning Styles</h3>
                     <p>Visual, structured, and interactive approaches that work for neurodivergent minds including autism, ADHD, and dyslexia.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fahands"></i></div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hands"></i></div>
                     <h3>Communication Needs</h3>
-                    <p>KSLintegrated content for Deaf learners and flexible communication tools developed with deaf consultants.</p>
+                    <p>KSL-integrated content for Deaf learners and flexible communication tools developed with deaf consultants.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fahome"></i></div>
-                    <h3>HomeBased Learning</h3>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-home"></i></div>
+                    <h3>Home-Based Learning</h3>
                     <p>Designed for families and caregivers to support learning at home with visual schedules and progress tracking.</p>
                 </div>
             </div>
             
-            <div class="testimonialbox" style="background: var(primary); margintop: 50px;">
-                <p>‘‰ Built from lived experience, NeuroBridge ensures learners are not just included €” but <strong>Empowered</strong>.</p>
+            <div class="testimonial-box" style="background: var(--mc-red); margin-top: 50px;">
+                <p>👉 Built from lived experience, NeuroBridge ensures learners are not just included — but <strong>Empowered</strong>.</p>
             </div>
         </div>
     </section>
 
-    <! ===== THE PROBLEM ===== >
-    <section id="problem" class="section sectionlight">
+    <!-- ===== THE PROBLEM ===== -->
+    <section id="problem" class="section section-light">
         <div class="container">
-            <h2 class="sectiontitle">The Problem</h2>
-            <p class="sectionsubtitle">Across Africa, millions of learners face barriers to education due to:</p>
+            <h2 class="section-title">The Problem</h2>
+            <p class="section-subtitle">Across Africa, millions of learners face barriers to education due to:</p>
             
-            <div class="problemgrid">
-                <div class="problemcard">
-                    <div class="problemicon">“š</div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📚</div>
                     <h3>Lack of inclusive teaching methods</h3>
                     <p>Teachers lack training and resources to support diverse learners in overcrowded classrooms.</p>
                 </div>
-                <div class="problemcard">
-                    <div class="problemicon">¤Ÿ</div>
+                <div class="problem-card">
+                    <div class="problem-icon">🤟</div>
                     <h3>Limited access to KSL resources</h3>
                     <p>Deaf learners cannot access lessons without sign language interpretation or visual supports.</p>
                 </div>
-                <div class="problemcard">
-                    <div class="problemicon">«</div>
+                <div class="problem-card">
+                    <div class="problem-icon">🏫</div>
                     <h3>Overcrowded classrooms</h3>
                     <p>Cannot support diverse needs of neurodivergent learners who require individualized attention.</p>
                 </div>
-                <div class="problemcard">
-                    <div class="problemicon">§ </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🧠</div>
                     <h3>Stigma around neurodivergence</h3>
-                    <p>Learners are misunderstood, pushed out, or ignored €” not because they cannot learn.</p>
+                    <p>Learners are misunderstood, pushed out, or ignored — not because they cannot learn.</p>
                 </div>
             </div>
             
-            <div class="testingbox" style="margintop: 50px;">
-                <h3 style="color: var(primary);">Many learners are left behind</h3>
-                <p style="fontsize: 1.3rem; fontweight: 500;">€” not because they cannot learn, but because the system does not support how they learn.</p>
+            <div class="testing-box" style="margin-top: 50px;">
+                <h3 style="color: var(--mc-red);">Many learners are left behind</h3>
+                <p style="font-size: 1.3rem; font-weight: 500;">— not because they cannot learn, but because the system does not support how they learn.</p>
             </div>
         </div>
     </section>
 
-    <! ===== OUR SOLUTION ===== >
+    <!-- ===== OUR SOLUTION ===== -->
     <section id="solution" class="section">
         <div class="container">
-            <h2 class="sectiontitle">Our Solution</h2>
-            <p class="sectionsubtitle">NeuroBridge delivers a techenabled, inclusive learning experience tailored to underserved learners.</p>
+            <h2 class="section-title">Our Solution</h2>
+            <p class="section-subtitle">NeuroBridge delivers a tech-enabled, inclusive learning experience tailored to underserved learners.</p>
             
-            <div style="display: grid; gridtemplatecolumns: repeat(2, 1fr); gap: 30px; margin: 50px 0;">
-                <div class="featurecard" style="background: var(primary); color: white;">
-                    <h3 style="color: white; marginbottom: 20px;">We combine:</h3>
-                    <ul style="liststyle: none;">
-                        <li style="marginbottom: 15px; fontsize: 1.1rem;"><i class="fas facheckcircle" style="color: white; marginright: 10px;"></i> Interactive lessons</li>
-                        <li style="marginbottom: 15px; fontsize: 1.1rem;"><i class="fas facheckcircle" style="color: white; marginright: 10px;"></i> Visual and structured learning</li>
-                        <li style="marginbottom: 15px; fontsize: 1.1rem;"><i class="fas facheckcircle" style="color: white; marginright: 10px;"></i> KSLintegrated content</li>
-                        <li style="marginbottom: 15px; fontsize: 1.1rem;"><i class="fas facheckcircle" style="color: white; marginright: 10px;"></i> Offline accessibility</li>
-                        <li style="fontsize: 1.1rem;"><i class="fas facheckcircle" style="color: white; marginright: 10px;"></i> Caregiver support tools</li>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 50px 0;">
+                <div class="feature-card" style="background: var(--mc-red); color: white;">
+                    <h3 style="color: white; margin-bottom: 20px;">We combine:</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Interactive lessons</li>
+                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Visual and structured learning</li>
+                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> KSL-integrated content</li>
+                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Offline accessibility</li>
+                        <li style="font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Caregiver support tools</li>
                     </ul>
                 </div>
-                <div class="featurecard" style="background: #F8FAFC; display: flex; flexdirection: column; justifycontent: center;">
-                    <p style="fontsize: 1.4rem; fontstyle: italic; marginbottom: 20px;">"So learners can access education in a way that actually works for them."</p>
-                    <p style="color: var(primary); fontweight: 600;">‘‰ Designed for real African learning environments</p>
+                <div class="feature-card" style="background: #F8FAFC; display: flex; flex-direction: column; justify-content: center;">
+                    <p style="font-size: 1.4rem; font-style: italic; margin-bottom: 20px;">"So learners can access education in a way that actually works for them."</p>
+                    <p style="color: var(--mc-red); font-weight: 600;">👉 Designed for real African learning environments</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <! ===== KEY FEATURES ===== >
-    <section id="features" class="section sectionlight">
+    <!-- ===== KEY FEATURES ===== -->
+    <section id="features" class="section section-light">
         <div class="container">
-            <h2 class="sectiontitle">Designed for Inclusion</h2>
-            <p class="sectionsubtitle">Every feature is built with neurodivergent and Deaf learners in mind</p>
+            <h2 class="section-title">Designed for Inclusion</h2>
+            <p class="section-subtitle">Every feature is built with neurodivergent and Deaf learners in mind</p>
             
-            <div class="featuresgrid">
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fawifislash"></i></div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wifi-slash"></i></div>
                     <h3>Offline Learning Mode</h3>
-                    <p>Access lessons anytime, even without internet. Perfect for rural and lowconnectivity areas across Kenya.</p>
+                    <p>Access lessons anytime, even without internet. Perfect for rural and low-connectivity areas across Kenya.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fahands"></i></div>
-                    <h3>KSLIntegrated Content</h3>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hands"></i></div>
+                    <h3>KSL-Integrated Content</h3>
                     <p>Supporting Deaf learners through visual communication with 24+ Kenyan Sign Language modules.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fabrain"></i></div>
-                    <h3>NeurodivergentFriendly Design</h3>
-                    <p>Simple, structured, and distractionaware interfaces that reduce overwhelm and support focus.</p>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Neurodivergent-Friendly Design</h3>
+                    <p>Simple, structured, and distraction-aware interfaces that reduce overwhelm and support focus.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas faheart"></i></div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
                     <h3>Caregiver Support Tools</h3>
                     <p>Helping families guide learning at home with visual schedules, progress tracking, and behavioral strategies.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fagraduationcap"></i></div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Inclusive Curriculum</h3>
                     <p>Built for diverse learners, aligned with CBC standards and designed for neurodivergent minds.</p>
                 </div>
-                <div class="featurecard">
-                    <div class="featureicon"><i class="fas fachartline"></i></div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Progress Tracking</h3>
                     <p>Monitor learning milestones and share reports with teachers and therapists for better support.</p>
                 </div>
@@ -2136,189 +2136,189 @@
         </div>
     </section>
 
-    <! ===== 6PILLAR DASHBOARD ===== >
+    <!-- ===== 6-PILLAR DASHBOARD ===== -->
     <section class="section">
         <div class="container">
-            <h2 class="sectiontitle">Complete <span style="color: var(primary);">6Pillar</span> Ecosystem</h2>
-            <p class="sectionsubtitle">One platform serving learners, caregivers, teachers, and counselors across Kenya</p>
+            <h2 class="section-title">Complete <span style="color: var(--mc-red);">6-Pillar</span> Ecosystem</h2>
+            <p class="section-subtitle">One platform serving learners, caregivers, teachers, and counselors across Kenya</p>
             
-            <div class="pillargrid">
-                <! Learner Portal (Blue) >
-                <div class="pillarcard blue" onclick="openModal('learner')">
-                    <div class="pillaricon"><i class="fas fagraduationcap"></i></div>
+            <div class="pillar-grid">
+                <!-- Learner Portal (Blue) -->
+                <div class="pillar-card blue" onclick="openModal('learner')">
+                    <div class="pillar-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Learner Portal</h3>
-                    <p>Focusfriendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.</p>
-                    <span class="pillartag"><i class="fas fachartline"></i> 65% completion</span>
+                    <p>Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.</p>
+                    <span class="pillar-tag"><i class="fas fa-chart-line"></i> 65% completion</span>
                 </div>
                 
-                <! KSL Integration (Purple) >
-                <div class="pillarcard purple" onclick="openModal('ksl')">
-                    <div class="pillaricon"><i class="fas fahands"></i></div>
+                <!-- KSL Integration (Purple) -->
+                <div class="pillar-card purple" onclick="openModal('ksl')">
+                    <div class="pillar-icon"><i class="fas fa-hands"></i></div>
                     <h3>KSL Integration</h3>
                     <p>Kenyan Sign Language video library with 24 lessons, developed with deaf consultants from Nairobi and Garissa.</p>
-                    <span class="pillartag"><i class="fas faplay"></i> 12 new lessons</span>
+                    <span class="pillar-tag"><i class="fas fa-play"></i> 12 new lessons</span>
                 </div>
                 
-                <! Parent/Caregiver Hub (Yellow) >
-                <div class="pillarcard yellow" onclick="openModal('parent')">
-                    <div class="pillaricon"><i class="fas faheart"></i></div>
+                <!-- Parent/Caregiver Hub (Yellow) -->
+                <div class="pillar-card yellow" onclick="openModal('parent')">
+                    <div class="pillar-icon"><i class="fas fa-heart"></i></div>
                     <h3>Parent Hub</h3>
                     <p>Support resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children.</p>
-                    <span class="pillartag"><i class="fas fausers"></i> 45 active members</span>
+                    <span class="pillar-tag"><i class="fas fa-users"></i> 45 active members</span>
                 </div>
                 
-                <! SensoryFriendly Interface (Gradient) >
-                <div class="pillarcard gradient" onclick="toggleSensoryMode()">
-                    <div class="pillaricon"><i class="fas fabrain"></i></div>
+                <!-- Sensory-Friendly Interface (Gradient) -->
+                <div class="pillar-card gradient" onclick="toggleSensoryMode()">
+                    <div class="pillar-icon"><i class="fas fa-brain"></i></div>
                     <h3>Sensory Mode</h3>
-                    <p>Lowstimulation interface with reduced animations, calming colors, and distractionfree learning environment.</p>
-                    <span class="pillartag"><i class="fas fatoggleon"></i> Click to toggle</span>
+                    <p>Low-stimulation interface with reduced animations, calming colors, and distraction-free learning environment.</p>
+                    <span class="pillar-tag"><i class="fas fa-toggle-on"></i> Click to toggle</span>
                 </div>
                 
-                <! CBC Curriculum (Green) >
-                <div class="pillarcard green" onclick="openModal('cbc')">
-                    <div class="pillaricon"><i class="fas fabook"></i></div>
+                <!-- CBC Curriculum (Green) -->
+                <div class="pillar-card green" onclick="openModal('cbc')">
+                    <div class="pillar-icon"><i class="fas fa-book"></i></div>
                     <h3>CBC Curriculum</h3>
-                    <p>Kenyan CompetencyBased Curriculum adapted for neurodivergent learners with visual supports and modified assessments.</p>
-                    <span class="pillartag"><i class="fas facheck"></i> 9 courses</span>
+                    <p>Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports and modified assessments.</p>
+                    <span class="pillar-tag"><i class="fas fa-check"></i> 9 courses</span>
                 </div>
                 
-                <! Counselor Connection (Red) >
-                <div class="pillarcard red" onclick="window.open('https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support.', '_blank')">
-                    <div class="pillaricon"><i class="fab fawhatsapp"></i></div>
+                <!-- Counselor Connection (Red) -->
+                <div class="pillar-card red" onclick="window.open('https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support.', '_blank')">
+                    <div class="pillar-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>Counselor Connect</h3>
                     <p>Direct WhatsApp access to professional counselors specializing in neurodiversity and family support.</p>
-                    <span class="pillartag"><i class="fas faclock"></i> Responds in 2hrs</span>
+                    <span class="pillar-tag"><i class="fas fa-clock"></i> Responds in 2hrs</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <! ===== KSL VIDEO LIBRARY ===== >
-    <section class="section sectionlight">
+    <!-- ===== KSL VIDEO LIBRARY ===== -->
+    <section class="section section-light">
         <div class="container">
-            <div class="sectionheader">
-                <h2>¤Ÿ Kenyan Sign Language <span style="color: var(accentpurple);">Library</span></h2>
+            <div class="section-header">
+                <h2>🤟 Kenyan Sign Language <span style="color: var(--accent-purple);">Library</span></h2>
                 <p>Developed with deaf consultants from Nairobi and Garissa. All videos reviewed by Amina (14) and our youth board.</p>
             </div>
             
-            <div class="kslgrid">
-                <div class="videocard" onclick="playVideo('greetings')">
-                    <div class="videothumb">‘‹</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">Basic Greetings</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:30</span>
-                            <span><i class="far faeye"></i> 1.2k views</span>
+            <div class="ksl-grid">
+                <div class="video-card" onclick="playVideo('greetings')">
+                    <div class="video-thumb">👋</div>
+                    <div class="video-info">
+                        <div class="video-title">Basic Greetings</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:30</span>
+                            <span><i class="far fa-eye"></i> 1.2k views</span>
                         </div>
                     </div>
                 </div>
-                <div class="videocard" onclick="playVideo('school')">
-                    <div class="videothumb">“š</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">School Words</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:45</span>
-                            <span><i class="far faeye"></i> 892 views</span>
+                <div class="video-card" onclick="playVideo('school')">
+                    <div class="video-thumb">📚</div>
+                    <div class="video-info">
+                        <div class="video-title">School Words</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:45</span>
+                            <span><i class="far fa-eye"></i> 892 views</span>
                         </div>
                     </div>
                 </div>
-                <div class="videocard" onclick="playVideo('numbers')">
-                    <div class="videothumb">”¢</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">Numbers 110</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:30</span>
-                            <span><i class="far faeye"></i> 1.5k views</span>
+                <div class="video-card" onclick="playVideo('numbers')">
+                    <div class="video-thumb">🔢</div>
+                    <div class="video-info">
+                        <div class="video-title">Numbers 1-10</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:30</span>
+                            <span><i class="far fa-eye"></i> 1.5k views</span>
                         </div>
                     </div>
                 </div>
-                <div class="videocard" onclick="playVideo('family')">
-                    <div class="videothumb">‘ª</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">Family Members</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:40</span>
-                            <span><i class="far faeye"></i> 756 views</span>
+                <div class="video-card" onclick="playVideo('family')">
+                    <div class="video-thumb">👪</div>
+                    <div class="video-info">
+                        <div class="video-title">Family Members</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:40</span>
+                            <span><i class="far fa-eye"></i> 756 views</span>
                         </div>
                     </div>
                 </div>
-                <div class="videocard" onclick="playVideo('colors')">
-                    <div class="videothumb">Ž¨</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">Colors</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:35</span>
-                            <span><i class="far faeye"></i> 621 views</span>
+                <div class="video-card" onclick="playVideo('colors')">
+                    <div class="video-thumb">🎨</div>
+                    <div class="video-info">
+                        <div class="video-title">Colors</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:35</span>
+                            <span><i class="far fa-eye"></i> 621 views</span>
                         </div>
                     </div>
                 </div>
-                <div class="videocard" onclick="playVideo('food')">
-                    <div class="videothumb">Ž</div>
-                    <div class="videoinfo">
-                        <div class="videotitle">Food & Drinks</div>
-                        <div class="videometa">
-                            <span><i class="far faclock"></i> 0:50</span>
-                            <span><i class="far faeye"></i> 543 views</span>
+                <div class="video-card" onclick="playVideo('food')">
+                    <div class="video-thumb">🍎</div>
+                    <div class="video-info">
+                        <div class="video-title">Food & Drinks</div>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 0:50</span>
+                            <span><i class="far fa-eye"></i> 543 views</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="kslfeatures">
-                <div class="kslfeature">
-                    <i class="fas favideo"></i>
+            <div class="ksl-features">
+                <div class="ksl-feature">
+                    <i class="fas fa-video"></i>
                     <h4>24 Lessons</h4>
                     <p>Complete KSL curriculum</p>
                 </div>
-                <div class="kslfeature">
-                    <i class="fas fadownload"></i>
+                <div class="ksl-feature">
+                    <i class="fas fa-download"></i>
                     <h4>Offline Access</h4>
                     <p>Download and learn anywhere</p>
                 </div>
-                <div class="kslfeature">
-                    <i class="fas faslowmotion"></i>
+                <div class="ksl-feature">
+                    <i class="fas fa-slow-motion"></i>
                     <h4>Slow Motion</h4>
                     <p>Learn at your own pace</p>
                 </div>
-                <div class="kslfeature">
-                    <i class="fas faquiz"></i>
+                <div class="ksl-feature">
+                    <i class="fas fa-quiz"></i>
                     <h4>Practice Quizzes</h4>
                     <p>Test your knowledge</p>
                 </div>
             </div>
             
-            <div style="textalign: center; margintop: 40px;">
-                <a href="/app" class="btn btnoutline" style="bordercolor: var(accentpurple); color: var(accentpurple);">
-                    <i class="fas faplaycircle"></i> Browse All 24 Lessons
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/app" class="btn btn-outline" style="border-color: var(--accent-purple); color: var(--accent-purple);">
+                    <i class="fas fa-play-circle"></i> Browse All 24 Lessons
                 </a>
             </div>
         </div>
     </section>
 
-    <! ===== WHO WE SERVE ===== >
+    <!-- ===== WHO WE SERVE ===== -->
     <section class="section">
         <div class="container">
-            <h2 class="sectiontitle">Who We Serve</h2>
+            <h2 class="section-title">Who We Serve</h2>
             
-            <div class="whogrid">
-                <div class="whocard">
-                    <div class="whoicon">§ </div>
+            <div class="who-grid">
+                <div class="who-card">
+                    <div class="who-icon">🧠</div>
                     <h3>Neurodivergent Learners</h3>
                     <p>ADHD, autism, dyslexia, dysgraphia, and more</p>
                 </div>
-                <div class="whocard">
-                    <div class="whoicon">¤Ÿ</div>
+                <div class="who-card">
+                    <div class="who-icon">🤟</div>
                     <h3>Deaf & Hard of Hearing</h3>
-                    <p>KSLintegrated learning for Deaf learners</p>
+                    <p>KSL-integrated learning for Deaf learners</p>
                 </div>
-                <div class="whocard">
-                    <div class="whoicon">‘ª</div>
+                <div class="who-card">
+                    <div class="who-icon">👪</div>
                     <h3>Caregivers & Parents</h3>
                     <p>Support tools, guides, and community</p>
                 </div>
-                <div class="whocard">
-                    <div class="whoicon">‘©«</div>
+                <div class="who-card">
+                    <div class="who-icon">👩🏫</div>
                     <h3>Teachers</h3>
                     <p>Inclusive education practitioners and special needs educators</p>
                 </div>
@@ -2326,26 +2326,26 @@
         </div>
     </section>
 
-    <! ===== WHY NEUROBRIDGE ===== >
-    <section class="section sectionlight">
+    <!-- ===== WHY NEUROBRIDGE ===== -->
+    <section class="section section-light">
         <div class="container">
-            <h2 class="sectiontitle">Why NeuroBridge?</h2>
-            <p class="sectionsubtitle">Most solutions are designed for learners with disabilities. NeuroBridge is designed with and from lived experience.</p>
+            <h2 class="section-title">Why NeuroBridge?</h2>
+            <p class="section-subtitle">Most solutions are designed for learners with disabilities. NeuroBridge is designed with and from lived experience.</p>
             
-            <div class="whygrid">
-                <div class="whycard">
-                    <h3>Humancentered</h3>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Human-centered</h3>
                     <p>Designed with real families and learners, not assumptions from distant boardrooms.</p>
                 </div>
-                <div class="whycard">
+                <div class="why-card">
                     <h3>Culturally relevant</h3>
                     <p>Built for African contexts with local names, stories, settings, and Kenyan Sign Language.</p>
                 </div>
-                <div class="whycard">
-                    <h3>Communitygrounded</h3>
+                <div class="why-card">
+                    <h3>Community-grounded</h3>
                     <p>Based on real family and community needs in Nairobi, Garissa, and Mombasa.</p>
                 </div>
-                <div class="whycard">
+                <div class="why-card">
                     <h3>Built from lived experience</h3>
                     <p>Founded by a mother of neurodivergent children who experienced the gaps firsthand.</p>
                 </div>
@@ -2353,42 +2353,44 @@
         </div>
     </section>
 
-    <! ===== FOUNDER SECTION ===== >
+    <!-- ===== FOUNDER SECTION ===== -->
     <section id="founder" class="founder">
-        <div class="foundergrid">
-            <div class="foundercontent">
+        <div class="founder-grid">
+            <div class="founder-content">
                 <h2>Built from Lived Experience</h2>
-                <div class="founderquote">
-                    "After leaving formal employment to care for my family and advocate for inclusive support systems, I founded Ability Inclusion Alliance €” and later NeuroBridge €” to create real, scalable solutions."
+                <div class="founder-quote">
+                    "After leaving formal employment to care for my family and advocate for inclusive support systems, I founded Ability Inclusion Alliance — and later NeuroBridge — to create real, scalable solutions."
                 </div>
-                <div class="foundername">€” Annab Mohamed</div>
-                <div class="foundertitle">Founder, Mother of Neurodivergent Children, Inclusive Development Practitioner</div>
-                <div class="foundermission">
-                    ‘‰ This is not just a platform. It is a mission shaped by lived reality.
+                <div class="founder-name">— Fatuma Mohamed</div>
+                <div class="founder-title">Founder, Mother of Neurodivergent Children, Inclusive Development Practitioner</div>
+                <div class="founder-mission">
+                    👉 This is not just a platform. It is a mission shaped by lived reality.
                 </div>
             </div>
             <div>
-                <div class="founderimage" style="width:350px; height:350px; overflow:hidden;"><img src="founder.jpg" alt="Annab Mohamed"></div>
+                <div class="founder-image">
+                    👩
+                </div>
             </div>
         </div>
     </section>
 
-    <! ===== SLIDES SECTION ===== >
+    <!-- ===== SLIDES SECTION ===== -->
     <section id="slides" class="section">
         <div class="container">
-            <h2 class="sectiontitle">Our Pitch in 11 Slides</h2>
-            <p class="sectionsubtitle">What we present to Mastercard Foundation and iHUB Kenya</p>
+            <h2 class="section-title">Our Pitch in 11 Slides</h2>
+            <p class="section-subtitle">What we present to Mastercard Foundation and iHUB Kenya</p>
             
-            <div class="slidesgrid">
-                <div class="slidecard">
-                    <div class="slidenumber">1</div>
+            <div class="slides-grid">
+                <div class="slide-card">
+                    <div class="slide-number">1</div>
                     <h3>NeuroBridge Africa</h3>
                     <p><strong>Closing the Learning Gap for Neurodivergent and Deaf Learners</strong></p>
-                    <p style="color: var(textsecondary);">Inclusive technology built for how learners truly learn</p>
+                    <p style="color: var(--text-secondary);">Inclusive technology built for how learners truly learn</p>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">2</div>
+                <div class="slide-card">
+                    <div class="slide-number">2</div>
                     <h3>The Problem</h3>
                     <ul>
                         <li>Neurodivergent learners are misunderstood</li>
@@ -2396,22 +2398,22 @@
                         <li>Teachers lack resources</li>
                         <li>Most EdTech not built for inclusion</li>
                     </ul>
-                    <p style="margintop: 10px; fontstyle: italic;">‘‰ Learners left behind, pushed out, ignored</p>
+                    <p style="margin-top: 10px; font-style: italic;">👉 Learners left behind, pushed out, ignored</p>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">3</div>
+                <div class="slide-card">
+                    <div class="slide-number">3</div>
                     <h3>Our Solution</h3>
                     <ul>
                         <li>Interactive lessons</li>
-                        <li>KSLintegrated learning</li>
+                        <li>KSL-integrated learning</li>
                         <li>Offline accessibility</li>
                         <li>Caregiver & teacher tools</li>
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">4</div>
+                <div class="slide-card">
+                    <div class="slide-number">4</div>
                     <h3>Our MVP</h3>
                     <ul>
                         <li>Functional web/app MVP</li>
@@ -2419,11 +2421,11 @@
                         <li>24+ KSL modules</li>
                         <li>Offline capability</li>
                     </ul>
-                    <p><a href="/app" style="color: var(primary);">‘‰ Live Demo †’</a></p>
+                    <p><a href="/app" style="color: var(--mc-red);">👉 Live Demo →</a></p>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">5</div>
+                <div class="slide-card">
+                    <div class="slide-number">5</div>
                     <h3>Early Validation</h3>
                     <ul>
                         <li>950+ learners reached</li>
@@ -2433,19 +2435,19 @@
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">6</div>
+                <div class="slide-card">
+                    <div class="slide-number">6</div>
                     <h3>Why Now</h3>
                     <ul>
                         <li>Governments pushing inclusion</li>
                         <li>Rising neurodiversity awareness</li>
-                        <li>Lack of Africanbuilt solutions</li>
+                        <li>Lack of African-built solutions</li>
                         <li>EdTech growth across Africa</li>
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">7</div>
+                <div class="slide-card">
+                    <div class="slide-number">7</div>
                     <h3>Our Advantage</h3>
                     <p><strong>Built from Lived Experience</strong></p>
                     <ul>
@@ -2456,8 +2458,8 @@
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">8</div>
+                <div class="slide-card">
+                    <div class="slide-number">8</div>
                     <h3>Who We Serve</h3>
                     <ul>
                         <li>Neurodivergent learners</li>
@@ -2467,8 +2469,8 @@
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">9</div>
+                <div class="slide-card">
+                    <div class="slide-number">9</div>
                     <h3>Business / Impact Model</h3>
                     <ul>
                         <li>Freemium access for families</li>
@@ -2478,14 +2480,14 @@
                     </ul>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">10</div>
+                <div class="slide-card">
+                    <div class="slide-number">10</div>
                     <h3>Our Vision</h3>
-                    <p style="fontsize: 1.1rem;">A future where no learner is excluded because of how they think, process, or communicate.</p>
+                    <p style="font-size: 1.1rem;">A future where no learner is excluded because of how they think, process, or communicate.</p>
                 </div>
                 
-                <div class="slidecard">
-                    <div class="slidenumber">11</div>
+                <div class="slide-card">
+                    <div class="slide-number">11</div>
                     <h3>Call to Action</h3>
                     <p>We are seeking support to scale NeuroBridge across underserved communities:</p>
                     <ul>
@@ -2498,141 +2500,142 @@
         </div>
     </section>
 
-    <! ===== DEMO SECTION ===== >
-    <section id="demo" class="demosection">
+    <!-- ===== DEMO SECTION ===== -->
+    <section id="demo" class="demo-section">
         <div class="container">
-            <h2>How to Demo Our MVP (3Minute Pitch)</h2>
+            <h2>How to Demo Our MVP (3-Minute Pitch)</h2>
             
-            <div class="demogrid">
+            <div class="demo-grid">
                 <div>
-                    <div class="demostep">
-                        <h4>Ž¯ 1. SET THE CONTEXT (30 sec)</h4>
+                    <div class="demo-step">
+                        <h4>🎯 1. SET THE CONTEXT (30 sec)</h4>
                         <p>"Let me show you how a neurodivergent or Deaf learner experiences NeuroBridge."</p>
-                        <p class="demonote">‘‰ Immediately humancentered</p>
+                        <p class="demo-note">👉 Immediately human-centered</p>
                     </div>
                     
-                    <div class="demostep">
-                        <h4>“± 2. SHOW THE PRODUCT (1.5 min)</h4>
-                        <p>Walk through: Landing page †’ Select a lesson</p>
-                        <p class="demonote">Show: Simple interface, KSL integration, Structured learning, Offline mention</p>
-                        <p class="demonote">"Designed to reduce overwhelm" · "Visualfirst learning" · "Accessible even without internet"</p>
+                    <div class="demo-step">
+                        <h4>📱 2. SHOW THE PRODUCT (1.5 min)</h4>
+                        <p>Walk through: Landing page → Select a lesson</p>
+                        <p class="demo-note">Show: Simple interface, KSL integration, Structured learning, Offline mention</p>
+                        <p class="demo-note">"Designed to reduce overwhelm" · "Visual-first learning" · "Accessible even without internet"</p>
                     </div>
                     
-                    <div class="demostep">
-                        <h4>“Š 3. CONNECT TO IMPACT (1 min)</h4>
+                    <div class="demo-step">
+                        <h4>📊 3. CONNECT TO IMPACT (1 min)</h4>
                         <p>"This is already being used by over 900 learners in pilot communities..."</p>
-                        <p class="demonote">Caregivers are using it at home · Learners engage better than traditional methods · There is demand for expansion.</p>
+                        <p class="demo-note">Caregivers are using it at home · Learners engage better than traditional methods · There is demand for expansion.</p>
                     </div>
                 </div>
                 
-                <div class="demosecret">
-                    <h4>”‘ SECRET SAUCE</h4>
+                <div class="demo-secret">
+                    <h4>🔑 SECRET SAUCE</h4>
                     <p>"For example, a parent in our pilot shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
-                    <a href="/app" class="btn btnwhite" style="margintop: 30px; display: inlineblock;">Try Live Demo Now †’</a>
+                    <a href="/app" class="btn btn-white" style="margin-top: 30px; display: inline-block;">Try Live Demo Now →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <! ===== TESTING VALIDATION ===== >
+    <!-- ===== TESTING VALIDATION ===== -->
     <section class="section">
         <div class="container">
-            <h2 class="sectiontitle">Early Validation & Testing</h2>
+            <h2 class="section-title">Early Validation & Testing</h2>
             
-            <div class="trustgrid" style="marginbottom: 50px;">
+            <div class="trust-grid" style="margin-bottom: 50px;">
                 <div>
-                    <div class="trustnumber">950+</div>
-                    <div class="trustlabel">learners reached</div>
+                    <div class="trust-number">950+</div>
+                    <div class="trust-label">learners reached</div>
                 </div>
                 <div>
-                    <div class="trustnumber">300+</div>
-                    <div class="trustlabel">app downloads</div>
+                    <div class="trust-number">300+</div>
+                    <div class="trust-label">app downloads</div>
                 </div>
                 <div>
-                    <div class="trustnumber">200k+</div>
-                    <div class="trustlabel">community reach</div>
+                    <div class="trust-number">200k+</div>
+                    <div class="trust-label">community reach</div>
                 </div>
                 <div>
-                    <div class="trustnumber">24+</div>
-                    <div class="trustlabel">KSL modules</div>
+                    <div class="trust-number">24+</div>
+                    <div class="trust-label">KSL modules</div>
                 </div>
             </div>
             
-            <div class="testingbox">
+            <div class="testing-box">
                 <h3>NeuroBridge Testing & Validation</h3>
-                <p>NeuroBridge Africa has undergone earlystage testing through a combination of usability testing, pilot engagement, and user feedback with neurodivergent learners, caregivers, and educators in Kenya.</p>
-                <p>We have onboarded over 950 early users across these groups, allowing us to observe how different stakeholders interact with the platform in realworld contexts. Testing focused on accessibility, ease of navigation, and engagement with interactive and visual learning content, including Kenyan Sign Language modules.</p>
-                <p>Through direct observation and feedback, we identified key user needs such as simplified navigation, clearer visual cues, and the importance of offline functionality for lowconnectivity environments. These insights informed iterative improvements to the MVP, including enhanced user interface design and offline access features.</p>
-                <p>Our testing process is ongoing, with continuous feedback loops from users guiding the development of a more inclusive, accessible, and contextrelevant learning platform.</p>
+                <p>NeuroBridge Africa has undergone early-stage testing through a combination of usability testing, pilot engagement, and user feedback with neurodivergent learners, caregivers, and educators in Kenya.</p>
+                <p>We have onboarded over 950 early users across these groups, allowing us to observe how different stakeholders interact with the platform in real-world contexts. Testing focused on accessibility, ease of navigation, and engagement with interactive and visual learning content, including Kenyan Sign Language modules.</p>
+                <p>Through direct observation and feedback, we identified key user needs such as simplified navigation, clearer visual cues, and the importance of offline functionality for low-connectivity environments. These insights informed iterative improvements to the MVP, including enhanced user interface design and offline access features.</p>
+                <p>Our testing process is ongoing, with continuous feedback loops from users guiding the development of a more inclusive, accessible, and context-relevant learning platform.</p>
             </div>
             
-            <div class="testimonialbox">
-                <i class="fas faquoteleft"></i>
-                <p>"Used by caregivers and learners in pilot communities €” a parent shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
+            <div class="testimonial-box">
+                <i class="fas fa-quote-left"></i>
+                <p>"Used by caregivers and learners in pilot communities — a parent shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
             </div>
         </div>
     </section>
 
-    <! ===== VISION SECTION ===== >
-    <section class="visionsection">
+    <!-- ===== VISION SECTION ===== -->
+    <section class="vision-section">
         <div class="container">
-            <h2 class="visiontitle">Our Vision</h2>
-            <p class="visiontext">
+            <h2 class="vision-title">Our Vision</h2>
+            <p class="vision-text">
                 A future where no learner is excluded because of how they think, process, or communicate.
             </p>
         </div>
     </section>
 
-    <! ===== JOIN PILOT SECTION ===== >
+    <!-- ===== JOIN PILOT SECTION ===== -->
     <section id="join" class="section">
         <div class="container">
-            <div class="testingbox" style="textalign: center;">
-                <h2 style="fontsize: 2.5rem; marginbottom: 20px;">š€ Join Our Pilot Program</h2>
-                <p style="fontsize: 1.2rem; maxwidth: 700px; margin: 0 auto 30px;">We're onboarding 15 new families in Nairobi and Eastleigh. Early access includes free KSL modules and caregiver support.</p>
-                <div style="display: flex; gap: 20px; justifycontent: center; flexwrap: wrap;">
-                    <a href="/app" class="btn btnprimary" style="padding: 15px 40px;"><i class="fas farocket"></i> Try the Demo</a>
-                    <a href="#" class="btn btnsecondary" onclick="openPilotForm()"><i class="fas fahandshake"></i> Apply for Pilot</a>
+            <div class="testing-box" style="text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">🚀 Join Our Pilot Program</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">We're onboarding 15 new families in Nairobi and Eastleigh. Early access includes free KSL modules and caregiver support.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/app" class="btn btn-primary" style="padding: 15px 40px;"><i class="fas fa-rocket"></i> Try the Demo</a>
+                    <a href="#" class="btn btn-secondary" onclick="openPilotForm()"><i class="fas fa-handshake"></i> Apply for Pilot</a>
                 </div>
-                <p style="margintop: 30px; color: var(textsecondary);">No commitment, we'll reach out within 24hrs</p>
+                <p style="margin-top: 30px; color: var(--text-secondary);">No commitment, we'll reach out within 24hrs</p>
             </div>
         </div>
     </section>
 
-    <! ===== CTA SECTION ===== >
+    <!-- ===== CTA SECTION ===== -->
     <section class="cta">
         <div class="container">
             <h2>Join Us in Building Inclusive Education</h2>
             <p>Be part of a movement ensuring no learner is left behind across Africa.</p>
             
-            <div class="ctabuttons">
-                <a href="/app" class="btn btnwhite"><i class="fas farocket"></i> Try the Demo</a>
-                <a href="#" class="btn btnwhiteoutline"><i class="fas fahandshake"></i> Partner With Us</a>
-                <a href="#" class="btn btnwhiteoutline" onclick="openPilotForm()"><i class="fas fausers"></i> Join the Pilot Program</a>
+            <div class="cta-buttons">
+                <a href="/app" class="btn btn-white"><i class="fas fa-rocket"></i> Try the Demo</a>
+                <a href="#" class="btn btn-white-outline"><i class="fas fa-handshake"></i> Partner With Us</a>
+                <a href="#" class="btn btn-white-outline" onclick="openPilotForm()"><i class="fas fa-users"></i> Join the Pilot Program</a>
             </div>
             
-            <p class="ctanote">We are seeking support to scale NeuroBridge across underserved communities: Funding · Partnerships · Pilot institutions</p>
+            <p class="cta-note">We are seeking support to scale NeuroBridge across underserved communities: Funding · Partnerships · Pilot institutions</p>
         </div>
     </section>
 
-    <! ===== FOOTER ===== >
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footergrid">
-            <div class="footercol">
-                <div class="footerlogo"><img src="logo.png" alt="NeuroBridge" style="height:40px; width:auto; filter:brightness(0) invert(1);"></div>
-                    <div class="footerlogotext">NEUROBRIDGE <span>AFRICA</span></div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">🧠</div>
+                    <div class="footer-logo-text">NEUROBRIDGE <span>AFRICA</span></div>
                 </div>
-                <p class="footerdescription">A womenled initiative of Ability Inclusion Alliance, registered in Kenya (April 2025). Building inclusive education for neurodivergent and deaf learners across Africa.</p>
-                <div class="sociallinks">
-                    <a href="#" class="sociallink"><i class="fab fawhatsapp"></i></a>
-                    <a href="#" class="sociallink"><i class="fab faxtwitter"></i></a>
-                    <a href="#" class="sociallink"><i class="fab falinkedinin"></i></a>
-                    <a href="#" class="sociallink"><i class="fab fainstagram"></i></a>
-                    <a href="#" class="sociallink"><i class="fab fagithub"></i></a>
-                    <a href="#" class="sociallink"><i class="fab fayoutube"></i></a>
+                <p class="footer-description">A women-led initiative of Ability Inclusion Alliance, registered in Kenya (April 2025). Building inclusive education for neurodivergent and deaf learners across Africa.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
-            <div class="footercol">
+            <div class="footer-col">
                 <h4>Platform</h4>
                 <ul>
                     <li><a href="#problem">Problem</a></li>
@@ -2643,7 +2646,7 @@
                 </ul>
             </div>
             
-            <div class="footercol">
+            <div class="footer-col">
                 <h4>Organization</h4>
                 <ul>
                     <li><a href="#founder">About Us</a></li>
@@ -2654,7 +2657,7 @@
                 </ul>
             </div>
             
-            <div class="footercol">
+            <div class="footer-col">
                 <h4>Resources</h4>
                 <ul>
                     <li><a href="#ksl">KSL Library</a></li>
@@ -2665,7 +2668,7 @@
                 </ul>
             </div>
             
-            <div class="footercol">
+            <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
                     <li><a href="#privacy">Privacy Policy</a></li>
@@ -2677,10 +2680,10 @@
             </div>
         </div>
         
-        <div class="footerbottom">
-            <p>© 2026 Ability Inclusion Alliance. All rights reserved. Proud applicant for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4.</p>
-            <p style="margintop: 15px; fontsize: 0.9rem;">iHUB Ã— Mastercard Foundation · Deadline April 10, 2026</p>
-            <p style="margintop: 20px;">
+        <div class="footer-bottom">
+            <p>© 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">iHUB × Mastercard Foundation · Deadline April 10, 2026</p>
+            <p style="margin-top: 20px;">
                 <a href="#privacy">Privacy</a> · 
                 <a href="#terms">Terms</a> · 
                 <a href="#accessibility">Accessibility</a> · 
@@ -2689,49 +2692,49 @@
         </div>
     </footer>
 
-    <! ===== FLOATING ELEMENTS ===== >
-    <button class="chatbubble" onclick="toggleChat()" arialabel="AI Assistant">
-        <i class="fas farobot"></i>
+    <!-- ===== FLOATING ELEMENTS ===== -->
+    <button class="chat-bubble" onclick="toggleChat()" aria-label="AI Assistant">
+        <i class="fas fa-robot"></i>
     </button>
     
-    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="whatsappfloat" arialabel="WhatsApp Support">
-        <i class="fab fawhatsapp"></i>
+    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="whatsapp-float" aria-label="WhatsApp Support">
+        <i class="fab fa-whatsapp"></i>
     </a>
     
-    <button class="scrollup" onclick="window.scrollTo({top:0,behavior:'smooth'})" arialabel="Scroll to top" id="scrollUp">
-        <i class="fas faarrowup"></i>
+    <button class="scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" id="scrollUp">
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-    <! ===== CHAT PANEL ===== >
-    <div class="chatpanel" id="chatPanel">
-        <div class="chatheader">
-            <h4><i class="fas farobot"></i> NeuroBridge Assistant</h4>
-            <button class="chatclose" onclick="toggleChat()"><i class="fas fatimes"></i></button>
+    <!-- ===== CHAT PANEL ===== -->
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <h4><i class="fas fa-robot"></i> NeuroBridge Assistant</h4>
+            <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
         </div>
-        <div class="chatmessages" id="chatMessages">
-            <div class="chatmessage bot">
-                <div class="messagebubble">
-                    ‘‹ Hello! Welcome to NeuroBridge Africa. How can I help you with our pilot program or platform today?
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <div class="message-bubble">
+                    👋 Hello! Welcome to NeuroBridge Africa. How can I help you with our pilot program or platform today?
                 </div>
-                <div class="messagetime">Just now</div>
+                <div class="message-time">Just now</div>
             </div>
         </div>
-        <div class="chatinputarea">
+        <div class="chat-input-area">
             <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendChatMessage()">
-            <button class="chatsend" onclick="sendChatMessage()"><i class="fas fapaperplane"></i></button>
+            <button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
-    <! ===== MODAL ===== >
+    <!-- ===== MODAL ===== -->
     <div class="modal" id="infoModal" onclick="closeModal(event)">
-        <div class="modalcontent" onclick="event.stopPropagation()">
-            <button class="modalclose" onclick="closeModal()"><i class="fas fatimes"></i></button>
-            <div class="modalicon" id="modalIcon"><i class="fas fagraduationcap"></i></div>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-icon" id="modalIcon"><i class="fas fa-graduation-cap"></i></div>
             <h3 id="modalTitle">Learner Portal</h3>
-            <p id="modalDescription">Focusfriendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.</p>
-            <div class="modalbuttons">
-                <button class="btn btnprimary" onclick="window.location.href='/app'">Explore</button>
-                <button class="btn btnsecondary" onclick="closeModal()">Close</button>
+            <p id="modalDescription">Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='/app'">Explore</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
             </div>
         </div>
     </div>
@@ -2739,7 +2742,7 @@
     <script>
         // ===== MOBILE MENU =====
         function toggleMobileMenu() {
-            const menu = document.querySelector('.navlinks');
+            const menu = document.querySelector('.nav-links');
             const hamburger = document.querySelector('.hamburger');
             if (menu.style.display === 'flex') {
                 menu.style.display = 'none';
@@ -2761,26 +2764,26 @@
 
         // ===== SENSORY MODE TOGGLE =====
         function toggleSensoryMode() {
-            document.body.classList.toggle('lowstimulation');
-            const toggle = document.querySelector('.toggleswitch');
+            document.body.classList.toggle('low-stimulation');
+            const toggle = document.querySelector('.toggle-switch');
             toggle.classList.toggle('active');
             
             // Save preference to localStorage
-            const isLowStim = document.body.classList.contains('lowstimulation');
-            localStorage.setItem('neurobridgesensorymode', isLowStim);
+            const isLowStim = document.body.classList.contains('low-stimulation');
+            localStorage.setItem('neurobridge-sensory-mode', isLowStim);
             
             // Show feedback
             if (isLowStim) {
-                showNotification('Lowstimulation mode activated', 'info');
+                showNotification('Low-stimulation mode activated', 'info');
             } else {
                 showNotification('Standard mode restored', 'info');
             }
         }
 
         // Load sensory mode preference
-        if (localStorage.getItem('neurobridgesensorymode') === 'true') {
-            document.body.classList.add('lowstimulation');
-            document.querySelector('.toggleswitch').classList.add('active');
+        if (localStorage.getItem('neurobridge-sensory-mode') === 'true') {
+            document.body.classList.add('low-stimulation');
+            document.querySelector('.toggle-switch').classList.add('active');
         }
 
         // ===== CHATBOT =====
@@ -2802,10 +2805,10 @@
             
             // Add user message
             const userDiv = document.createElement('div');
-            userDiv.className = 'chatmessage user';
+            userDiv.className = 'chat-message user';
             userDiv.innerHTML = `
-                <div class="messagebubble">${escapeHtml(msg)}</div>
-                <div class="messagetime">Just now</div>
+                <div class="message-bubble">${escapeHtml(msg)}</div>
+                <div class="message-time">Just now</div>
             `;
             chatMessages.appendChild(userDiv);
             
@@ -2828,10 +2831,10 @@
                 const randomResponse = responses[Math.floor(Math.random() * responses.length)];
                 
                 const botDiv = document.createElement('div');
-                botDiv.className = 'chatmessage bot';
+                botDiv.className = 'chat-message bot';
                 botDiv.innerHTML = `
-                    <div class="messagebubble">${randomResponse}</div>
-                    <div class="messagetime">Just now</div>
+                    <div class="message-bubble">${randomResponse}</div>
+                    <div class="message-time">Just now</div>
                 `;
                 chatMessages.appendChild(botDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -2859,10 +2862,10 @@
                 padding: 15px 25px;
                 background: ${type === 'success' ? '#27AE60' : type === 'error' ? '#EB001B' : '#3498DB'};
                 color: white;
-                borderradius: 50px;
-                boxshadow: 0 10px 25px rgba(0,0,0,0.2);
-                zindex: 20001;
-                fontweight: 500;
+                border-radius: 50px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                z-index: 20001;
+                font-weight: 500;
                 animation: slideIn 0.3s ease;
             `;
             notification.textContent = message;
@@ -2911,12 +2914,12 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px 50px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.glasscard, .pillarcard, .videocard, .featurecard, .problemcard, .whocard, .slidecard, .kslfeature').forEach(el => {
+        document.querySelectorAll('.glass-card, .pillar-card, .video-card, .feature-card, .problem-card, .who-card, .slide-card, .ksl-feature').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s cubicbezier(0.175, 0.885, 0.32, 1.275)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             observer.observe(el);
         });
 
@@ -2935,7 +2938,7 @@
             const videos = {
                 greetings: 'Basic Greetings in KSL',
                 school: 'School Words in KSL',
-                numbers: 'Numbers 110 in KSL',
+                numbers: 'Numbers 1-10 in KSL',
                 family: 'Family Members in KSL',
                 colors: 'Colors in KSL',
                 food: 'Food & Drinks in KSL'
@@ -2953,24 +2956,24 @@
             
             const content = {
                 learner: {
-                    icon: '<i class="fas fagraduationcap"></i>',
+                    icon: '<i class="fas fa-graduation-cap"></i>',
                     title: 'Learner Portal',
-                    desc: 'Focusfriendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds. Includes personalized learning paths and reward systems.'
+                    desc: 'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds. Includes personalized learning paths and reward systems.'
                 },
                 ksl: {
-                    icon: '<i class="fas fahands"></i>',
+                    icon: '<i class="fas fa-hands"></i>',
                     title: 'KSL Integration',
-                    desc: 'Kenyan Sign Language video library with 24 lessons, developed with deaf consultants from Nairobi and Garissa. Features slowmotion, quizzes, and offline access.'
+                    desc: 'Kenyan Sign Language video library with 24 lessons, developed with deaf consultants from Nairobi and Garissa. Features slow-motion, quizzes, and offline access.'
                 },
                 parent: {
-                    icon: '<i class="fas faheart"></i>',
+                    icon: '<i class="fas fa-heart"></i>',
                     title: 'Parent Hub',
                     desc: 'Support resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children. Access webinars, guides, and local support groups.'
                 },
                 cbc: {
-                    icon: '<i class="fas fabook"></i>',
+                    icon: '<i class="fas fa-book"></i>',
                     title: 'CBC Curriculum',
-                    desc: 'Kenyan CompetencyBased Curriculum adapted for neurodivergent learners with visual supports, modified assessments, and individualized education plans (IEPs).'
+                    desc: 'Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports, modified assessments, and individualized education plans (IEPs).'
                 }
             };
             
@@ -2983,7 +2986,7 @@
         }
 
         function closeModal(event) {
-            if (!event || event.target.classList.contains('modal') || event.target.classList.contains('modalclose') || event.target.closest('.btnsecondary')) {
+            if (!event || event.target.classList.contains('modal') || event.target.classList.contains('modal-close') || event.target.closest('.btn-secondary')) {
                 document.getElementById('infoModal').classList.remove('active');
             }
         }
@@ -3013,7 +3016,7 @@
 
         // ===== TOUCH OPTIMIZATIONS FOR MOBILE =====
         if ('ontouchstart' in window) {
-            document.body.classList.add('touchdevice');
+            document.body.classList.add('touch-device');
         }
 
         // ===== INITIALIZE =====
@@ -3030,24 +3033,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
