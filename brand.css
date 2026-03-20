@@ -67,3 +67,14 @@ img[src*="Annab"], .profile-photo {
     background: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+/* Footer Text & Fellowship Info Styling */
+footer, footer p, footer span {
+    color: var(--mc-warm) !important;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--mc-yellow) !important;
+    font-weight: bold;
+}
