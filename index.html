@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -753,7 +753,7 @@
         }
 
         .slide-card li:before {
-            content: "👉";
+            content: "??";
             position: absolute;
             left: 0;
             color: var(--mc-red);
@@ -1400,7 +1400,22 @@
             .chat-panel { width: 300px; right: 15px; bottom: 165px; }
             .whatsapp-float { bottom: 155px; }
         }
-    </style>
+    
+        /* ===== HERO IMAGE ANIMATION ===== */
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .hero-image img {
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+</style>
 </head>
 <body>
     <!-- ===== NAVIGATION ===== -->
@@ -1436,23 +1451,25 @@
     <section class="hero">
         <div class="hero-grid">
             <div class="hero-content">
-                <div class="hero-badge">🔥 Built from Lived Experience · Nairobi, Kenya</div>
+                <div class="hero-badge">?? Built from Lived Experience � Nairobi, Kenya</div>
                 <h1 class="hero-title">
                     <span class="hero-gradient-text">Closing the Learning Gap</span><br>
                     for Neurodivergent & Deaf Learners
                 </h1>
-                <p class="hero-subtitle">Inclusive technology built for Africa — designed for how learners truly think, process, and communicate. Kenyan Sign Language, sensory tools, and caregiver support in one platform.</p>
+                <p class="hero-subtitle">Inclusive technology built for Africa � designed for how learners truly think, process, and communicate. Kenyan Sign Language, sensory tools, and caregiver support in one platform.</p>
                 <div class="hero-buttons">
                     <a href="/app" class="btn btn-primary"><i class="fas fa-rocket"></i> Try the Demo</a>
                     <a href="#join" class="btn btn-secondary"><i class="fas fa-users"></i> Join the Pilot</a>
                 </div>
             </div>
             <div class="hero-image">
-                <i class="fas fa-hands"></i>
-                <h3>Inclusive Learning for All</h3>
-                <p>KSL-integrated · Neurodivergent-friendly · Offline-first</p>
-                <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Nairobi · Garissa · Mombasa</p>
-            </div>
+    <img src="/hero-image.jpg" alt="NeuroBridge Africa - Inclusive Learning" style="width: 100%; height: 400px; object-fit: cover; border-radius: 30px;">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 40px 30px 30px; border-radius: 0 0 30px 30px;">
+        <h3 style="color: white;">Inclusive Learning for All</h3>
+        <p style="color: white; opacity: 0.9;">KSL-integrated � Neurodivergent-friendly � Offline-first</p>
+        <p style="color: white; margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> Nairobi � Garissa � Mombasa</p>
+    </div>
+</div>
         </div>
     </section>
 
@@ -1515,7 +1532,7 @@
             </div>
             
             <div class="testimonial-box" style="margin-top: 50px;">
-                <p>👉 Built from lived experience, NeuroBridge ensures learners are not just included — but <strong>Empowered</strong>.</p>
+                <p>?? Built from lived experience, NeuroBridge ensures learners are not just included � but <strong>Empowered</strong>.</p>
             </div>
         </div>
     </section>
@@ -1528,30 +1545,30 @@
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📚</div>
+                    <div class="feature-icon">??</div>
                     <h3>Lack of inclusive teaching methods</h3>
                     <p>Teachers lack training and resources to support diverse learners in overcrowded classrooms.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🤟</div>
+                    <div class="feature-icon">??</div>
                     <h3>Limited access to KSL resources</h3>
                     <p>Deaf learners cannot access lessons without sign language interpretation or visual supports.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🏫</div>
+                    <div class="feature-icon">??</div>
                     <h3>Overcrowded classrooms</h3>
                     <p>Cannot support diverse needs of neurodivergent learners who require individualized attention.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
+                    <div class="feature-icon">??</div>
                     <h3>Stigma around neurodivergence</h3>
-                    <p>Learners are misunderstood, pushed out, or ignored — not because they cannot learn.</p>
+                    <p>Learners are misunderstood, pushed out, or ignored � not because they cannot learn.</p>
                 </div>
             </div>
             
             <div class="testing-box" style="margin-top: 50px;">
                 <h3>Many learners are left behind</h3>
-                <p style="font-size: 1.2rem;">— not because they cannot learn, but because the system does not support how they learn.</p>
+                <p style="font-size: 1.2rem;">� not because they cannot learn, but because the system does not support how they learn.</p>
             </div>
         </div>
     </section>
@@ -1575,7 +1592,7 @@
                 </div>
                 <div class="feature-card">
                     <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 20px;">"So learners can access education in a way that actually works for them."</p>
-                    <p style="color: var(--mc-orange);">👉 Designed for real African learning environments</p>
+                    <p style="color: var(--mc-orange);">?? Designed for real African learning environments</p>
                 </div>
             </div>
         </div>
@@ -1672,47 +1689,47 @@
     <!-- ===== KSL VIDEO LIBRARY ===== -->
     <section class="section" style="background: var(--bg-card);">
         <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
-            <h2 class="section-title">🤟 Kenyan Sign Language <span style="color: var(--mc-orange);">Library</span></h2>
+            <h2 class="section-title">?? Kenyan Sign Language <span style="color: var(--mc-orange);">Library</span></h2>
             <p class="section-subtitle">Developed with deaf consultants from Nairobi and Garissa. All videos reviewed by our youth board.</p>
             
             <div class="ksl-grid">
-                <div class="video-card" onclick="showNotification('▶️ Playing: Basic Greetings in KSL')">
-                    <div class="video-thumb">👋</div>
+                <div class="video-card" onclick="showNotification('?? Playing: Basic Greetings in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">Basic Greetings</div>
                         <div class="video-meta"><span>0:30</span><span>1.2k views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="showNotification('▶️ Playing: School Words in KSL')">
-                    <div class="video-thumb">📚</div>
+                <div class="video-card" onclick="showNotification('?? Playing: School Words in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">School Words</div>
                         <div class="video-meta"><span>0:45</span><span>892 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="showNotification('▶️ Playing: Numbers 1-10 in KSL')">
-                    <div class="video-thumb">🔢</div>
+                <div class="video-card" onclick="showNotification('?? Playing: Numbers 1-10 in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">Numbers 1-10</div>
                         <div class="video-meta"><span>0:30</span><span>1.5k views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="showNotification('▶️ Playing: Family Members in KSL')">
-                    <div class="video-thumb">👪</div>
+                <div class="video-card" onclick="showNotification('?? Playing: Family Members in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">Family Members</div>
                         <div class="video-meta"><span>0:40</span><span>756 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="showNotification('▶️ Playing: Colors in KSL')">
-                    <div class="video-thumb">🎨</div>
+                <div class="video-card" onclick="showNotification('?? Playing: Colors in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">Colors</div>
                         <div class="video-meta"><span>0:35</span><span>621 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="showNotification('▶️ Playing: Food & Drinks in KSL')">
-                    <div class="video-thumb">🍎</div>
+                <div class="video-card" onclick="showNotification('?? Playing: Food & Drinks in KSL')">
+                    <div class="video-thumb">??</div>
                     <div class="video-info">
                         <div class="video-title">Food & Drinks</div>
                         <div class="video-meta"><span>0:50</span><span>543 views</span></div>
@@ -1733,22 +1750,22 @@
             
             <div class="who-grid">
                 <div class="who-card">
-                    <div class="who-icon">🧠</div>
+                    <div class="who-icon">??</div>
                     <h3>Neurodivergent Learners</h3>
                     <p>ADHD, autism, dyslexia, dysgraphia, and more</p>
                 </div>
                 <div class="who-card">
-                    <div class="who-icon">🤟</div>
+                    <div class="who-icon">??</div>
                     <h3>Deaf & Hard of Hearing</h3>
                     <p>KSL-integrated learning for Deaf learners</p>
                 </div>
                 <div class="who-card">
-                    <div class="who-icon">👪</div>
+                    <div class="who-icon">??</div>
                     <h3>Caregivers & Parents</h3>
                     <p>Support tools, guides, and community</p>
                 </div>
                 <div class="who-card">
-                    <div class="who-icon">👩🏫</div>
+                    <div class="who-icon">????</div>
                     <h3>Teachers</h3>
                     <p>Inclusive education practitioners and special needs educators</p>
                 </div>
@@ -1789,12 +1806,12 @@
             <div class="founder-content">
                 <h2>Built from Lived Experience</h2>
                 <div class="founder-quote">
-                    "After leaving formal employment to care for my family and advocate for inclusive support systems, I founded Ability Inclusion Alliance — and later NeuroBridge — to create real, scalable solutions."
+                    "After leaving formal employment to care for my family and advocate for inclusive support systems, I founded Ability Inclusion Alliance � and later NeuroBridge � to create real, scalable solutions."
                 </div>
-                <div class="founder-name">— Annab Mohamed</div>
+                <div class="founder-name">� Annab Mohamed</div>
                 <div class="founder-title">Founder, Mother of Neurodivergent Children, Inclusive Development Practitioner</div>
                 <div class="founder-mission">
-                    👉 This is not just a platform. It is a mission shaped by lived reality.
+                    ?? This is not just a platform. It is a mission shaped by lived reality.
                 </div>
             </div>
             <div>
@@ -1813,7 +1830,7 @@
                 <div class="slide-card"><div class="slide-number">1</div><h3>NeuroBridge Africa</h3><p>Closing the Learning Gap for Neurodivergent and Deaf Learners</p></div>
                 <div class="slide-card"><div class="slide-number">2</div><h3>The Problem</h3><ul><li>Neurodivergent learners are misunderstood</li><li>Deaf learners lack KSL tools</li><li>Teachers lack resources</li><li>Most EdTech not built for inclusion</li></ul></div>
                 <div class="slide-card"><div class="slide-number">3</div><h3>Our Solution</h3><ul><li>Interactive lessons</li><li>KSL-integrated learning</li><li>Offline accessibility</li><li>Caregiver & teacher tools</li></ul></div>
-                <div class="slide-card"><div class="slide-number">4</div><h3>Our MVP</h3><ul><li>Functional web/app MVP</li><li>Interactive lesson demo</li><li>24+ KSL modules</li><li>Offline capability</li></ul><p><a href="/app" style="color: var(--mc-orange);">👉 Live Demo →</a></p></div>
+                <div class="slide-card"><div class="slide-number">4</div><h3>Our MVP</h3><ul><li>Functional web/app MVP</li><li>Interactive lesson demo</li><li>24+ KSL modules</li><li>Offline capability</li></ul><p><a href="/app" style="color: var(--mc-orange);">?? Live Demo ?</a></p></div>
                 <div class="slide-card"><div class="slide-number">5</div><h3>Early Validation</h3><ul><li>950+ learners reached</li><li>300+ downloads</li><li>200k+ community reach</li><li>Active pilot users</li></ul></div>
                 <div class="slide-card"><div class="slide-number">6</div><h3>Why Now</h3><ul><li>Governments pushing inclusion</li><li>Rising neurodiversity awareness</li><li>Lack of African-built solutions</li><li>EdTech growth across Africa</li></ul></div>
                 <div class="slide-card"><div class="slide-number">7</div><h3>Our Advantage</h3><p><strong>Built from Lived Experience</strong></p><ul><li>Founder is a mother of neurodivergent children</li><li>Founded Ability Inclusion Alliance</li><li>Direct experience with system gaps</li><li>Deep community trust</li></ul></div>
@@ -1833,25 +1850,25 @@
             <div class="demo-grid">
                 <div>
                     <div class="demo-step">
-                        <h4>🎯 1. SET THE CONTEXT (30 sec)</h4>
+                        <h4>?? 1. SET THE CONTEXT (30 sec)</h4>
                         <p>"Let me show you how a neurodivergent or Deaf learner experiences NeuroBridge."</p>
-                        <p class="demo-note">👉 Immediately human-centered</p>
+                        <p class="demo-note">?? Immediately human-centered</p>
                     </div>
                     <div class="demo-step">
-                        <h4>📱 2. SHOW THE PRODUCT (1.5 min)</h4>
-                        <p>Walk through: Landing page → Select a lesson → Show KSL integration</p>
-                        <p class="demo-note">"Designed to reduce overwhelm" · "Visual-first learning" · "Accessible even without internet"</p>
+                        <h4>?? 2. SHOW THE PRODUCT (1.5 min)</h4>
+                        <p>Walk through: Landing page ? Select a lesson ? Show KSL integration</p>
+                        <p class="demo-note">"Designed to reduce overwhelm" � "Visual-first learning" � "Accessible even without internet"</p>
                     </div>
                     <div class="demo-step">
-                        <h4>📊 3. CONNECT TO IMPACT (1 min)</h4>
+                        <h4>?? 3. CONNECT TO IMPACT (1 min)</h4>
                         <p>"This is already being used by over 900 learners in pilot communities..."</p>
-                        <p class="demo-note">Caregivers use it at home · Learners engage better · Demand for expansion</p>
+                        <p class="demo-note">Caregivers use it at home � Learners engage better � Demand for expansion</p>
                     </div>
                 </div>
                 <div class="demo-secret">
-                    <h4>🔑 SECRET SAUCE</h4>
+                    <h4>?? SECRET SAUCE</h4>
                     <p>"A parent in our pilot shared that their child, who struggled in a traditional classroom for three years, was able to engage independently using NeuroBridge for the first time."</p>
-                    <a href="/app" class="btn btn-primary" style="margin-top: 25px;"><i class="fas fa-rocket"></i> Try Live Demo Now →</a>
+                    <a href="/app" class="btn btn-primary" style="margin-top: 25px;"><i class="fas fa-rocket"></i> Try Live Demo Now ?</a>
                 </div>
             </div>
         </div>
@@ -1878,7 +1895,7 @@
             
             <div class="testimonial-box">
                 <i class="fas fa-quote-left"></i>
-                <p>"Used by caregivers and learners in pilot communities — a parent shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
+                <p>"Used by caregivers and learners in pilot communities � a parent shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
             </div>
         </div>
     </section>
@@ -1895,7 +1912,7 @@
     <section id="join" class="section">
         <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <div class="testing-box" style="text-align: center;">
-                <h2 style="font-size: 2rem;">🚀 Join Our Pilot Program</h2>
+                <h2 style="font-size: 2rem;">?? Join Our Pilot Program</h2>
                 <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px;">We're onboarding 15 new families in Nairobi and Eastleigh. Early access includes free KSL modules and caregiver support.</p>
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                     <a href="/app" class="btn btn-primary"><i class="fas fa-rocket"></i> Try the Demo</a>
@@ -1918,7 +1935,7 @@
                 <a href="#" class="btn btn-secondary" onclick="showNotification('Join the pilot program: info@neurobridge.co.ke')"><i class="fas fa-users"></i> Join the Pilot Program</a>
             </div>
             
-            <p class="cta-note">We are seeking support to scale NeuroBridge: Funding · Partnerships · Pilot institutions</p>
+            <p class="cta-note">We are seeking support to scale NeuroBridge: Funding � Partnerships � Pilot institutions</p>
         </div>
     </section>
 
@@ -1956,8 +1973,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4.</p>
-            <p style="margin-top: 10px;">iHUB × Mastercard Foundation · Deadline April 10, 2026</p>
+            <p>� 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4.</p>
+            <p style="margin-top: 10px;">iHUB � Mastercard Foundation � Deadline April 10, 2026</p>
         </div>
     </footer>
 
@@ -1969,12 +1986,12 @@
     <!-- ===== CHAT PANEL ===== -->
     <div class="chat-panel" id="chatPanel">
         <div class="chat-header">
-            <h4><i class="fas fa-robot"></i> Bridge — NeuroBridge AI</h4>
+            <h4><i class="fas fa-robot"></i> Bridge � NeuroBridge AI</h4>
             <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="chat-message bot">
-                <div class="message-bubble">👋 Habari! I'm Bridge, NeuroBridge's AI assistant. Ask me about KSL, ADHD, autism support, or our programs. Naongea Kiswahili na English! 🇰🇪</div>
+                <div class="message-bubble">?? Habari! I'm Bridge, NeuroBridge's AI assistant. Ask me about KSL, ADHD, autism support, or our programs. Naongea Kiswahili na English! ????</div>
                 <div class="message-time">Just now</div>
             </div>
         </div>
