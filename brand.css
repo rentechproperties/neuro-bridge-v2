@@ -51,3 +51,12 @@ button:hover {
 .notification-error {
     background-color: var(--mc-red) !important;
 }
+/* Ensure Nav links are visible on the new dark background */
+nav a, .nav-link {
+    color: var(--mc-warm) !important;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+nav a:hover {
+    color: var(--mc-yellow) !important;
+}
