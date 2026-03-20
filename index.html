@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroBridge Africa | Closing the Learning Gap for Neurodivergent & Deaf Learners</title>
+    <title>NeuroBridge Africa | Inclusive EdTech for Neurodivergent & Deaf Learners</title>
     
     <!-- Primary Meta Tags -->
     <meta name="description" content="NeuroBridge Africa: Inclusive EdTech platform for neurodivergent and deaf learners across Kenya. KSL integration, sensory tools, CBC curriculum, and caregiver support. Mastercard Foundation EdTech Fellow.">
@@ -32,21 +32,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* ===== ROOT VARIABLES ===== */
+        /* ===== ROOT VARIABLES - MATCH APP BRANDING ===== */
         :root {
-            --mc-dark: #000000;
-            --light-bg: #050505;
-            --card-bg: #111111;
-            --text-primary: #FFFFFF;
-            --text-secondary: #CCCCCC;
             --mc-red: #EB001B;
             --mc-orange: #F79E1B;
+            --mc-dark: #0F0F0F;
+            --bg-dark: #0F0F0F;
+            --bg-card: #1A1A1A;
+            --bg-hover: #232323;
+            --text-primary: #FFFFFF;
+            --text-secondary: #D1D5DB;
+            --text-muted: #9CA3AF;
+            --border-light: #2A2A2A;
             --accent-purple: #A855F7;
             --accent-blue: #3B82F6;
-            --accent-pink: #EC4899;
             --accent-green: #10B981;
-            --accent-teal: #14B8A6;
             --accent-yellow: #F59E0B;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.3);
+            --shadow-md: 0 10px 15px rgba(0,0,0,0.4);
+            --shadow-lg: 0 20px 25px rgba(0,0,0,0.5);
+            --glow: 0 0 15px rgba(235,0,27,0.3);
+            --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
 
         * {
@@ -58,39 +64,21 @@
         html { scroll-behavior: smooth; }
 
         body { 
-            background-color: var(--light-bg) !important; 
+            background: var(--bg-dark) !important; 
             color: var(--text-primary) !important; 
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Force all text to be readable */
-        p, h1, h2, h3, h4, h5, h6, span, li, div, b, strong { 
-            color: #FFFFFF !important; 
-        }
+        h1, h2, h3, h4, h5, h6, p, span, li, div { color: var(--text-primary) !important; }
 
-        /* Card System */
-        .glass-card, .feature-card, .problem-card, .pillar-card, .who-card, .why-card, .slide-card, .ksl-feature {
-            background: var(--card-bg) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 15px !important;
-            padding: 30px !important;
-            margin-bottom: 20px !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-        }
-
-        /* Color-coded card borders */
-        .card-red { border-top: 4px solid var(--mc-red) !important; }
-        .card-orange { border-top: 4px solid var(--mc-orange) !important; }
-        .card-purple { border-top: 4px solid var(--accent-purple) !important; }
-        .card-blue { border-top: 4px solid var(--accent-blue) !important; }
-
-        /* ===== HEADER & NAVIGATION (DARK MODE) ===== */
+        /* ===== NAVIGATION - MATCH APP STYLE ===== */
         .navbar {
-            background: #000000 !important;
+            background: rgba(15,15,15,0.97) !important;
+            backdrop-filter: blur(10px);
             border-bottom: 2px solid var(--mc-red);
-            padding: 20px 5%;
+            padding: 18px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -112,60 +100,53 @@
         }
 
         .logo-icon {
-            height: 50px;
-            width: auto;
-            /* This makes the logo pop on the black background */
-            filter: brightness(0) invert(1); 
-        }
-
-        .nav-links {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-radius: 12px;
             display: flex;
-            gap: 25px;
             align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            box-shadow: var(--glow);
         }
 
-        .nav-link {
-            color: #FFFFFF !important;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--mc-orange) !important;
-        }
-
-       .logo-text {
+        .logo-text {
             display: flex;
             flex-direction: column;
         }
 
         .logo-main {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            color: #FFFFFF !important; /* Forced White */
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
 
         .logo-sub {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: var(--mc-orange) !important;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 28px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #FFFFFF !important; /* Forced White for readability */
-            font-weight: 600;
+            color: var(--text-secondary) !important;
+            font-weight: 500;
             font-size: 0.95rem;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
@@ -175,14 +156,15 @@
         .nav-cta {
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             color: white !important;
-            padding: 10px 25px;
+            padding: 10px 24px;
             border-radius: 50px;
             font-weight: 600;
         }
 
         .nav-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(235,0,27,0.2);
+            box-shadow: 0 5px 15px rgba(235,0,27,0.4);
+            color: white !important;
         }
 
         .hamburger {
@@ -198,13 +180,61 @@
             width: 25px;
             height: 2px;
             background: var(--text-primary);
-            transition: all var(--transition-speed);
+            transition: var(--transition);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            color: white;
+            box-shadow: 0 10px 20px rgba(235,0,27,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(235,0,27,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--mc-red);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--mc-red);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--mc-orange);
+            color: var(--mc-orange);
+        }
+
+        .btn-outline:hover {
+            background: var(--mc-orange);
+            color: var(--bg-dark);
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            padding: 100px 5%;
-            background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
+            padding: 80px 5% 60px;
             position: relative;
             overflow: hidden;
         }
@@ -216,13 +246,8 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(235,0,27,0.02) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(235,0,27,0.03) 0%, transparent 70%);
             animation: rotate 40s linear infinite;
-            animation-play-state: running;
-        }
-
-        body.low-stimulation .hero::before {
-            animation: none;
         }
 
         @keyframes rotate {
@@ -237,6 +262,8 @@
             align-items: center;
             position: relative;
             z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .hero-content {
@@ -245,34 +272,33 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(235,0,27,0.1);
-            color: var(--mc-red);
+            background: rgba(235,0,27,0.15);
+            color: var(--mc-orange);
             padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            border: 1px solid rgba(235,0,27,0.2);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(235,0,27,0.3);
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 20px;}
-            line-height: 1.1;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero-gradient-text {
-            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange), var(--accent-purple));
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 30px;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .hero-buttons {
@@ -285,9 +311,7 @@
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             border-radius: 30px;
             padding: 50px 40px;
-            color: white;
             text-align: center;
-            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
         }
@@ -304,15 +328,14 @@
         }
 
         .hero-image i {
-            font-size: 5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
         }
 
         .hero-image h3 {
-            color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             position: relative;
             z-index: 2;
@@ -320,22 +343,21 @@
 
         .hero-image p {
             opacity: 0.9;
-            font-size: 1.1rem;
             position: relative;
             z-index: 2;
         }
 
         .hero-location {
-            margin-top: 30px;
+            margin-top: 25px;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* ===== TRUST STRIP ===== */
         .trust-strip {
-            background: white;
-            padding: 40px 5%;
+            background: var(--bg-card);
+            padding: 50px 5%;
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
         }
@@ -353,32 +375,27 @@
         }
 
         .trust-number {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .trust-label {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
         }
 
         /* ===== SECTION STYLES ===== */
         .section {
-            padding: 100px 5%;
-        }
-
-        .section-light {
-            background: #F8FAFC;
+            padding: 80px 5%;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 20px;
             text-align: center;
         }
@@ -387,270 +404,118 @@
             color: var(--text-secondary);
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 60px;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
         }
 
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all var(--transition-speed);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            color: white;
-            box-shadow: 0 10px 25px rgba(235,0,27,0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(235,0,27,0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--mc-red);
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--mc-red);
-            color: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--mc-red);
-            color: var(--mc-red);
-            padding: 12px 30px;
-        }
-
-        .btn-outline:hover {
-            background: var(--mc-red);
-            color: white;
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--mc-red);
-        }
-
-        .btn-white:hover {
-            background: var(--mc-orange);
-            color: white;
-        }
-
-        .btn-white-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-white-outline:hover {
-            background: white;
-            color: var(--mc-red);
-        }
-
-        /* ===== PROBLEM GRID ===== */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin: 50px 0;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-speed);
-        }
-
-        .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--mc-red);
-        }
-
-        .problem-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .problem-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ===== FEATURES GRID ===== */
+        /* ===== FEATURE CARDS ===== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
-            transition: all var(--transition-speed);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
             border-color: var(--mc-red);
+            box-shadow: var(--shadow-md);
         }
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background: rgba(235,0,27,0.1);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--mc-red);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
-        /* ===== 6-PILLAR DASHBOARD ===== */
+        /* ===== PILLAR CARDS ===== */
         .pillar-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            margin: 60px 0;
+            margin: 50px 0;
         }
 
         .pillar-card {
-            background: var(--card-bg);
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 35px;
-            transition: all var(--transition-speed);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
         .pillar-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .pillar-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--mc-red), var(--mc-orange));
-            transform: scaleX(0);
-            transition: transform var(--transition-speed);
-        }
-
-        .pillar-card:hover::after {
-            transform: scaleX(1);
+            transform: translateY(-5px);
+            border-color: var(--mc-red);
+            box-shadow: var(--shadow-md);
         }
 
         .pillar-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
         }
 
-        .pillar-card.blue .pillar-icon { background: rgba(52,152,219,0.1); color: var(--accent-blue); }
-        .pillar-card.purple .pillar-icon { background: rgba(155,89,182,0.1); color: var(--accent-purple); }
-        .pillar-card.yellow .pillar-icon { background: rgba(241,196,15,0.1); color: var(--accent-yellow); }
-        .pillar-card.green .pillar-icon { background: rgba(39,174,96,0.1); color: var(--accent-green); }
+        .pillar-card.blue .pillar-icon { background: rgba(59,130,246,0.1); color: var(--accent-blue); }
+        .pillar-card.purple .pillar-icon { background: rgba(168,85,247,0.1); color: var(--accent-purple); }
+        .pillar-card.yellow .pillar-icon { background: rgba(245,158,11,0.1); color: var(--accent-yellow); }
+        .pillar-card.green .pillar-icon { background: rgba(16,185,129,0.1); color: var(--accent-green); }
         .pillar-card.red .pillar-icon { background: rgba(235,0,27,0.1); color: var(--mc-red); }
-        .pillar-card.gradient .pillar-icon { 
-            background: linear-gradient(135deg, rgba(235,0,27,0.1), rgba(247,158,27,0.1)); 
-            color: var(--mc-red);
-        }
 
         .pillar-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
         }
 
         .pillar-card p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .pillar-tag {
             display: inline-block;
-            padding: 6px 15px;
-            background: #F8FAFC;
-            border: 1px solid var(--border-light);
+            padding: 5px 12px;
+            background: var(--bg-hover);
             border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+            font-size: 0.7rem;
+            color: var(--text-muted);
         }
 
-        /* ===== KSL VIDEO SECTION ===== */
-        .ksl-section {
-            margin: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
+        /* ===== KSL SECTION ===== */
         .ksl-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -659,146 +524,83 @@
         }
 
         .video-card {
-            background: white;
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
             border-radius: 20px;
             overflow: hidden;
-            transition: all var(--transition-speed);
+            transition: var(--transition);
             cursor: pointer;
         }
 
         .video-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            border-color: var(--mc-red);
         }
 
         .video-thumb {
-            height: 180px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            height: 160px;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3rem;
             color: white;
-            position: relative;
-        }
-
-        .video-thumb::after {
-            content: '▶';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transition: opacity var(--transition-speed);
-        }
-
-        .video-card:hover .video-thumb::after {
-            opacity: 1;
         }
 
         .video-info {
-            padding: 20px;
+            padding: 18px;
         }
 
         .video-title {
             font-weight: 600;
-            font-size: 1.1rem;
             margin-bottom: 8px;
         }
 
         .video-meta {
             display: flex;
-            justify-content: space-between;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .video-meta i {
-            margin-right: 5px;
-        }
-
-        .ksl-features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
         }
 
-        .ksl-feature {
-            text-align: center;
-            padding: 25px;
-            background: #F8FAFC;
-            border-radius: 16px;
-            transition: all var(--transition-speed);
-        }
-
-        .ksl-feature:hover {
-            background: white;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .ksl-feature i {
-            font-size: 2.2rem;
-            color: var(--accent-purple);
-            margin-bottom: 15px;
-        }
-
-        .ksl-feature h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .ksl-feature p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        /* ===== WHO WE SERVE GRID ===== */
+        /* ===== WHO GRID ===== */
         .who-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            gap: 25px;
             margin: 50px 0;
         }
 
         .who-card {
-            text-align: center;
-            padding: 40px 30px;
-            background: white;
-            border-radius: 20px;
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
-            transition: all var(--transition-speed);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
         }
 
         .who-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
             border-color: var(--mc-red);
         }
 
         .who-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
 
         .who-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .who-card p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
-        /* ===== WHY NEUROBRIDGE GRID ===== */
+        /* ===== WHY GRID ===== */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -807,35 +609,31 @@
         }
 
         .why-card {
-            background: white;
-            padding: 35px;
+            background: var(--bg-card);
+            padding: 30px;
             border-radius: 20px;
             border-left: 4px solid var(--mc-red);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed);
+            transition: var(--transition);
         }
 
         .why-card:hover {
             transform: translateX(5px);
-            box-shadow: var(--shadow-hover);
         }
 
         .why-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
-            color: var(--mc-red);
         }
 
         .why-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* ===== FOUNDER SECTION ===== */
         .founder {
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            color: white;
-            padding: 100px 5%;
+            padding: 80px 5%;
         }
 
         .founder-grid {
@@ -848,15 +646,14 @@
         }
 
         .founder-content h2 {
-            color: white;
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
         .founder-quote {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-style: italic;
-            margin: 30px 0;
+            margin: 25px 0;
             opacity: 0.95;
             line-height: 1.5;
             font-family: 'Playfair Display', serif;
@@ -864,18 +661,16 @@
 
         .founder-name {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 5px;
         }
 
         .founder-title {
             opacity: 0.9;
-            font-size: 1rem;
         }
 
         .founder-mission {
-            margin-top: 30px;
-            font-size: 1.2rem;
+            margin-top: 25px;
             padding: 20px;
             background: rgba(255,255,255,0.1);
             border-radius: 16px;
@@ -883,17 +678,23 @@
         }
 
         .founder-image {
-            width: 350px;
-            height: 350px;
-            background: rgba(255,255,255,0.2);
+            width: 320px;
+            height: 320px;
+            background: rgba(255,255,255,0.15);
             border-radius: 50%;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 7rem;
+            font-size: 6rem;
             border: 4px solid rgba(255,255,255,0.3);
-            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===== SLIDES SECTION ===== */
@@ -905,52 +706,45 @@
         }
 
         .slide-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
-            transition: all var(--transition-speed);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            border-radius: 20px;
+            padding: 25px;
+            transition: var(--transition);
         }
 
         .slide-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
             border-color: var(--mc-red);
         }
 
         .slide-number {
             display: inline-block;
-            background: var(--mc-red);
-            color: white;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             width: 35px;
             height: 35px;
             border-radius: 50%;
             text-align: center;
             line-height: 35px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .slide-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--mc-red);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
         }
 
         .slide-card ul {
             list-style: none;
-            flex: 1;
         }
 
         .slide-card li {
-            margin-bottom: 12px;
-            padding-left: 25px;
+            margin-bottom: 8px;
+            padding-left: 20px;
             position: relative;
             color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         .slide-card li:before {
@@ -960,27 +754,10 @@
             color: var(--mc-red);
         }
 
-        .slide-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .slide-card strong {
-            color: var(--text-primary);
-        }
-
         /* ===== DEMO SECTION ===== */
         .demo-section {
-            background: var(--mc-dark);
-            color: white;
+            background: var(--bg-card);
             padding: 80px 5%;
-        }
-
-        .demo-section h2 {
-            color: white;
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
         }
 
         .demo-grid {
@@ -992,86 +769,85 @@
         }
 
         .demo-step {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .demo-step h4 {
             color: var(--mc-orange);
             margin-bottom: 10px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .demo-step p {
-            opacity: 0.9;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
 
         .demo-note {
             color: var(--mc-orange);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             margin-top: 5px;
         }
 
         .demo-secret {
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
+            background: rgba(235,0,27,0.1);
+            padding: 35px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(235,0,27,0.3);
         }
 
         .demo-secret h4 {
             color: var(--mc-orange);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
 
         .demo-secret p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-style: italic;
-            color: var(--mc-orange);
+            color: var(--text-primary);
             line-height: 1.6;
         }
 
         /* ===== TESTING SECTION ===== */
         .testing-box {
-            background: linear-gradient(135deg, #F8FAFC, white);
-            padding: 50px;
-            border-radius: 30px;
-            margin: 50px 0;
+            background: var(--bg-card);
             border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-lg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
         }
 
         .testing-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--mc-red);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--mc-orange);
         }
 
         .testing-box p {
             color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 1.05rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
         }
 
         .testimonial-box {
-            background: var(--mc-red);
-            color: white;
-            padding: 50px;
-            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(235,0,27,0.1), rgba(247,158,27,0.1));
+            border: 1px solid rgba(235,0,27,0.3);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
             margin: 50px 0;
         }
 
         .testimonial-box i {
-            font-size: 3rem;
-            opacity: 0.3;
+            font-size: 2.5rem;
+            opacity: 0.5;
             margin-bottom: 20px;
+            color: var(--mc-orange);
         }
 
         .testimonial-box p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
@@ -1080,44 +856,41 @@
 
         /* ===== VISION SECTION ===== */
         .vision-section {
-            background: linear-gradient(135deg, var(--mc-dark), #1A1A1A);
-            color: white;
-            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
+            padding: 80px 5%;
             text-align: center;
         }
 
         .vision-title {
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
         }
 
         .vision-text {
-            font-size: 1.8rem;
-            max-width: 900px;
+            font-size: 1.5rem;
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.4;
             font-family: 'Playfair Display', serif;
         }
 
         /* ===== CTA SECTION ===== */
         .cta {
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            color: white;
-            padding: 100px 5%;
+            padding: 80px 5%;
             text-align: center;
         }
 
         .cta h2 {
-            color: white;
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
 
         .cta p {
-            font-size: 1.3rem;
-            opacity: 0.95;
+            font-size: 1.1rem;
+            opacity: 0.9;
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
         }
 
         .cta-buttons {
@@ -1125,80 +898,24 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .cta-note {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        /* ===== SENSORY TOGGLE ===== */
-        .sensory-toggle {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: linear-gradient(135deg, #F8FAFC, white);
-            border-radius: 100px;
-            margin: 30px 0;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-            max-width: 600px;
-        }
-
-        .toggle-switch {
-            width: 70px;
-            height: 34px;
-            background: var(--border-light);
-            border-radius: 34px;
-            position: relative;
-            cursor: pointer;
-            transition: all var(--transition-speed);
-            flex-shrink: 0;
-        }
-
-        .toggle-switch.active {
-            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-        }
-
-        .toggle-slider {
-            width: 30px;
-            height: 30px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: all var(--transition-speed);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .toggle-switch.active .toggle-slider {
-            left: 38px;
-        }
-
-        .toggle-label {
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .toggle-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            flex: 1;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            background: #0F0F0F;
-            color: white;
-            padding: 80px 5% 30px;
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-light);
+            padding: 60px 5% 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto 50px;
@@ -1206,8 +923,8 @@
 
         .footer-col h4 {
             color: var(--mc-orange);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -1217,14 +934,14 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-col ul li a {
-            color: #D1D5DB;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color var(--transition-speed);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            transition: var(--transition);
         }
 
         .footer-col ul li a:hover {
@@ -1235,24 +952,24 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
         }
 
         .footer-logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .footer-logo-text {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .footer-logo-text span {
@@ -1260,127 +977,116 @@
         }
 
         .footer-description {
-            color: #D1D5DB;
-            line-height: 1.8;
+            color: var(--text-secondary);
+            line-height: 1.6;
             margin: 20px 0;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
+            width: 38px;
+            height: 38px;
+            background: var(--bg-card);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: all var(--transition-speed);
-            font-size: 1.2rem;
+            transition: var(--transition);
         }
 
         .social-link:hover {
-            background: var(--mc-orange);
+            background: var(--mc-red);
+            color: white;
             transform: translateY(-3px);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #D1D5DB;
-            font-size: 0.95rem;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.8rem;
             max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
         .footer-bottom a {
             color: var(--mc-orange);
             text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer-bottom a:hover {
-            text-decoration: underline;
         }
 
         /* ===== FLOATING ELEMENTS ===== */
         .chat-bubble {
             position: fixed;
             bottom: 100px;
-            right: 28px;
+            right: 25px;
             z-index: 9999;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            box-shadow: 0 10px 25px rgba(235,0,27,0.3);
-            transition: all var(--transition-speed);
+            box-shadow: 0 10px 25px rgba(235,0,27,0.4);
+            transition: var(--transition);
             border: none;
         }
 
         .chat-bubble:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 15px 35px rgba(235,0,27,0.4);
         }
 
         .whatsapp-float {
             position: fixed;
-            bottom: 190px;
-            right: 28px;
+            bottom: 180px;
+            right: 25px;
             z-index: 9999;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2.2rem;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-            transition: all var(--transition-speed);
+            font-size: 2rem;
             text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            transition: var(--transition);
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
         }
 
         .scroll-up {
             position: fixed;
             bottom: 100px;
-            left: 28px;
+            left: 25px;
             z-index: 9999;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(235,0,27,0.3);
-            transition: all var(--transition-speed);
+            transition: var(--transition);
             border: none;
             opacity: 0;
             visibility: hidden;
@@ -1393,18 +1099,17 @@
 
         .scroll-up:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 8px 25px rgba(235,0,27,0.5);
         }
 
         /* ===== CHAT PANEL ===== */
         .chat-panel {
             position: fixed;
             bottom: 190px;
-            right: 28px;
-            width: 380px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            right: 25px;
+            width: 360px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             z-index: 10000;
             overflow: hidden;
             border: 1px solid var(--border-light);
@@ -1413,127 +1118,157 @@
 
         .chat-header {
             background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            padding: 20px;
-            color: white;
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .chat-header h4 {
-            color: white;
             margin: 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
-        .chat-header h4 i {
-            margin-right: 8px;
-        }
-
-        .chat-close {
+        .chat-header button {
             background: none;
             border: none;
             color: white;
             cursor: pointer;
-            font-size: 1.3rem;
-            opacity: 0.8;
-            transition: opacity var(--transition-speed);
-        }
-
-        .chat-close:hover {
-            opacity: 1;
+            font-size: 1.2rem;
         }
 
         .chat-messages {
             padding: 20px;
-            height: 300px;
+            height: 280px;
             overflow-y: auto;
-            background: #F8FAFC;
         }
 
         .chat-message {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 15px;
         }
 
         .chat-message.bot {
-            align-items: flex-start;
+            text-align: left;
         }
 
         .chat-message.user {
-            align-items: flex-end;
+            text-align: right;
         }
 
         .message-bubble {
-            max-width: 80%;
-            padding: 15px 18px;
+            display: inline-block;
+            max-width: 85%;
+            padding: 12px 16px;
             border-radius: 18px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.5;
         }
 
         .bot .message-bubble {
-            background: white;
+            background: var(--bg-hover);
             border: 1px solid var(--border-light);
-            border-bottom-left-radius: 5px;
+            border-bottom-left-radius: 4px;
         }
 
         .user .message-bubble {
-            background: var(--mc-red);
-            color: white;
-            border-bottom-right-radius: 5px;
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+            border-bottom-right-radius: 4px;
         }
 
         .message-time {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
+            font-size: 0.65rem;
+            color: var(--text-muted);
             margin-top: 5px;
-            margin-left: 5px;
-            margin-right: 5px;
         }
 
         .chat-input-area {
-            padding: 20px;
+            padding: 15px;
             border-top: 1px solid var(--border-light);
             display: flex;
             gap: 10px;
-            background: white;
         }
 
         .chat-input-area input {
             flex: 1;
-            padding: 12px 18px;
+            padding: 12px 15px;
+            background: var(--bg-hover);
             border: 1px solid var(--border-light);
             border-radius: 25px;
+            color: var(--text-primary);
+            font-size: 0.85rem;
             outline: none;
-            font-size: 0.95rem;
-            transition: all var(--transition-speed);
         }
 
         .chat-input-area input:focus {
             border-color: var(--mc-red);
-            box-shadow: 0 0 0 3px rgba(235,0,27,0.1);
         }
 
         .chat-send {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: var(--mc-red);
-            color: white;
             border: none;
             border-radius: 50%;
+            color: white;
             cursor: pointer;
-            transition: all var(--transition-speed);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+            transition: var(--transition);
         }
 
         .chat-send:hover {
             background: var(--mc-orange);
             transform: scale(1.05);
+        }
+
+        /* ===== SENSORY TOGGLE ===== */
+        .sensory-toggle {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: var(--bg-card);
+            border-radius: 50px;
+            margin: 30px auto;
+            border: 1px solid var(--border-light);
+            max-width: 600px;
+        }
+
+        .toggle-switch {
+            width: 65px;
+            height: 32px;
+            background: var(--bg-hover);
+            border-radius: 32px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .toggle-switch.active {
+            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
+        }
+
+        .toggle-slider {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: var(--transition);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            left: 35px;
+        }
+
+        .toggle-label {
+            font-weight: 500;
+        }
+
+        .toggle-description {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            flex: 1;
         }
 
         /* ===== MODAL ===== */
@@ -1544,7 +1279,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.8);
             z-index: 20000;
             align-items: center;
             justify-content: center;
@@ -1556,55 +1291,48 @@
         }
 
         .modal-content {
-            background: white;
-            border-radius: 30px;
-            max-width: 550px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            max-width: 500px;
             width: 90%;
-            padding: 50px;
+            padding: 40px;
             position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
             text-align: center;
+            border: 1px solid var(--border-light);
         }
 
         .modal-close {
             position: absolute;
-            top: 20px;
+            top: 15px;
             right: 20px;
             background: none;
             border: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-secondary);
-            transition: color var(--transition-speed);
-        }
-
-        .modal-close:hover {
-            color: var(--mc-red);
         }
 
         .modal-icon {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             background: rgba(235,0,27,0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--mc-red);
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
         }
 
         .modal h3 {
             margin-bottom: 15px;
-            font-size: 2rem;
         }
 
         .modal p {
             color: var(--text-secondary);
-            margin-bottom: 30px;
-            line-height: 1.8;
-            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .modal-buttons {
@@ -1613,36 +1341,9 @@
             justify-content: center;
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fadeInUp {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(235,0,27,0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(235,0,27,0); }
-            100% { box-shadow: 0 0 0 0 rgba(235,0,27,0); }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
         /* ===== LOW STIMULATION MODE ===== */
         body.low-stimulation {
-            --transition-speed: 0s;
-            --animation-enabled: 0;
+            --transition: 0s;
         }
 
         body.low-stimulation * {
@@ -1650,225 +1351,49 @@
             transition: none !important;
         }
 
-        body.low-stimulation .glass-card:hover,
-        body.low-stimulation .pillar-card:hover,
-        body.low-stimulation .video-card:hover,
-        body.low-stimulation .feature-card:hover,
-        body.low-stimulation .problem-card:hover,
-        body.low-stimulation .who-card:hover,
-        body.low-stimulation .slide-card:hover {
-            transform: none;
-        }
-
-        body.low-stimulation .hero::before {
-            animation: none;
-        }
-
+        body.low-stimulation .hero::before,
         body.low-stimulation .hero-image::before {
             animation: none;
         }
 
-        /* ===== MOBILE RESPONSIVE ===== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .ksl-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .pillar-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .problem-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .pillar-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .ksl-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .who-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .slides-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .founder-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .demo-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero-buttons { justify-content: center; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .ksl-grid { grid-template-columns: repeat(2, 1fr); }
+            .who-grid { grid-template-columns: repeat(2, 1fr); }
+            .slides-grid { grid-template-columns: repeat(2, 1fr); }
+            .founder-grid { grid-template-columns: 1fr; text-align: center; }
+            .demo-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 968px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .section {
-                padding: 60px 5%;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .trust-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .problem-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pillar-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .ksl-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .ksl-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .who-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .slides-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .cta-buttons .btn {
-                width: 100%;
-            }
-            
-            .sensory-toggle {
-                flex-direction: column;
-                align-items: flex-start;
-                border-radius: 20px;
-            }
-            
-            .chat-panel {
-                width: 300px;
-                right: 15px;
-            }
-            
-            .modal-content {
-                padding: 40px 20px;
-            }
-            
-            .modal-buttons {
-                flex-direction: column;
-            }
-        }
-
-        /* ===== PRINT STYLES ===== */
-        @media print {
-            .chat-bubble,
-            .whatsapp-float,
-            .scroll-up,
-            .chat-panel,
-            .hamburger,
-            .nav-cta {
-                display: none !important;
-            }
-            
-            .navbar {
-                position: static;
-            }
-            
-            .hero::before,
-            .hero-image::before {
-                display: none;
-            }
-        }
-
-        /* ===== UTILITY CLASSES ===== */
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: 10px; }
-        .mt-2 { margin-top: 20px; }
-        .mt-3 { margin-top: 30px; }
-        .mt-4 { margin-top: 40px; }
-        .mt-5 { margin-top: 50px; }
-        .mb-1 { margin-bottom: 10px; }
-        .mb-2 { margin-bottom: 20px; }
-        .mb-3 { margin-bottom: 30px; }
-        .mb-4 { margin-bottom: 40px; }
-        .mb-5 { margin-bottom: 50px; }
-        .p-1 { padding: 10px; }
-        .p-2 { padding: 20px; }
-        .p-3 { padding: 30px; }
-        .p-4 { padding: 40px; }
-        .p-5 { padding: 50px; }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            .trust-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            .ksl-grid { grid-template-columns: 1fr; }
+            .who-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .slides-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; gap: 15px; }
+            .cta-buttons .btn { width: 100%; }
+            .chat-panel { width: 300px; right: 15px; bottom: 165px; }
+            .whatsapp-float { bottom: 155px; }
         }
     </style>
 </head>
@@ -1891,7 +1416,7 @@
                 <li><a href="#founder">Founder</a></li>
                 <li><a href="#slides">Pitch</a></li>
                 <li><a href="#demo">Demo</a></li>
-                <li><a href="/app" class="nav-cta">Try Demo</a></li>
+                <li><a href="/app" class="nav-cta"><i class="fas fa-rocket"></i> Launch App</a></li>
             </ul>
             
             <button class="hamburger" onclick="toggleMobileMenu()">
@@ -1904,9 +1429,9 @@
 
     <!-- ===== HERO SECTION ===== -->
     <section class="hero">
-        <div class="container hero-grid">
+        <div class="hero-grid">
             <div class="hero-content">
-                <div class="hero-badge">🔥 Built from Lived Experience</div>
+                <div class="hero-badge">🔥 Built from Lived Experience · Nairobi, Kenya</div>
                 <h1 class="hero-title">
                     <span class="hero-gradient-text">Closing the Learning Gap</span><br>
                     for Neurodivergent & Deaf Learners
@@ -1927,9 +1452,9 @@
     </section>
 
     <!-- ===== SENSORY TOGGLE ===== -->
-    <div class="container">
+    <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
         <div class="sensory-toggle">
-            <i class="fas fa-moon" style="color: var(--mc-red); font-size: 1.3rem;"></i>
+            <i class="fas fa-moon" style="color: var(--mc-orange); font-size: 1.2rem;"></i>
             <span class="toggle-label"><strong>Low-Stimulation Mode:</strong></span>
             <span class="toggle-description">Reduces animations for sensory sensitivity</span>
             <div class="toggle-switch" id="sensoryToggle" onclick="toggleSensoryMode()">
@@ -1938,12 +1463,12 @@
         </div>
     </div>
 
-    <!-- ===== TRUST / IMPACT STRIP ===== -->
+    <!-- ===== TRUST STRIP ===== -->
     <section class="trust-strip">
         <div class="trust-grid">
             <div class="trust-item">
                 <div class="trust-number">950+</div>
-                <div class="trust-label">learners reached through pilot programs and community testing</div>
+                <div class="trust-label">learners reached through pilot programs</div>
             </div>
             <div class="trust-item">
                 <div class="trust-number">300+</div>
@@ -1951,20 +1476,20 @@
             </div>
             <div class="trust-item">
                 <div class="trust-number">200k+</div>
-                <div class="trust-label">community reach through advocacy and awareness</div>
+                <div class="trust-label">community reach through advocacy</div>
             </div>
             <div class="trust-item">
                 <div class="trust-number">24+</div>
-                <div class="trust-label">Kenyan Sign Language (KSL) modules developed</div>
+                <div class="trust-label">KSL modules developed</div>
             </div>
         </div>
     </section>
 
     <!-- ===== WHAT IS NEUROBRIDGE ===== -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">What is NeuroBridge?</h2>
-            <p class="section-subtitle">NeuroBridge is an inclusive digital learning platform designed for neurodivergent and Deaf learners who are often excluded from traditional education systems.</p>
+            <p class="section-subtitle">An inclusive digital learning platform for neurodivergent and Deaf learners who are often excluded from traditional education systems.</p>
             
             <div class="features-grid" style="margin-top: 30px;">
                 <div class="feature-card">
@@ -1984,76 +1509,76 @@
                 </div>
             </div>
             
-            <div class="testimonial-box" style="background: var(--mc-red); margin-top: 50px;">
+            <div class="testimonial-box" style="margin-top: 50px;">
                 <p>👉 Built from lived experience, NeuroBridge ensures learners are not just included — but <strong>Empowered</strong>.</p>
             </div>
         </div>
     </section>
 
     <!-- ===== THE PROBLEM ===== -->
-    <section id="problem" class="section section-light">
-        <div class="container">
+    <section id="problem" class="section" style="background: var(--bg-card);">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">The Problem</h2>
             <p class="section-subtitle">Across Africa, millions of learners face barriers to education due to:</p>
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">📚</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
                     <h3>Lack of inclusive teaching methods</h3>
                     <p>Teachers lack training and resources to support diverse learners in overcrowded classrooms.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🤟</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤟</div>
                     <h3>Limited access to KSL resources</h3>
                     <p>Deaf learners cannot access lessons without sign language interpretation or visual supports.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🏫</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏫</div>
                     <h3>Overcrowded classrooms</h3>
                     <p>Cannot support diverse needs of neurodivergent learners who require individualized attention.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🧠</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
                     <h3>Stigma around neurodivergence</h3>
                     <p>Learners are misunderstood, pushed out, or ignored — not because they cannot learn.</p>
                 </div>
             </div>
             
             <div class="testing-box" style="margin-top: 50px;">
-                <h3 style="color: var(--mc-red);">Many learners are left behind</h3>
-                <p style="font-size: 1.3rem; font-weight: 500;">— not because they cannot learn, but because the system does not support how they learn.</p>
+                <h3>Many learners are left behind</h3>
+                <p style="font-size: 1.2rem;">— not because they cannot learn, but because the system does not support how they learn.</p>
             </div>
         </div>
     </section>
 
     <!-- ===== OUR SOLUTION ===== -->
     <section id="solution" class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Our Solution</h2>
             <p class="section-subtitle">NeuroBridge delivers a tech-enabled, inclusive learning experience tailored to underserved learners.</p>
             
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 50px 0;">
-                <div class="feature-card" style="background: var(--mc-red); color: white;">
-                    <h3 style="color: white; margin-bottom: 20px;">We combine:</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Interactive lessons</li>
-                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Visual and structured learning</li>
-                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> KSL-integrated content</li>
-                        <li style="margin-bottom: 15px; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Offline accessibility</li>
-                        <li style="font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: white; margin-right: 10px;"></i> Caregiver support tools</li>
+                <div class="feature-card" style="background: linear-gradient(135deg, rgba(235,0,27,0.15), rgba(247,158,27,0.1));">
+                    <h3>We combine:</h3>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--mc-orange); margin-right: 10px;"></i> Interactive lessons</li>
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--mc-orange); margin-right: 10px;"></i> Visual and structured learning</li>
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--mc-orange); margin-right: 10px;"></i> KSL-integrated content</li>
+                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--mc-orange); margin-right: 10px;"></i> Offline accessibility</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--mc-orange); margin-right: 10px;"></i> Caregiver support tools</li>
                     </ul>
                 </div>
-                <div class="feature-card" style="background: #F8FAFC; display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 1.4rem; font-style: italic; margin-bottom: 20px;">"So learners can access education in a way that actually works for them."</p>
-                    <p style="color: var(--mc-red); font-weight: 600;">👉 Designed for real African learning environments</p>
+                <div class="feature-card">
+                    <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 20px;">"So learners can access education in a way that actually works for them."</p>
+                    <p style="color: var(--mc-orange);">👉 Designed for real African learning environments</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== KEY FEATURES ===== -->
-    <section id="features" class="section section-light">
-        <div class="container">
+    <section id="features" class="section" style="background: var(--bg-card);">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Designed for Inclusion</h2>
             <p class="section-subtitle">Every feature is built with neurodivergent and Deaf learners in mind</p>
             
@@ -2092,169 +1617,113 @@
         </div>
     </section>
 
-    <!-- ===== 6-PILLAR DASHBOARD ===== -->
+    <!-- ===== 6-PILLAR ECOSYSTEM ===== -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Complete <span style="color: var(--mc-red);">6-Pillar</span> Ecosystem</h2>
             <p class="section-subtitle">One platform serving learners, caregivers, teachers, and counselors across Kenya</p>
             
             <div class="pillar-grid">
-                <!-- Learner Portal (Blue) -->
                 <div class="pillar-card blue" onclick="openModal('learner')">
                     <div class="pillar-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Learner Portal</h3>
-                    <p>Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.</p>
-                    <span class="pillar-tag"><i class="fas fa-chart-line"></i> 65% completion</span>
+                    <p>Focus-friendly modules with progress tracking, visual schedules, and interactive lessons.</p>
+                    <span class="pillar-tag">65% completion</span>
                 </div>
-                
-                <!-- KSL Integration (Purple) -->
                 <div class="pillar-card purple" onclick="openModal('ksl')">
                     <div class="pillar-icon"><i class="fas fa-hands"></i></div>
                     <h3>KSL Integration</h3>
-                    <p>Kenyan Sign Language video library with 24 lessons, developed with deaf consultants from Nairobi and Garissa.</p>
-                    <span class="pillar-tag"><i class="fas fa-play"></i> 12 new lessons</span>
+                    <p>24+ Kenyan Sign Language lessons developed with deaf consultants from Nairobi and Garissa.</p>
+                    <span class="pillar-tag">12 new lessons</span>
                 </div>
-                
-                <!-- Parent/Caregiver Hub (Yellow) -->
                 <div class="pillar-card yellow" onclick="openModal('parent')">
                     <div class="pillar-icon"><i class="fas fa-heart"></i></div>
                     <h3>Parent Hub</h3>
-                    <p>Support resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children.</p>
-                    <span class="pillar-tag"><i class="fas fa-users"></i> 45 active members</span>
+                    <p>Support resources, WhatsApp community, daily tips, and expert advice for caregivers.</p>
+                    <span class="pillar-tag">45 active members</span>
                 </div>
-                
-                <!-- Sensory-Friendly Interface (Gradient) -->
-                <div class="pillar-card gradient" onclick="toggleSensoryMode()">
+                <div class="pillar-card green" onclick="toggleSensoryMode()">
                     <div class="pillar-icon"><i class="fas fa-brain"></i></div>
                     <h3>Sensory Mode</h3>
-                    <p>Low-stimulation interface with reduced animations, calming colors, and distraction-free learning environment.</p>
-                    <span class="pillar-tag"><i class="fas fa-toggle-on"></i> Click to toggle</span>
+                    <p>Low-stimulation interface with reduced animations and calming colors. Click to toggle.</p>
+                    <span class="pillar-tag">Click to toggle</span>
                 </div>
-                
-                <!-- CBC Curriculum (Green) -->
-                <div class="pillar-card green" onclick="openModal('cbc')">
+                <div class="pillar-card blue" onclick="openModal('cbc')">
                     <div class="pillar-icon"><i class="fas fa-book"></i></div>
                     <h3>CBC Curriculum</h3>
-                    <p>Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports and modified assessments.</p>
-                    <span class="pillar-tag"><i class="fas fa-check"></i> 9 courses</span>
+                    <p>Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports.</p>
+                    <span class="pillar-tag">9 courses</span>
                 </div>
-                
-                <!-- Counselor Connection (Red) -->
-                <div class="pillar-card red" onclick="window.open('https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support.', '_blank')">
+                <div class="pillar-card red" onclick="window.open('https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%20I%20need%20support', '_blank')">
                     <div class="pillar-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>Counselor Connect</h3>
-                    <p>Direct WhatsApp access to professional counselors specializing in neurodiversity and family support.</p>
-                    <span class="pillar-tag"><i class="fas fa-clock"></i> Responds in 2hrs</span>
+                    <p>Direct WhatsApp access to professional counselors specializing in neurodiversity.</p>
+                    <span class="pillar-tag">Responds in 2hrs</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== KSL VIDEO LIBRARY ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>🤟 Kenyan Sign Language <span style="color: var(--accent-purple);">Library</span></h2>
-                <p>Developed with deaf consultants from Nairobi and Garissa. All videos reviewed by Amina (14) and our youth board.</p>
-            </div>
+    <section class="section" style="background: var(--bg-card);">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
+            <h2 class="section-title">🤟 Kenyan Sign Language <span style="color: var(--mc-orange);">Library</span></h2>
+            <p class="section-subtitle">Developed with deaf consultants from Nairobi and Garissa. All videos reviewed by our youth board.</p>
             
             <div class="ksl-grid">
-                <div class="video-card" onclick="playVideo('greetings')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: Basic Greetings in KSL')">
                     <div class="video-thumb">👋</div>
                     <div class="video-info">
                         <div class="video-title">Basic Greetings</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:30</span>
-                            <span><i class="far fa-eye"></i> 1.2k views</span>
-                        </div>
+                        <div class="video-meta"><span>0:30</span><span>1.2k views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="playVideo('school')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: School Words in KSL')">
                     <div class="video-thumb">📚</div>
                     <div class="video-info">
                         <div class="video-title">School Words</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:45</span>
-                            <span><i class="far fa-eye"></i> 892 views</span>
-                        </div>
+                        <div class="video-meta"><span>0:45</span><span>892 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="playVideo('numbers')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: Numbers 1-10 in KSL')">
                     <div class="video-thumb">🔢</div>
                     <div class="video-info">
                         <div class="video-title">Numbers 1-10</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:30</span>
-                            <span><i class="far fa-eye"></i> 1.5k views</span>
-                        </div>
+                        <div class="video-meta"><span>0:30</span><span>1.5k views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="playVideo('family')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: Family Members in KSL')">
                     <div class="video-thumb">👪</div>
                     <div class="video-info">
                         <div class="video-title">Family Members</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:40</span>
-                            <span><i class="far fa-eye"></i> 756 views</span>
-                        </div>
+                        <div class="video-meta"><span>0:40</span><span>756 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="playVideo('colors')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: Colors in KSL')">
                     <div class="video-thumb">🎨</div>
                     <div class="video-info">
                         <div class="video-title">Colors</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:35</span>
-                            <span><i class="far fa-eye"></i> 621 views</span>
-                        </div>
+                        <div class="video-meta"><span>0:35</span><span>621 views</span></div>
                     </div>
                 </div>
-                <div class="video-card" onclick="playVideo('food')">
+                <div class="video-card" onclick="showNotification('▶️ Playing: Food & Drinks in KSL')">
                     <div class="video-thumb">🍎</div>
                     <div class="video-info">
                         <div class="video-title">Food & Drinks</div>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 0:50</span>
-                            <span><i class="far fa-eye"></i> 543 views</span>
-                        </div>
+                        <div class="video-meta"><span>0:50</span><span>543 views</span></div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="ksl-features">
-                <div class="ksl-feature">
-                    <i class="fas fa-video"></i>
-                    <h4>24 Lessons</h4>
-                    <p>Complete KSL curriculum</p>
-                </div>
-                <div class="ksl-feature">
-                    <i class="fas fa-download"></i>
-                    <h4>Offline Access</h4>
-                    <p>Download and learn anywhere</p>
-                </div>
-                <div class="ksl-feature">
-                    <i class="fas fa-slow-motion"></i>
-                    <h4>Slow Motion</h4>
-                    <p>Learn at your own pace</p>
-                </div>
-                <div class="ksl-feature">
-                    <i class="fas fa-quiz"></i>
-                    <h4>Practice Quizzes</h4>
-                    <p>Test your knowledge</p>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-                <a href="/app" class="btn btn-outline" style="border-color: var(--accent-purple); color: var(--accent-purple);">
-                    <i class="fas fa-play-circle"></i> Browse All 24 Lessons
-                </a>
+                <a href="/app" class="btn btn-outline"><i class="fas fa-play-circle"></i> Browse All 24 Lessons</a>
             </div>
         </div>
     </section>
 
     <!-- ===== WHO WE SERVE ===== -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Who We Serve</h2>
             
             <div class="who-grid">
@@ -2283,8 +1752,8 @@
     </section>
 
     <!-- ===== WHY NEUROBRIDGE ===== -->
-    <section class="section section-light">
-        <div class="container">
+    <section class="section" style="background: var(--bg-card);">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Why NeuroBridge?</h2>
             <p class="section-subtitle">Most solutions are designed for learners with disabilities. NeuroBridge is designed with and from lived experience.</p>
             
@@ -2324,142 +1793,39 @@
                 </div>
             </div>
             <div>
-               <div class="founder-image" style="width:300px; height:300px; border-radius:50%; overflow:hidden; border:5px solid #FF5F00; margin: 0 auto; box-shadow: 0 10px 30px rgba(255, 95, 0, 0.3);">
-    <img src="founder.jpg" alt="Annab Mohamed" style="width:100%; height:100%; object-fit:cover; display:block;">
-</div>
+                <div class="founder-image">
+                    <img src="https://ui-avatars.com/api/?name=Annab+Mohamed&size=300&background=EB001B&color=fff&bold=true&length=2" alt="Annab Mohamed">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SLIDES SECTION ===== -->
+    <!-- ===== PITCH SLIDES ===== -->
     <section id="slides" class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Our Pitch in 11 Slides</h2>
             <p class="section-subtitle">What we present to Mastercard Foundation and iHUB Kenya</p>
             
             <div class="slides-grid">
-                <div class="slide-card">
-                    <div class="slide-number">1</div>
-                    <h3>NeuroBridge Africa</h3>
-                    <p><strong>Closing the Learning Gap for Neurodivergent and Deaf Learners</strong></p>
-                    <p style="color: var(--text-secondary);">Inclusive technology built for how learners truly learn</p>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">2</div>
-                    <h3>The Problem</h3>
-                    <ul>
-                        <li>Neurodivergent learners are misunderstood</li>
-                        <li>Deaf learners lack KSL tools</li>
-                        <li>Teachers lack resources</li>
-                        <li>Most EdTech not built for inclusion</li>
-                    </ul>
-                    <p style="margin-top: 10px; font-style: italic;">👉 Learners left behind, pushed out, ignored</p>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">3</div>
-                    <h3>Our Solution</h3>
-                    <ul>
-                        <li>Interactive lessons</li>
-                        <li>KSL-integrated learning</li>
-                        <li>Offline accessibility</li>
-                        <li>Caregiver & teacher tools</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">4</div>
-                    <h3>Our MVP</h3>
-                    <ul>
-                        <li>Functional web/app MVP</li>
-                        <li>Interactive lesson demo</li>
-                        <li>24+ KSL modules</li>
-                        <li>Offline capability</li>
-                    </ul>
-                    <p><a href="/app" style="color: var(--mc-red);">👉 Live Demo →</a></p>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">5</div>
-                    <h3>Early Validation</h3>
-                    <ul>
-                        <li>950+ learners reached</li>
-                        <li>300+ downloads</li>
-                        <li>200k+ community reach</li>
-                        <li>Active pilot users</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">6</div>
-                    <h3>Why Now</h3>
-                    <ul>
-                        <li>Governments pushing inclusion</li>
-                        <li>Rising neurodiversity awareness</li>
-                        <li>Lack of African-built solutions</li>
-                        <li>EdTech growth across Africa</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">7</div>
-                    <h3>Our Advantage</h3>
-                    <p><strong>Built from Lived Experience</strong></p>
-                    <ul>
-                        <li>Founder is a mother of neurodivergent children</li>
-                        <li>Founded Ability Inclusion Alliance</li>
-                        <li>Direct experience with system gaps</li>
-                        <li>Deep community trust</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">8</div>
-                    <h3>Who We Serve</h3>
-                    <ul>
-                        <li>Neurodivergent learners</li>
-                        <li>Deaf learners</li>
-                        <li>Caregivers</li>
-                        <li>Teachers</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">9</div>
-                    <h3>Business / Impact Model</h3>
-                    <ul>
-                        <li>Freemium access for families</li>
-                        <li>Partnerships with schools & NGOs</li>
-                        <li>Institutional licensing</li>
-                        <li>Grants + impact funding</li>
-                    </ul>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">10</div>
-                    <h3>Our Vision</h3>
-                    <p style="font-size: 1.1rem;">A future where no learner is excluded because of how they think, process, or communicate.</p>
-                </div>
-                
-                <div class="slide-card">
-                    <div class="slide-number">11</div>
-                    <h3>Call to Action</h3>
-                    <p>We are seeking support to scale NeuroBridge across underserved communities:</p>
-                    <ul>
-                        <li>Funding</li>
-                        <li>Partnerships</li>
-                        <li>Pilot institutions</li>
-                    </ul>
-                </div>
+                <div class="slide-card"><div class="slide-number">1</div><h3>NeuroBridge Africa</h3><p>Closing the Learning Gap for Neurodivergent and Deaf Learners</p></div>
+                <div class="slide-card"><div class="slide-number">2</div><h3>The Problem</h3><ul><li>Neurodivergent learners are misunderstood</li><li>Deaf learners lack KSL tools</li><li>Teachers lack resources</li><li>Most EdTech not built for inclusion</li></ul></div>
+                <div class="slide-card"><div class="slide-number">3</div><h3>Our Solution</h3><ul><li>Interactive lessons</li><li>KSL-integrated learning</li><li>Offline accessibility</li><li>Caregiver & teacher tools</li></ul></div>
+                <div class="slide-card"><div class="slide-number">4</div><h3>Our MVP</h3><ul><li>Functional web/app MVP</li><li>Interactive lesson demo</li><li>24+ KSL modules</li><li>Offline capability</li></ul><p><a href="/app" style="color: var(--mc-orange);">👉 Live Demo →</a></p></div>
+                <div class="slide-card"><div class="slide-number">5</div><h3>Early Validation</h3><ul><li>950+ learners reached</li><li>300+ downloads</li><li>200k+ community reach</li><li>Active pilot users</li></ul></div>
+                <div class="slide-card"><div class="slide-number">6</div><h3>Why Now</h3><ul><li>Governments pushing inclusion</li><li>Rising neurodiversity awareness</li><li>Lack of African-built solutions</li><li>EdTech growth across Africa</li></ul></div>
+                <div class="slide-card"><div class="slide-number">7</div><h3>Our Advantage</h3><p><strong>Built from Lived Experience</strong></p><ul><li>Founder is a mother of neurodivergent children</li><li>Founded Ability Inclusion Alliance</li><li>Direct experience with system gaps</li><li>Deep community trust</li></ul></div>
+                <div class="slide-card"><div class="slide-number">8</div><h3>Who We Serve</h3><ul><li>Neurodivergent learners</li><li>Deaf learners</li><li>Caregivers</li><li>Teachers</li></ul></div>
+                <div class="slide-card"><div class="slide-number">9</div><h3>Business Model</h3><ul><li>Freemium access for families</li><li>Partnerships with schools & NGOs</li><li>Institutional licensing</li><li>Grants + impact funding</li></ul></div>
+                <div class="slide-card"><div class="slide-number">10</div><h3>Our Vision</h3><p>A future where no learner is excluded because of how they think, process, or communicate.</p></div>
+                <div class="slide-card"><div class="slide-number">11</div><h3>Call to Action</h3><p>We are seeking support to scale NeuroBridge:</p><ul><li>Funding</li><li>Partnerships</li><li>Pilot institutions</li></ul></div>
             </div>
         </div>
     </section>
 
     <!-- ===== DEMO SECTION ===== -->
     <section id="demo" class="demo-section">
-        <div class="container">
-            <h2>How to Demo Our MVP (3-Minute Pitch)</h2>
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
+            <h2 style="text-align: center; margin-bottom: 40px;">How to Demo Our MVP (3-Minute Pitch)</h2>
             
             <div class="demo-grid">
                 <div>
@@ -2468,60 +1834,43 @@
                         <p>"Let me show you how a neurodivergent or Deaf learner experiences NeuroBridge."</p>
                         <p class="demo-note">👉 Immediately human-centered</p>
                     </div>
-                    
                     <div class="demo-step">
                         <h4>📱 2. SHOW THE PRODUCT (1.5 min)</h4>
-                        <p>Walk through: Landing page → Select a lesson</p>
-                        <p class="demo-note">Show: Simple interface, KSL integration, Structured learning, Offline mention</p>
+                        <p>Walk through: Landing page → Select a lesson → Show KSL integration</p>
                         <p class="demo-note">"Designed to reduce overwhelm" · "Visual-first learning" · "Accessible even without internet"</p>
                     </div>
-                    
                     <div class="demo-step">
                         <h4>📊 3. CONNECT TO IMPACT (1 min)</h4>
                         <p>"This is already being used by over 900 learners in pilot communities..."</p>
-                        <p class="demo-note">Caregivers are using it at home · Learners engage better than traditional methods · There is demand for expansion.</p>
+                        <p class="demo-note">Caregivers use it at home · Learners engage better · Demand for expansion</p>
                     </div>
                 </div>
-                
                 <div class="demo-secret">
                     <h4>🔑 SECRET SAUCE</h4>
-                    <p>"For example, a parent in our pilot shared that their child, who struggled in a traditional classroom, was able to engage independently using NeuroBridge for the first time."</p>
-                    <a href="/app" class="btn btn-white" style="margin-top: 30px; display: inline-block;">Try Live Demo Now →</a>
+                    <p>"A parent in our pilot shared that their child, who struggled in a traditional classroom for three years, was able to engage independently using NeuroBridge for the first time."</p>
+                    <a href="/app" class="btn btn-primary" style="margin-top: 25px;"><i class="fas fa-rocket"></i> Try Live Demo Now →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== TESTING VALIDATION ===== -->
+    <!-- ===== TESTING & VALIDATION ===== -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="section-title">Early Validation & Testing</h2>
             
             <div class="trust-grid" style="margin-bottom: 50px;">
-                <div>
-                    <div class="trust-number">950+</div>
-                    <div class="trust-label">learners reached</div>
-                </div>
-                <div>
-                    <div class="trust-number">300+</div>
-                    <div class="trust-label">app downloads</div>
-                </div>
-                <div>
-                    <div class="trust-number">200k+</div>
-                    <div class="trust-label">community reach</div>
-                </div>
-                <div>
-                    <div class="trust-number">24+</div>
-                    <div class="trust-label">KSL modules</div>
-                </div>
+                <div><div class="trust-number">950+</div><div class="trust-label">learners reached</div></div>
+                <div><div class="trust-number">300+</div><div class="trust-label">app downloads</div></div>
+                <div><div class="trust-number">200k+</div><div class="trust-label">community reach</div></div>
+                <div><div class="trust-number">24+</div><div class="trust-label">KSL modules</div></div>
             </div>
             
             <div class="testing-box">
                 <h3>NeuroBridge Testing & Validation</h3>
-                <p>NeuroBridge Africa has undergone early-stage testing through a combination of usability testing, pilot engagement, and user feedback with neurodivergent learners, caregivers, and educators in Kenya.</p>
+                <p>NeuroBridge Africa has undergone early-stage testing through usability testing, pilot engagement, and user feedback with neurodivergent learners, caregivers, and educators in Kenya.</p>
                 <p>We have onboarded over 950 early users across these groups, allowing us to observe how different stakeholders interact with the platform in real-world contexts. Testing focused on accessibility, ease of navigation, and engagement with interactive and visual learning content, including Kenyan Sign Language modules.</p>
-                <p>Through direct observation and feedback, we identified key user needs such as simplified navigation, clearer visual cues, and the importance of offline functionality for low-connectivity environments. These insights informed iterative improvements to the MVP, including enhanced user interface design and offline access features.</p>
-                <p>Our testing process is ongoing, with continuous feedback loops from users guiding the development of a more inclusive, accessible, and context-relevant learning platform.</p>
+                <p>Through direct observation and feedback, we identified key user needs such as simplified navigation, clearer visual cues, and the importance of offline functionality for low-connectivity environments.</p>
             </div>
             
             <div class="testimonial-box">
@@ -2533,49 +1882,47 @@
 
     <!-- ===== VISION SECTION ===== -->
     <section class="vision-section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2 class="vision-title">Our Vision</h2>
-            <p class="vision-text">
-                A future where no learner is excluded because of how they think, process, or communicate.
-            </p>
+            <p class="vision-text">A future where no learner is excluded because of how they think, process, or communicate.</p>
         </div>
     </section>
 
     <!-- ===== JOIN PILOT SECTION ===== -->
     <section id="join" class="section">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <div class="testing-box" style="text-align: center;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">🚀 Join Our Pilot Program</h2>
-                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">We're onboarding 15 new families in Nairobi and Eastleigh. Early access includes free KSL modules and caregiver support.</p>
+                <h2 style="font-size: 2rem;">🚀 Join Our Pilot Program</h2>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px;">We're onboarding 15 new families in Nairobi and Eastleigh. Early access includes free KSL modules and caregiver support.</p>
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <a href="/app" class="btn btn-primary" style="padding: 15px 40px;"><i class="fas fa-rocket"></i> Try the Demo</a>
-                    <a href="#" class="btn btn-secondary" onclick="openPilotForm()"><i class="fas fa-handshake"></i> Apply for Pilot</a>
+                    <a href="/app" class="btn btn-primary"><i class="fas fa-rocket"></i> Try the Demo</a>
+                    <a href="#" class="btn btn-secondary" onclick="showNotification('Pilot application form would open here. For now, please email info@neurobridge.co.ke')"><i class="fas fa-handshake"></i> Apply for Pilot</a>
                 </div>
-                <p style="margin-top: 30px; color: var(--text-secondary);">No commitment, we'll reach out within 24hrs</p>
+                <p style="margin-top: 25px;">No commitment, we'll reach out within 24hrs</p>
             </div>
         </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
     <section class="cta">
-        <div class="container">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
             <h2>Join Us in Building Inclusive Education</h2>
             <p>Be part of a movement ensuring no learner is left behind across Africa.</p>
             
             <div class="cta-buttons">
-                <a href="/app" class="btn btn-white"><i class="fas fa-rocket"></i> Try the Demo</a>
-                <a href="#" class="btn btn-white-outline"><i class="fas fa-handshake"></i> Partner With Us</a>
-                <a href="#" class="btn btn-white-outline" onclick="openPilotForm()"><i class="fas fa-users"></i> Join the Pilot Program</a>
+                <a href="/app" class="btn btn-primary"><i class="fas fa-rocket"></i> Try the Demo</a>
+                <a href="#" class="btn btn-secondary" onclick="showNotification('Partner with us: info@neurobridge.co.ke')"><i class="fas fa-handshake"></i> Partner With Us</a>
+                <a href="#" class="btn btn-secondary" onclick="showNotification('Join the pilot program: info@neurobridge.co.ke')"><i class="fas fa-users"></i> Join the Pilot Program</a>
             </div>
             
-            <p class="cta-note">We are seeking support to scale NeuroBridge across underserved communities: Funding · Partnerships · Pilot institutions</p>
+            <p class="cta-note">We are seeking support to scale NeuroBridge: Funding · Partnerships · Pilot institutions</p>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-grid">
-            <div class="footer-col">
+            <div>
                 <div class="footer-logo">
                     <div class="footer-logo-icon">🧠</div>
                     <div class="footer-logo-text">NEUROBRIDGE <span>AFRICA</span></div>
@@ -2586,92 +1933,45 @@
                     <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-col">
                 <h4>Platform</h4>
-                <ul>
-                    <li><a href="#problem">Problem</a></li>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#slides">Pitch Deck</a></li>
-                    <li><a href="/app">MVP App</a></li>
-                </ul>
+                <ul><li><a href="#problem">Problem</a></li><li><a href="#solution">Solution</a></li><li><a href="#features">Features</a></li><li><a href="#slides">Pitch Deck</a></li><li><a href="/app">MVP App</a></li></ul>
             </div>
-            
-            <div class="footer-col">
-                <h4>Organization</h4>
-                <ul>
-                    <li><a href="#founder">About Us</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#press">Press Kit</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
             <div class="footer-col">
                 <h4>Resources</h4>
-                <ul>
-                    <li><a href="#ksl">KSL Library</a></li>
-                    <li><a href="#resources">Caregiver Guides</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
+                <ul><li><a href="#ksl">KSL Library</a></li><li><a href="#caregiver">Caregiver Guides</a></li><li><a href="#research">Research</a></li><li><a href="#faq">FAQ</a></li></ul>
             </div>
-            
             <div class="footer-col">
                 <h4>Legal</h4>
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#accessibility">Accessibility</a></li>
-                    <li><a href="#cookies">Cookie Policy</a></li>
-                    <li><a href="#data">Data Protection</a></li>
-                </ul>
+                <ul><li><a href="#" onclick="showNotification('Privacy Policy')">Privacy Policy</a></li><li><a href="#" onclick="showNotification('Terms of Service')">Terms of Service</a></li><li><a href="#" onclick="showNotification('Accessibility Statement')">Accessibility</a></li><li><a href="#" onclick="showNotification('Cookie Policy')">Cookie Policy</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul><li><a href="mailto:info@neurobridge.co.ke">info@neurobridge.co.ke</a></li><li><a href="tel:+254100403629">+254 100 403 629</a></li><li><a href="https://wa.me/254100403629">WhatsApp Support</a></li><li><a href="#location">Nairobi, Kenya</a></li></ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>© 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4.</p>
-            <p style="margin-top: 15px; font-size: 0.9rem;">iHUB × Mastercard Foundation · Deadline April 10, 2026</p>
-            <p style="margin-top: 20px;">
-                <a href="#privacy">Privacy</a> · 
-                <a href="#terms">Terms</a> · 
-                <a href="#accessibility">Accessibility</a> · 
-                <a href="#sitemap">Sitemap</a>
-            </p>
+            <p style="margin-top: 10px;">iHUB × Mastercard Foundation · Deadline April 10, 2026</p>
         </div>
     </footer>
 
     <!-- ===== FLOATING ELEMENTS ===== -->
-    <button class="chat-bubble" onclick="toggleChat()" aria-label="AI Assistant">
-        <i class="fas fa-robot"></i>
-    </button>
-    
-    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="whatsapp-float" aria-label="WhatsApp Support">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <button class="scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" id="scrollUp">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button class="chat-bubble" onclick="toggleChat()"><i class="fas fa-robot"></i></button>
+    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%20I%20need%20support" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <button class="scroll-up" id="scrollUp" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 
     <!-- ===== CHAT PANEL ===== -->
     <div class="chat-panel" id="chatPanel">
         <div class="chat-header">
-            <h4><i class="fas fa-robot"></i> NeuroBridge Assistant</h4>
-            <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            <h4><i class="fas fa-robot"></i> Bridge — NeuroBridge AI</h4>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="chat-message bot">
-                <div class="message-bubble">
-                    👋 Hello! Welcome to NeuroBridge Africa. How can I help you with our pilot program or platform today?
-                </div>
+                <div class="message-bubble">👋 Habari! I'm Bridge, NeuroBridge's AI assistant. Ask me about KSL, ADHD, autism support, or our programs. Naongea Kiswahili na English! 🇰🇪</div>
                 <div class="message-time">Just now</div>
             </div>
         </div>
@@ -2696,13 +1996,11 @@
     </div>
 
     <script>
-        // ===== MOBILE MENU =====
+        // Mobile menu
         function toggleMobileMenu() {
             const menu = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
             if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-                hamburger.classList.remove('active');
+                menu.style.display = '';
             } else {
                 menu.style.display = 'flex';
                 menu.style.flexDirection = 'column';
@@ -2710,46 +2008,30 @@
                 menu.style.top = '80px';
                 menu.style.left = '0';
                 menu.style.width = '100%';
-                menu.style.background = 'white';
+                menu.style.background = '#1A1A1A';
                 menu.style.padding = '20px';
-                menu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                menu.style.zIndex = '1000';
-                hamburger.classList.add('active');
+                menu.style.borderBottom = '1px solid #2A2A2A';
+                menu.style.zIndex = '999';
             }
         }
 
-        // ===== SENSORY MODE TOGGLE =====
+        // Sensory mode
         function toggleSensoryMode() {
             document.body.classList.toggle('low-stimulation');
-            const toggle = document.querySelector('.toggle-switch');
-            toggle.classList.toggle('active');
-            
-            // Save preference to localStorage
-            const isLowStim = document.body.classList.contains('low-stimulation');
-            localStorage.setItem('neurobridge-sensory-mode', isLowStim);
-            
-            // Show feedback
-            if (isLowStim) {
-                showNotification('Low-stimulation mode activated', 'info');
-            } else {
-                showNotification('Standard mode restored', 'info');
-            }
+            const toggle = document.getElementById('sensoryToggle');
+            if (toggle) toggle.classList.toggle('active');
+            localStorage.setItem('neurobridge-sensory', document.body.classList.contains('low-stimulation'));
         }
-
-        // Load sensory mode preference
-        if (localStorage.getItem('neurobridge-sensory-mode') === 'true') {
+        if (localStorage.getItem('neurobridge-sensory') === 'true') {
             document.body.classList.add('low-stimulation');
-            document.querySelector('.toggle-switch').classList.add('active');
+            const toggle = document.getElementById('sensoryToggle');
+            if (toggle) toggle.classList.add('active');
         }
 
-        // ===== CHATBOT =====
+        // Chat
         function toggleChat() {
             const panel = document.getElementById('chatPanel');
-            if (panel.style.display === 'none' || panel.style.display === '') {
-                panel.style.display = 'block';
-            } else {
-                panel.style.display = 'none';
-            }
+            panel.style.display = panel.style.display === 'none' || panel.style.display === '' ? 'block' : 'none';
         }
 
         function sendChatMessage() {
@@ -2757,235 +2039,84 @@
             const msg = input.value.trim();
             if (!msg) return;
             
-            const chatMessages = document.getElementById('chatMessages');
-            
-            // Add user message
-            const userDiv = document.createElement('div');
-            userDiv.className = 'chat-message user';
-            userDiv.innerHTML = `
-                <div class="message-bubble">${escapeHtml(msg)}</div>
-                <div class="message-time">Just now</div>
-            `;
-            chatMessages.appendChild(userDiv);
-            
-            // Clear input
+            const messages = document.getElementById('chatMessages');
+            messages.innerHTML += `<div class="chat-message user"><div class="message-bubble">${escapeHtml(msg)}</div><div class="message-time">Just now</div></div>`;
             input.value = '';
+            messages.scrollTop = messages.scrollHeight;
             
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            
-            // Simulate bot response
             setTimeout(() => {
-                const responses = [
-                    "Thanks for your message! Our team will respond within 24 hours.",
-                    "You can also reach us on WhatsApp at +254 100 403 629 for immediate support.",
-                    "Would you like to join our pilot program? I can help you with the application.",
-                    "Our KSL library has 24 free lessons. Would you like me to send the link?",
-                    "We have support groups for caregivers. Would you like to join?",
-                    "The next pilot cohort starts in April 2026. I can add you to the waitlist."
-                ];
-                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                
-                const botDiv = document.createElement('div');
-                botDiv.className = 'chat-message bot';
-                botDiv.innerHTML = `
-                    <div class="message-bubble">${randomResponse}</div>
-                    <div class="message-time">Just now</div>
-                `;
-                chatMessages.appendChild(botDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);
+                let response = "Thanks for your message! Our team will respond within 24 hours. You can also reach us on WhatsApp at +254 100 403 629 for immediate support.";
+                if (msg.toLowerCase().includes('ksl')) response = "Our KSL library has 24+ lessons developed with deaf consultants from Nairobi and Garissa. You can access them in the app at /app!";
+                else if (msg.toLowerCase().includes('pilot')) response = "We're onboarding 15 families in Nairobi and Eastleigh! You can apply by emailing info@neurobridge.co.ke or using the form above.";
+                else if (msg.toLowerCase().includes('adhd')) response = "ADHD support is built into our platform with focus-friendly modules, visual schedules, and structured lessons. Try the demo at /app!";
+                messages.innerHTML += `<div class="chat-message bot"><div class="message-bubble">${response}</div><div class="message-time">Just now</div></div>`;
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
         }
 
-        // Helper to escape HTML
-        function escapeHtml(unsafe) {
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+        function escapeHtml(str) {
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
         }
 
-        // ===== NOTIFICATION SYSTEM =====
-        function showNotification(message, type = 'info') {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 25px;
-                background: ${type === 'success' ? '#27AE60' : type === 'error' ? '#EB001B' : '#3498DB'};
-                color: white;
-                border-radius: 50px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-                z-index: 20001;
-                font-weight: 500;
-                animation: slideIn 0.3s ease;
-            `;
-            notification.textContent = message;
-            
-            // Add animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            document.body.appendChild(notification);
-            
-            // Remove after 5 seconds
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                notification.style.transform = 'translateX(100%)';
-                notification.style.opacity = '0';
-                setTimeout(() => notification.remove(), 300);
-            }, 5000);
+        function showNotification(msg) {
+            const toast = document.createElement('div');
+            toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#1A1A1A;border-left:4px solid #EB001B;color:white;padding:15px 20px;border-radius:8px;z-index:20001;box-shadow:0 5px 15px rgba(0,0,0,0.3);';
+            toast.textContent = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
         }
 
-        // ===== SMOOTH SCROLL =====
+        // Modal
+        const modalContent = {
+            learner: { icon: '<i class="fas fa-graduation-cap"></i>', title: 'Learner Portal', desc: 'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.' },
+            ksl: { icon: '<i class="fas fa-hands"></i>', title: 'KSL Integration', desc: '24+ Kenyan Sign Language lessons developed with deaf consultants from Nairobi and Garissa.' },
+            parent: { icon: '<i class="fas fa-heart"></i>', title: 'Parent Hub', desc: 'Support resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children.' },
+            cbc: { icon: '<i class="fas fa-book"></i>', title: 'CBC Curriculum', desc: 'Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports.' }
+        };
+        function openModal(type) {
+            const c = modalContent[type] || modalContent.learner;
+            document.getElementById('modalIcon').innerHTML = c.icon;
+            document.getElementById('modalTitle').innerHTML = c.title;
+            document.getElementById('modalDescription').innerHTML = c.desc;
+            document.getElementById('infoModal').classList.add('active');
+        }
+        function closeModal(e) {
+            if (!e || e.target.classList.contains('modal') || e.target.classList.contains('modal-close') || e.target.closest('.btn-secondary')) {
+                document.getElementById('infoModal').classList.remove('active');
+            }
+        }
+
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollUp');
+            if (window.scrollY > 500) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
                 if (target) {
+                    e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
 
-        // ===== SCROLL REVEAL ANIMATION =====
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.glass-card, .pillar-card, .video-card, .feature-card, .problem-card, .who-card, .slide-card, .ksl-feature').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            observer.observe(el);
+        // Enter key for chat
+        document.getElementById('chatInput')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendChatMessage();
         });
 
-        // ===== SCROLL TO TOP BUTTON =====
-        window.addEventListener('scroll', function() {
-            const scrollUp = document.getElementById('scrollUp');
-            if (window.scrollY > 500) {
-                scrollUp.classList.add('visible');
-            } else {
-                scrollUp.classList.remove('visible');
-            }
-        });
-
-        // ===== VIDEO PLAY SIMULATION =====
-        function playVideo(videoId) {
-            const videos = {
-                greetings: 'Basic Greetings in KSL',
-                school: 'School Words in KSL',
-                numbers: 'Numbers 1-10 in KSL',
-                family: 'Family Members in KSL',
-                colors: 'Colors in KSL',
-                food: 'Food & Drinks in KSL'
-            };
-            
-            showNotification(`Playing: ${videos[videoId] || 'KSL Video'}`, 'info');
-        }
-
-        // ===== MODAL SYSTEM =====
-        function openModal(type) {
-            const modal = document.getElementById('infoModal');
-            const icon = document.getElementById('modalIcon');
-            const title = document.getElementById('modalTitle');
-            const desc = document.getElementById('modalDescription');
-            
-            const content = {
-                learner: {
-                    icon: '<i class="fas fa-graduation-cap"></i>',
-                    title: 'Learner Portal',
-                    desc: 'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds. Includes personalized learning paths and reward systems.'
-                },
-                ksl: {
-                    icon: '<i class="fas fa-hands"></i>',
-                    title: 'KSL Integration',
-                    desc: 'Kenyan Sign Language video library with 24 lessons, developed with deaf consultants from Nairobi and Garissa. Features slow-motion, quizzes, and offline access.'
-                },
-                parent: {
-                    icon: '<i class="fas fa-heart"></i>',
-                    title: 'Parent Hub',
-                    desc: 'Support resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children. Access webinars, guides, and local support groups.'
-                },
-                cbc: {
-                    icon: '<i class="fas fa-book"></i>',
-                    title: 'CBC Curriculum',
-                    desc: 'Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports, modified assessments, and individualized education plans (IEPs).'
-                }
-            };
-            
-            const selected = content[type] || content.learner;
-            icon.innerHTML = selected.icon;
-            title.textContent = selected.title;
-            desc.textContent = selected.desc;
-            
-            modal.classList.add('active');
-        }
-
-        function closeModal(event) {
-            if (!event || event.target.classList.contains('modal') || event.target.classList.contains('modal-close') || event.target.closest('.btn-secondary')) {
-                document.getElementById('infoModal').classList.remove('active');
-            }
-        }
-
-        // ===== PILOT FORM SIMULATION =====
-        function openPilotForm() {
-            showNotification('Pilot application form would open here. For now, please email info@neurobridge.co.ke', 'info');
-        }
-
-        // ===== ENTER KEY FOR CHAT =====
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendChatMessage();
-            }
-        });
-
-        // ===== LOADING STATES =====
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-            });
-        });
-
-        // ===== ANALYTICS SIMULATION =====
-        console.log('NeuroBridge Africa Landing Page loaded successfully');
-        console.log('Stats: 950+ learners, 300+ downloads, 200k+ reach, 24+ KSL modules');
-
-        // ===== TOUCH OPTIMIZATIONS FOR MOBILE =====
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-        }
-
-        // ===== INITIALIZE =====
-        window.addEventListener('load', () => {
-            console.log('NeuroBridge Africa ready');
-            
-            // Check if we need to show any notifications
-            if (window.location.hash === '#join') {
-                setTimeout(() => {
-                    showNotification('Welcome! Interested in joining our pilot?', 'info');
-                }, 1000);
-            }
-        });
+        console.log('NeuroBridge Africa - Fully branded to match app!');
     </script>
 </body>
 </html>
