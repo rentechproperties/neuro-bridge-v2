@@ -78,3 +78,39 @@ footer a {
     color: var(--mc-yellow) !important;
     font-weight: bold;
 }
+
+/* App-Style Modern UI Tweaks */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Rebranding the Cards to match the App's Glassmorphism */
+.glass-card, .pillar-card, .video-card, .feature-card, .problem-card, .who-card, .slide-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-top: 4px solid var(--mc-orange) !important; /* The MCF accent */
+    border-radius: 15px !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* App-style Header: Fixed, Glassy, and Professional */
+nav {
+    background: rgba(35, 31, 32, 0.95) !important; /* MC Black with slight transparency */
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid var(--mc-orange);
+}
+
+/* Hero Section: Matching the App's cleaner look */
+.hero-section {
+    background: linear-gradient(135deg, var(--mc-warm) 0%, #ffffff 100%) !important;
+    color: var(--mc-black) !important;
+}
+
+.hero-section h1 {
+    background: var(--mc-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
