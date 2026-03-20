@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>NeuroBridge Africa | Complete Inclusive EdTech Platform</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="NeuroBridge Africa: Complete inclusive EdTech platform for neurodivergent and deaf learners. KSL integration, AI assistant, counselor access, and comprehensive support system.">
+    <meta name="keywords" content="neurodivergent, autism, ADHD, dyslexia, deaf education, KSL, Kenyan Sign Language, inclusive education, Kenya, EdTech platform">
+    <meta name="author" content="Ability Inclusion Alliance">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neurobridge.co.ke">
+    <meta property="og:title" content="NeuroBridge Africa | Complete Inclusive EdTech Platform">
+    <meta property="og:description" content="Empowering neurodiversity across Africa with comprehensive support tools.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.css">
+    
+    <style>
+        /* ===== ROOT VARIABLES - CORPORATE DESIGN SYSTEM ===== */
+        :root {
+            --primary: #EB001B;
+            --primary-dark: #B30015;
+            --primary-light: #330000;
+            --secondary: #F79E1B;
+            --secondary-light: #332200;
+            --accent-green: #27AE60;
+            --accent-blue: #0A3B5C;
+            --accent-purple: #9B59B6;
+            
+            --bg-dark: #0F0F0F;
+            --bg-card: #1A1A1A;
+            --bg-light: #2A2A2A;
+            
+            --text-primary: #FFFFFF;
+            --text-secondary: #D1D5DB;
+            --text-muted: #9CA3AF;
+            
+            --border: #2A2A2A;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.3);
+            --shadow-md: 0 10px 15px rgba(0,0,0,0.4);
+            --shadow-lg: 0 20px 25px rgba(0,0,0,0.5);
+            --shadow-hover: 0 30px 35px rgba(235,0,27,0.2);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* ===== STICKY NAVBAR ===== */
+        .navbar {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-3d {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 800;
+            transform: perspective(500px) rotateY(5deg);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .logo-icon:hover {
+            transform: perspective(500px) rotateY(0deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 100px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(235,0,27,0.05) 0%, transparent 70%);
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 20px rgba(235,0,27,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(235,0,27,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== IMPACT STATS SECTION ===== */
+        .impact-section {
+            padding: 60px 5%;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* ===== PROGRAMS SECTION ===== */
+        .programs-section {
+            padding: 100px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .program-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(235,0,27,0.1), rgba(247,158,27,0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .program-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ===== DASHBOARD SECTION ===== */
+        .dashboard-section {
+            padding: 100px 5%;
+            background: var(--bg-card);
+        }
+
+        .login-screen {
+            max-width: 400px;
+            margin: 0 auto 60px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-screen h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(235,0,27,0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(235,0,27,0.3);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .dashboard-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin: 0 auto 15px;
+        }
+
+        /* ===== KSL LEARNING HUB ===== */
+        .ksl-hub {
+            padding: 80px 5%;
+        }
+
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 10px;
+            margin: 40px 0;
+        }
+
+        .alphabet-card {
+            aspect-ratio: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .alphabet-card:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .alphabet-card .gesture-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.6rem;
+        }
+
+        /* ===== AI ASSISTANT ===== */
+        .chat-bubble {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            z-index: 9999;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(235,0,27,0.3);
+            transition: var(--transition);
+            border: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(235,0,27,0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(235,0,27,0); }
+            100% { box-shadow: 0 0 0 0 rgba(235,0,27,0); }
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .chat-panel {
+            position: fixed;
+            bottom: 190px;
+            right: 28px;
+            width: 380px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            overflow: hidden;
+            display: none;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+        }
+
+        .bot .message-bubble {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            border-bottom-left-radius: 5px;
+        }
+
+        .user .message-bubble {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+            margin-left: auto;
+        }
+
+        .chat-input-area {
+            padding: 15px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            color: var(--text-primary);
+        }
+
+        .chat-send {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 190px;
+            right: 28px;
+            z-index: 9999;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            transition: var(--transition);
+            text-decoration: none;
+            bottom: 100px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* ===== DATA VISUALIZATION ===== */
+        .charts-section {
+            padding: 80px 5%;
+            background: var(--bg-card);
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .chart-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .chart-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .progress-bars {
+            margin-top: 30px;
+        }
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* ===== RESOURCES SECTION ===== */
+        .resources-section {
+            padding: 100px 5%;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .resource-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--bg-light);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 15px 0;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            padding: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 80px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-primary);
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-up {
+            position: fixed;
+            bottom: 100px;
+            left: 28px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-up.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .stats-grid,
+            .programs-grid,
+            .dashboard-grid,
+            .resources-grid,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .stats-grid,
+            .programs-grid,
+            .dashboard-grid,
+            .resources-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .alphabet-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .chat-panel {
+                width: 300px;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        .high-contrast {
+            --primary: #FF0000;
+            --secondary: #FFA500;
+            --bg-dark: #000000;
+            --bg-card: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #F0F0F0;
+        }
+
+        *:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-3d">
+                <div class="logo-icon">🧠</div>
+                <span class="logo-text">NEUROBRIDGE</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#join" class="nav-cta">Join Platform</a></li>
+            </ul>
+            
+            <button class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="hero-gradient-text">Empowering Neurodiversity</span><br>
+                Across Africa
+            </h1>
+            <p class="hero-subtitle">A complete inclusive platform for neurodivergent and deaf learners. Kenyan Sign Language, AI assistance, counselor access, and comprehensive support tools.</p>
+            <div class="hero-buttons">
+                <a href="#join" class="btn btn-primary">Get Support</a>
+                <a href="#dashboard" class="btn btn-secondary">Join Platform</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Section -->
+    <section class="impact-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" data-target="950">0</div>
+                <div class="stat-label">Learners Supported</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="12">0</div>
+                <div class="stat-label">Schools Reached</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Parents Engaged</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-label">Counselors Onboarded</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section - 6 Core Pillars -->
+    <section id="programs" class="programs-section">
+        <div class="section-header">
+            <h2>Our <span style="color: var(--primary);">6 Core Pillars</span></h2>
+            <p>Complete inclusion built from the ground up</p>
+        </div>
+        
+        <div class="programs-grid">
+            <div class="program-card" onclick="openModal('learner')">
+                <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Learner Support</h3>
+                <p>Focus-friendly modules, visual learning, and personalized paths for neurodivergent minds.</p>
+            </div>
+            <div class="program-card" onclick="openModal('parent')">
+                <div class="program-icon"><i class="fas fa-heart"></i></div>
+                <h3>Parent Support</h3>
+                <p>Resources, community, and daily guidance for caregivers of neurodivergent children.</p>
+            </div>
+            <div class="program-card" onclick="openModal('counselor')">
+                <div class="program-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Counselor Access</h3>
+                <p>Direct connection to trained counselors specializing in neurodiversity.</p>
+            </div>
+            <div class="program-card" onclick="openModal('sensory')">
+                <div class="program-icon"><i class="fas fa-brain"></i></div>
+                <h3>Sensory Tools</h3>
+                <p>Low-stimulation interface, break reminders, and calming features.</p>
+            </div>
+            <div class="program-card" onclick="openModal('cbc')">
+                <div class="program-icon"><i class="fas fa-book"></i></div>
+                <h3>CBC Support</h3>
+                <p>Kenyan curriculum adapted for diverse learning needs.</p>
+            </div>
+            <div class="program-card" onclick="openModal('ksl')">
+                <div class="program-icon"><i class="fas fa-hands"></i></div>
+                <h3>KSL Learning Hub</h3>
+                <p>Kenyan Sign Language alphabet, numbers, and full lessons.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KSL Learning Hub -->
+    <section class="ksl-hub">
+        <div class="section-header">
+            <h2>KSL <span style="color: var(--secondary);">Learning Hub</span></h2>
+            <p>26 gestures · Numbers 1-10 · Full video library</p>
+        </div>
+
+        <div class="alphabet-grid">
+            <div class="alphabet-card">A<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">B<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">C<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">D<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">E<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">F<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">G<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">H<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">I<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">J<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">K<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">L<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">M<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">N<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">O<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">P<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">Q<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">R<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">S<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">T<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">U<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">V<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">W<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">X<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">Y<span class="gesture-badge">✋</span></div>
+            <div class="alphabet-card">Z<span class="gesture-badge">✋</span></div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="login-screen">
+            <h3>Access Your Dashboard</h3>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password">
+            </div>
+            <button class="login-btn" onclick="showDashboard()">Sign In</button>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-secondary);">Demo: Use any credentials</p>
+        </div>
+
+        <div class="dashboard-grid" id="dashboardGrid" style="display: none;">
+            <div class="dashboard-card" onclick="openModal('learning')">
+                <div class="dashboard-icon"><i class="fas fa-book-open"></i></div>
+                <h4>Access Learning Tools</h4>
+                <p style="color: var(--text-secondary);">1,000+ interactive lessons</p>
+            </div>
+            <div class="dashboard-card" onclick="openModal('counselor')">
+                <div class="dashboard-icon"><i class="fas fa-comments"></i></div>
+                <h4>Talk to a Counselor</h4>
+                <p style="color: var(--text-secondary);">Direct support access</p>
+            </div>
+            <div class="dashboard-card" onclick="openModal('parent')">
+                <div class="dashboard-icon"><i class="fas fa-users"></i></div>
+                <h4>Parent Guidance</h4>
+                <p style="color: var(--text-secondary);">Resources & community</p>
+            </div>
+            <div class="dashboard-card" onclick="openModal('sensory')">
+                <div class="dashboard-icon"><i class="fas fa-brain"></i></div>
+                <h4>Sensory Support Tools</h4>
+                <p style="color: var(--text-secondary);">Calming features</p>
+            </div>
+            <div class="dashboard-card" onclick="openModal('ksl')">
+                <div class="dashboard-icon"><i class="fas fa-hands"></i></div>
+                <h4>KSL Learning Hub</h4>
+                <p style="color: var(--text-secondary);">Sign language lessons</p>
+            </div>
+            <div class="dashboard-card" onclick="openModal('cbc')">
+                <div class="dashboard-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4>CBC Curriculum</h4>
+                <p style="color: var(--text-secondary);">Adapted learning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="charts-section">
+        <div class="section-header">
+            <h2>Our <span style="color: var(--primary);">Impact</span></h2>
+            <p>Measurable results in learner engagement</p>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Learner Engagement</h3>
+                <div class="counter-number" id="engagementCounter">75%</div>
+                <div class="progress-bars">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Focus Improvement</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>KSL Mastery</span>
+                            <span>72%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Parent Satisfaction</span>
+                            <span>94%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 94%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3>Growth Metrics</h3>
+                <div class="counter-number" id="familiesCounter">500+</div>
+                <p style="color: var(--text-secondary); text-align: center;">Families Supported</p>
+                <div style="margin-top: 30px;">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Year 1 Target</span>
+                            <span>1,200</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 79%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Schools Partnered</span>
+                            <span>12</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="section-header">
+            <h2>Resources & <span style="color: var(--secondary);">Guides</span></h2>
+            <p>For parents, teachers, and learners</p>
+        </div>
+
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
+                <h4>Parent's Guide to Neurodiversity</h4>
+                <span class="resource-category">Parents</span>
+                <p style="color: var(--text-secondary); margin-top: 10px;">Understanding and supporting your neurodivergent child.</p>
+                <div class="video-placeholder">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4>Inclusive Classroom Strategies</h4>
+                <span class="resource-category">Teachers</span>
+                <p style="color: var(--text-secondary); margin-top: 10px;">Practical techniques for diverse learners.</p>
+                <div class="video-placeholder">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon"><i class="fas fa-hands"></i></div>
+                <h4>KSL Basics for Families</h4>
+                <span class="resource-category">Learners</span>
+                <p style="color: var(--text-secondary); margin-top: 10px;">Learn Kenyan Sign Language together.</p>
+                <div class="video-placeholder">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h3>Request Support</h3>
+                <form onsubmit="submitContact(event)">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <textarea placeholder="How can we help you?" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3 style="margin-bottom: 30px;">Get in Touch</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@neurobridge.co.ke</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254 100 403 629</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+254 100 403 629</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Nairobi, Kenya</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.2rem;">🧠</div>
+                    <span style="font-size: 1.2rem; font-weight: 700;">NEUROBRIDGE AFRICA</span>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">A women-led initiative of Ability Inclusion Alliance, registered in Kenya. Building inclusive education for neurodivergent and deaf learners across Africa.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#resources">Parent Guides</a></li>
+                    <li><a href="#resources">Teacher Tools</a></li>
+                    <li><a href="#ksl">KSL Library</a></li>
+                    <li><a href="#research">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for Mastercard Foundation EdTech Fellowship.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <button class="chat-bubble" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollUp">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Chat Panel -->
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <h4><i class="fas fa-robot"></i> NeuroBridge Assistant</h4>
+            <button onclick="toggleChat()" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <div class="message-bubble">Hello! I'm your NeuroBridge assistant. How can I help you today?</div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="infoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 20000; align-items: center; justify-content: center;">
+        <div style="background: var(--bg-card); max-width: 500px; width: 90%; border-radius: 20px; padding: 40px; position: relative;">
+            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer;">✕</button>
+            <div id="modalIcon" style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white;"></div>
+            <h3 id="modalTitle" style="text-align: center; margin-bottom: 15px;"></h3>
+            <p id="modalDescription" style="color: var(--text-secondary); text-align: center; margin-bottom: 25px;"></p>
+            <button onclick="closeModal()" class="btn btn-primary" style="width: 100%;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+                hamburger.classList.remove('active');
+            } else {
+                menu.style.display = 'flex';
+                menu.style.flexDirection = 'column';
+                menu.style.position = 'absolute';
+                menu.style.top = '80px';
+                menu.style.left = '0';
+                menu.style.width = '100%';
+                menu.style.background = 'var(--bg-card)';
+                menu.style.padding = '20px';
+                menu.style.zIndex = '1000';
+                hamburger.classList.add('active');
+            }
+        }
+
+        // Counter animation
+        function animateNumbers() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.round(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Start animation when section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.impact-section');
+        if (statsSection) observer.observe(statsSection);
+
+        // Dashboard login
+        function showDashboard() {
+            document.getElementById('dashboardGrid').style.display = 'grid';
+            document.querySelector('.login-screen').style.display = 'none';
+            alert('Welcome to your dashboard!');
+        }
+
+        // Chat functions
+        function toggleChat() {
+            const panel = document.getElementById('chatPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+            
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // Add user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'chat-message user';
+            userDiv.innerHTML = `<div class="message-bubble">${msg}</div>`;
+            chatMessages.appendChild(userDiv);
+            
+            input.value = '';
+            
+            // Bot response based on keywords
+            setTimeout(() => {
+                let response = "Thank you for your message. A counselor will respond within 24 hours.";
+                
+                if (msg.toLowerCase().includes('autism') || msg.toLowerCase().includes('support')) {
+                    response = "I can connect you with our autism support specialists. Would you like to schedule a consultation?";
+                } else if (msg.toLowerCase().includes('ksl') || msg.toLowerCase().includes('sign')) {
+                    response = "Our KSL Learning Hub has 26 alphabet gestures and numbers 1-10. Would you like me to guide you?";
+                } else if (msg.toLowerCase().includes('parent') || msg.toLowerCase().includes('caregiver')) {
+                    response = "We have a parent support group and resources. Would you like to join our WhatsApp community?";
+                }
+                
+                const botDiv = document.createElement('div');
+                botDiv.className = 'chat-message bot';
+                botDiv.innerHTML = `<div class="message-bubble">${response}</div>`;
+                chatMessages.appendChild(botDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+
+        // Modal functions
+        function openModal(type) {
+            const modal = document.getElementById('infoModal');
+            const icon = document.getElementById('modalIcon');
+            const title = document.getElementById('modalTitle');
+            const desc = document.getElementById('modalDescription');
+            
+            const content = {
+                learner: {
+                    icon: '<i class="fas fa-graduation-cap"></i>',
+                    title: 'Learner Support',
+                    desc: 'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.'
+                },
+                parent: {
+                    icon: '<i class="fas fa-heart"></i>',
+                    title: 'Parent Support',
+                    desc: 'Resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children.'
+                },
+                counselor: {
+                    icon: '<i class="fas fa-comments"></i>',
+                    title: 'Counselor Access',
+                    desc: 'Direct connection to trained counselors specializing in neurodiversity and family support.'
+                },
+                sensory: {
+                    icon: '<i class="fas fa-brain"></i>',
+                    title: 'Sensory Tools',
+                    desc: 'Low-stimulation interface, break reminders, calming colors, and distraction-free learning environment.'
+                },
+                cbc: {
+                    icon: '<i class="fas fa-book"></i>',
+                    title: 'CBC Support',
+                    desc: 'Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports.'
+                },
+                ksl: {
+                    icon: '<i class="fas fa-hands"></i>',
+                    title: 'KSL Learning Hub',
+                    desc: 'Kenyan Sign Language alphabet, numbers 1-10, and full video lessons with quizzes.'
+                },
+                learning: {
+                    icon: '<i class="fas fa-book-open"></i>',
+                    title: 'Learning Tools',
+                    desc: 'Access 1,000+ interactive lessons across mathematics, science, language, and life skills.'
+                }
+            };
+            
+            const selected = content[type] || content.learner;
+            icon.innerHTML = selected.icon;
+            title.textContent = selected.title;
+            desc.textContent = selected.desc;
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // Contact form
+        function submitContact(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! We will contact you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollUp = document.getElementById('scrollUp');
+            if (window.scrollY > 500) {
+                scrollUp.classList.add('visible');
+            } else {
+                scrollUp.classList.remove('visible');
+            }
+        });
+
+        // Alphabet card clicks
+        document.querySelectorAll('.alphabet-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const letter = this.textContent.trim()[0];
+                openModal('ksl');
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Enter key for chat
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+
+        // Initial load
+        console.log('NeuroBridge Africa - Complete Inclusive Platform Loaded');
+    </script>
+</body>
+</html>
