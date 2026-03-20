@@ -334,6 +334,18 @@ body{font-family:'DM Sans',sans-serif;background:#0D0B0B;color:#fff;overflow-x:h
 </style>
 </head>
 <body>
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,11,11,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,95,0,0.2); padding: 10px 5%; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #EB001B, #FF5F00); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: bold;">NB</div>
+        <span style="font-weight: 700; font-size: 0.9rem;">NeuroBridge Africa</span>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="/" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500;">Home</a>
+        <a href="/app" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500;">MVP App</a>
+        <a href="/deck" style="background: linear-gradient(135deg, #EB001B, #FF5F00); padding: 6px 14px; border-radius: 6px; color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600;">Pitch Deck</a>
+    </div>
+</nav>
+
 
 <!-- PROGRESS -->
 <div class="progress-line" id="progressLine" style="width:8.33%"></div>
@@ -355,7 +367,7 @@ body{font-family:'DM Sans',sans-serif;background:#0D0B0B;color:#fff;overflow-x:h
 
 <!-- ═══ SLIDE 1 — COVER ═══ -->
 <div class="slide active" id="slide-0">
-  <div class="s1">
+  <div class="s1" style="padding-top: 80px;">
     <div class="s1-orb1"></div><div class="s1-orb2"></div><div class="s1-grid"></div>
     <div class="s1-badge">Mastercard Foundation EdTech Fellowship · Kenya Cohort 4 · 2026</div>
     <h1>NEURO<span class="line2">BRIDGE AFRICA</span></h1>
