@@ -32,37 +32,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* ===== ROOT VARIABLES - VIBRANT CORPORATE SYSTEM ===== */
+        /* ===== ROOT VARIABLES ===== */
         :root {
-            /* Mastercard Foundation Colors */
+            --mc-dark: #000000;
+            --light-bg: #050505;
+            --card-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
             --mc-red: #EB001B;
             --mc-orange: #F79E1B;
-            --mc-yellow: #FDB913;
-            --mc-dark: #0A0A0A;
-            --light-bg: #FFFFFF;
-            
-            /* Vibrant Accent Colors */
-            --accent-yellow: #F1C40F;
-            --accent-blue: #3498DB;
-            --accent-purple: #9B59B6;
-            --accent-green: #27AE60;
-            --accent-teal: #1ABC9C;
-            --accent-pink: #E83E8C;
-            
-            /* UI Colors */
-            --card-bg: #FFFFFF;
-            --border-light: #E2E8F0;
-            --text-primary: #0A0A0A;
-            --text-secondary: #4A5568;
-            --text-muted: #718096;
-            --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
-            --shadow-md: 0 10px 25px rgba(0,0,0,0.03);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.04);
-            --shadow-hover: 0 30px 50px rgba(235,0,27,0.08);
-            
-            /* Sensory Mode Variables */
-            --transition-speed: 0.3s;
-            --animation-enabled: 1;
+            --accent-purple: #A855F7;
+            --accent-blue: #3B82F6;
+            --accent-pink: #EC4899;
+            --accent-green: #10B981;
+            --accent-teal: #14B8A6;
+            --accent-yellow: #F59E0B;
         }
 
         * {
@@ -71,84 +55,45 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        body {
-            background: var(--light-bg);
-            color: var(--text-primary);
+        body { 
+            background-color: var(--light-bg) !important; 
+            color: var(--text-primary) !important; 
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+        /* Force all text to be readable */
+        p, h1, h2, h3, h4, h5, h6, span, li, div, b, strong { 
+            color: #FFFFFF !important; 
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        /* ===== GLASSMORPHISM & CARD SYSTEMS ===== */
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: transparent;
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--mc-red), var(--mc-orange));
-            opacity: 0;
-            transition: opacity var(--transition-speed);
-        }
-
-        .glass-card:hover::before {
-            opacity: 1;
+        /* Card System */
+        .glass-card, .feature-card, .problem-card, .pillar-card, .who-card, .why-card, .slide-card, .ksl-feature {
+            background: var(--card-bg) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 15px !important;
+            padding: 30px !important;
+            margin-bottom: 20px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
         }
 
         /* Color-coded card borders */
-        .card-red { border-top: 4px solid var(--mc-red); }
-        .card-orange { border-top: 4px solid var(--mc-orange); }
-        .card-yellow { border-top: 4px solid var(--accent-yellow); }
-        .card-blue { border-top: 4px solid var(--accent-blue); }
-        .card-purple { border-top: 4px solid var(--accent-purple); }
-        .card-green { border-top: 4px solid var(--accent-green); }
-        .card-teal { border-top: 4px solid var(--accent-teal); }
-        .card-pink { border-top: 4px solid var(--accent-pink); }
+        .card-red { border-top: 4px solid var(--mc-red) !important; }
+        .card-orange { border-top: 4px solid var(--mc-orange) !important; }
+        .card-purple { border-top: 4px solid var(--accent-purple) !important; }
+        .card-blue { border-top: 4px solid var(--accent-blue) !important; }
 
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER & NAVIGATION (DARK MODE) ===== */
         .navbar {
-            background: white;
-            border-bottom: 1px solid var(--border-light);
+            background: #000000 !important;
+            border-bottom: 2px solid var(--mc-red);
             padding: 20px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
         }
 
         .nav-container {
@@ -162,24 +107,35 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--mc-red), var(--mc-orange));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            font-weight: 800;
+            height: 50px;
+            width: auto;
+            /* This makes the logo pop on the black background */
+            filter: brightness(0) invert(1); 
         }
 
-        .logo-text {
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #FFFFFF !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--mc-orange) !important;
+        }
+
+       .logo-text {
             display: flex;
             flex-direction: column;
         }
@@ -187,13 +143,13 @@
         .logo-main {
             font-size: 1.4rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: #FFFFFF !important; /* Forced White */
             line-height: 1.2;
         }
 
         .logo-sub {
             font-size: 0.8rem;
-            color: var(--mc-orange);
+            color: var(--mc-orange) !important;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -206,14 +162,14 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
+            color: #FFFFFF !important; /* Forced White for readability */
+            font-weight: 600;
             font-size: 0.95rem;
-            transition: color var(--transition-speed);
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--mc-red);
+            color: var(--mc-orange) !important;
         }
 
         .nav-cta {
@@ -301,7 +257,7 @@
 
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 20px;
+            margin-bottom: 20px;}
             line-height: 1.1;
         }
 

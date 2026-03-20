@@ -1,0 +1,18 @@
+﻿:root {
+  /* Mastercard Foundation Official Brand Colours */
+  --mc-red:    #EB001B;
+  --mc-orange: #FF5F00;
+  --mc-yellow: #F79E1B;
+  --mc-black:  #231F20;
+  --mc-warm:   #F5F2EE;
+  --mc-gray:   #3D3935;
+  --mc-mid-gray:#7A7673;
+
+  /* The Official Gradient */
+  --mc-gradient: linear-gradient(90deg, #EB001B, #FF5F00, #F79E1B);
+
+  /* Quick-use Classes */
+  --bg-main: var(--mc-warm);
+  --text-main: var(--mc-gray);
+  --btn-primary: var(--mc-orange);
+}
