@@ -1,1685 +1,1305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>NeuroBridge Africa | Complete Inclusive EdTech Platform</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="description" content="NeuroBridge Africa: Complete inclusive EdTech platform for neurodivergent and deaf learners. KSL integration, AI assistant, counselor access, and comprehensive support system.">
-    <meta name="keywords" content="neurodivergent, autism, ADHD, dyslexia, deaf education, KSL, Kenyan Sign Language, inclusive education, Kenya, EdTech platform">
-    <meta name="author" content="Ability Inclusion Alliance">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://neurobridge.co.ke">
-    <meta property="og:title" content="NeuroBridge Africa | Complete Inclusive EdTech Platform">
-    <meta property="og:description" content="Empowering neurodiversity across Africa with comprehensive support tools.">
-    
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.css">
-    
-    <style>
-        /* ===== ROOT VARIABLES - CORPORATE DESIGN SYSTEM ===== */
-        :root {
-            --primary: #EB001B;
-            --primary-dark: #B30015;
-            --primary-light: #330000;
-            --secondary: #F79E1B;
-            --secondary-light: #332200;
-            --accent-green: #27AE60;
-            --accent-blue: #0A3B5C;
-            --accent-purple: #9B59B6;
-            
-            --bg-dark: #0F0F0F;
-            --bg-card: #1A1A1A;
-            --bg-light: #2A2A2A;
-            
-            --text-primary: #FFFFFF;
-            --text-secondary: #D1D5DB;
-            --text-muted: #9CA3AF;
-            
-            --border: #2A2A2A;
-            --shadow-sm: 0 4px 6px rgba(0,0,0,0.3);
-            --shadow-md: 0 10px 15px rgba(0,0,0,0.4);
-            --shadow-lg: 0 20px 25px rgba(0,0,0,0.5);
-            --shadow-hover: 0 30px 35px rgba(235,0,27,0.2);
-            
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); }
-        h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.2rem; }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        /* ===== STICKY NAVBAR ===== */
-        .navbar {
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo-3d {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            font-weight: 800;
-            transform: perspective(500px) rotateY(5deg);
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-        }
-
-        .logo-icon:hover {
-            transform: perspective(500px) rotateY(0deg) scale(1.05);
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white !important;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .nav-cta::after {
-            display: none;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            padding: 100px 5%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(235,0,27,0.05) 0%, transparent 70%);
-            animation: rotate 60s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            box-shadow: 0 10px 20px rgba(235,0,27,0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(235,0,27,0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* ===== IMPACT STATS SECTION ===== */
-        .impact-section {
-            padding: 60px 5%;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .stat-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* ===== PROGRAMS SECTION ===== */
-        .programs-section {
-            padding: 100px 5%;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .program-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .program-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-
-        .program-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(235,0,27,0.1), rgba(247,158,27,0.1));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .program-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .program-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* ===== DASHBOARD SECTION ===== */
-        .dashboard-section {
-            padding: 100px 5%;
-            background: var(--bg-card);
-        }
-
-        .login-screen {
-            max-width: 400px;
-            margin: 0 auto 60px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .login-screen h3 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 15px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(235,0,27,0.2);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(235,0,27,0.3);
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .dashboard-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .dashboard-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin: 0 auto 15px;
-        }
-
-        /* ===== KSL LEARNING HUB ===== */
-        .ksl-hub {
-            padding: 80px 5%;
-        }
-
-        .alphabet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-            gap: 10px;
-            margin: 40px 0;
-        }
-
-        .alphabet-card {
-            aspect-ratio: 1;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .alphabet-card:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .alphabet-card .gesture-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            width: 20px;
-            height: 20px;
-            background: var(--accent-purple);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.6rem;
-        }
-
-        /* ===== AI ASSISTANT ===== */
-        .chat-bubble {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            z-index: 9999;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(235,0,27,0.3);
-            transition: var(--transition);
-            border: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(235,0,27,0.4); }
-            70% { box-shadow: 0 0 0 20px rgba(235,0,27,0); }
-            100% { box-shadow: 0 0 0 0 rgba(235,0,27,0); }
-        }
-
-        .chat-bubble:hover {
-            transform: scale(1.1) translateY(-5px);
-        }
-
-        .chat-panel {
-            position: fixed;
-            bottom: 190px;
-            right: 28px;
-            width: 380px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow-lg);
-            z-index: 10000;
-            overflow: hidden;
-            display: none;
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-messages {
-            padding: 20px;
-            height: 300px;
-            overflow-y: auto;
-        }
-
-        .chat-message {
-            margin-bottom: 15px;
-        }
-
-        .message-bubble {
-            max-width: 80%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            font-size: 0.95rem;
-        }
-
-        .bot .message-bubble {
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            border-bottom-left-radius: 5px;
-        }
-
-        .user .message-bubble {
-            background: var(--primary);
-            color: white;
-            border-bottom-right-radius: 5px;
-            margin-left: auto;
-        }
-
-        .chat-input-area {
-            padding: 15px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 10px;
-        }
-
-        .chat-input-area input {
-            flex: 1;
-            padding: 12px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 25px;
-            color: var(--text-primary);
-        }
-
-        .chat-send {
-            width: 45px;
-            height: 45px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        /* ===== WHATSAPP FLOAT ===== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 190px;
-            right: 28px;
-            z-index: 9999;
-            width: 70px;
-            height: 70px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.2rem;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-            transition: var(--transition);
-            text-decoration: none;
-            bottom: 100px;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-5px);
-        }
-
-        /* ===== DATA VISUALIZATION ===== */
-        .charts-section {
-            padding: 80px 5%;
-            background: var(--bg-card);
-        }
-
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .chart-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .chart-card h3 {
-            margin-bottom: 20px;
-        }
-
-        .progress-bars {
-            margin-top: 30px;
-        }
-
-        .progress-item {
-            margin-bottom: 20px;
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            color: var(--text-secondary);
-        }
-
-        .progress-bar {
-            height: 8px;
-            background: var(--bg-light);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 4px;
-            transition: width 1.5s ease;
-        }
-
-        .counter-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* ===== RESOURCES SECTION ===== */
-        .resources-section {
-            padding: 100px 5%;
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .resource-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            transition: var(--transition);
-        }
-
-        .resource-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .resource-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .resource-category {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--bg-light);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin: 15px 0;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px;
-        }
-
-        .contact-form h3 {
-            margin-bottom: 30px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-primary);
-        }
-
-        .contact-form textarea {
-            height: 120px;
-            resize: none;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .contact-info {
-            padding: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            color: var(--text-secondary);
-        }
-
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-card);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            padding: 80px 5% 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto 50px;
-        }
-
-        .footer-col h4 {
-            color: var(--text-primary);
-            margin-bottom: 25px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        /* ===== SCROLL TO TOP ===== */
-        .scroll-up {
-            position: fixed;
-            bottom: 100px;
-            left: 28px;
-            z-index: 9999;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-up.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .stats-grid,
-            .programs-grid,
-            .dashboard-grid,
-            .resources-grid,
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .stats-grid,
-            .programs-grid,
-            .dashboard-grid,
-            .resources-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .alphabet-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
-            
-            .chat-panel {
-                width: 300px;
-            }
-        }
-
-        /* ===== ACCESSIBILITY ===== */
-        .high-contrast {
-            --primary: #FF0000;
-            --secondary: #FFA500;
-            --bg-dark: #000000;
-            --bg-card: #1A1A1A;
-            --text-primary: #FFFFFF;
-            --text-secondary: #F0F0F0;
-        }
-
-        *:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>NeuroBridge Africa | Complete Inclusive Platform</title>
+<meta name="description" content="NeuroBridge Africa: Complete inclusive EdTech platform for neurodivergent and deaf learners across Kenya. KSL, AI tutor, counselor access, caregiver support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ═══════════════════════════════════════════
+   BRAND: Match live site — Red/Orange/Dark
+═══════════════════════════════════════════ */
+:root{
+  --primary:#EB001B;--pd:#B30015;--pl:rgba(235,0,27,0.12);
+  --secondary:#F79E1B;--sl:rgba(247,158,27,0.12);
+  --green:#27AE60;--purple:#9B59B6;--blue:#3498DB;
+  --bg:#0F0F0F;--bg2:#1A1A1A;--bg3:#232323;--bg4:#2A2A2A;
+  --border:#2A2A2A;--border2:rgba(255,255,255,0.08);
+  --t:#FFFFFF;--t2:#D1D5DB;--t3:#9CA3AF;--t4:#6B7280;
+  --shadow:0 10px 25px rgba(0,0,0,0.5);
+  --glow:0 10px 30px rgba(235,0,27,0.25);
+  --tr:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--t);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em}
+.grad{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.container{max-width:1400px;margin:0 auto;padding:0 5%}
+
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 30px;border-radius:50px;font-weight:600;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;transition:var(--tr);white-space:nowrap;font-family:"Inter",sans-serif}
+.btn-p{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;box-shadow:var(--glow)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(235,0,27,0.4)}
+.btn-o{background:transparent;border:2px solid var(--primary);color:var(--t)}
+.btn-o:hover{background:var(--primary);color:white}
+.btn-g{background:#25D366;color:white}
+.btn-g:hover{background:#1da851;transform:translateY(-2px)}
+.btn-full{width:100%}
+.btn-sm{padding:9px 18px;font-size:0.82rem}
+
+/* ═══ FORMS ═══ */
+.nb-form{display:flex;flex-direction:column;gap:12px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fl{font-size:0.7rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em}
+.fi,.fs,.fta{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--t);font-size:0.88rem;outline:none;transition:border-color 0.2s;font-family:"Inter",sans-serif;width:100%}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(235,0,27,0.15)}
+.fi::placeholder,.fta::placeholder{color:var(--t4)}
+.fs{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:30px}
+.fs option{background:var(--bg3);color:var(--t)}
+.fta{resize:vertical;min-height:80px;line-height:1.6}
+.f-ok{background:rgba(39,174,96,0.15);border:1px solid rgba(39,174,96,0.3);border-radius:10px;padding:16px;text-align:center;display:none}
+.f-ok i{font-size:1.6rem;color:var(--green);margin-bottom:6px;display:block}
+.f-ok h4{color:var(--green);margin-bottom:3px}
+.f-ok p{font-size:0.8rem;color:var(--t2)}
+
+/* ═══ TOAST ═══ */
+#toast{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-16px);background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:11px 20px;font-size:0.82rem;font-weight:600;color:var(--t);box-shadow:var(--shadow);z-index:9999;opacity:0;pointer-events:none;transition:all 0.3s;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes su{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bi{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(235,0,27,0.5)}70%{box-shadow:0 0 0 18px rgba(235,0,27,0)}100%{box-shadow:0 0 0 0 rgba(235,0,27,0)}}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes kp{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes td{0%,80%,100%{transform:scale(0.7);opacity:0.4}40%{transform:scale(1);opacity:1}}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+@media(max-width:400px){.f-row{grid-template-columns:1fr}}
+
+/* ═══ SECTION SCREENS (app panels) ═══ */
+.apanel{display:none}
+.apanel.active{display:block}
+.pb-wrap{background:var(--bg3);border-radius:50px;height:6px}
+.pb-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:width 0.8s ease}
+
+/* ══════════════════════════════════════════
+   STICKY NAVBAR
+══════════════════════════════════════════ */
+.navbar{background:rgba(15,15,15,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:15px 5%;position:sticky;top:0;z-index:1000}
+.nav-wrap{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo-3d{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:var(--glow);transition:var(--tr);flex-shrink:0}
+.logo-icon:hover{transform:scale(1.05)}
+.logo-txt{font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--t2);font-weight:500;font-size:0.9rem;transition:color 0.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:width 0.2s}
+.nav-links a:hover{color:var(--t)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white!important;padding:9px 22px;border-radius:50px;font-weight:600}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--t);border-radius:2px;transition:var(--tr)}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero{padding:100px 5%;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(235,0,27,0.05) 0%,transparent 70%);animation:rotate 60s linear infinite}
+.hero-content{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.3rem,5vw,3.8rem);margin-bottom:20px;line-height:1.15}
+.hero-sub{font-size:1.15rem;color:var(--t2);max-width:600px;margin:0 auto 32px;line-height:1.75}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--pl);border:1px solid rgba(235,0,27,0.25);color:var(--primary);padding:7px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;margin-bottom:22px}
+
+/* ══════════════════════════════════════════
+   IMPACT STATS
+══════════════════════════════════════════ */
+.impact-section{padding:60px 5%;background:linear-gradient(135deg,var(--bg2),var(--bg))}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1400px;margin:0 auto}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:36px 24px;text-align:center;transition:var(--tr);position:relative;overflow:hidden}
+.stat-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));transform:scaleX(0);transition:var(--tr)}
+.stat-card:hover{transform:translateY(-5px);box-shadow:var(--glow)}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-num{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:8px}
+.stat-lbl{color:var(--t2);font-size:0.95rem}
+
+/* ══════════════════════════════════════════
+   6 CORE PILLARS
+══════════════════════════════════════════ */
+.programs-section{padding:90px 5%}
+.section-hdr{text-align:center;margin-bottom:56px}
+.section-hdr h2{font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:14px}
+.section-hdr p{color:var(--t2);max-width:580px;margin:0 auto;font-size:1.05rem}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.program-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:32px;transition:var(--tr);cursor:pointer;position:relative;overflow:hidden}
+.program-card:hover{transform:translateY(-7px);box-shadow:var(--glow);border-color:var(--primary)}
+.prog-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--pl),var(--sl));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:var(--primary);margin-bottom:22px}
+.program-card h3{font-size:1.2rem;margin-bottom:12px}
+.program-card p{color:var(--t2);line-height:1.7;font-size:0.9rem}
+
+/* ══════════════════════════════════════════
+   INTERACTIVE LEARNING PANEL
+══════════════════════════════════════════ */
+.learn-section{padding:90px 5%;background:var(--bg2)}
+.learn-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;justify-content:center}
+.ltab{background:var(--bg3);border:1px solid var(--border);color:var(--t2);padding:9px 20px;border-radius:50px;font-size:0.85rem;font-weight:600;cursor:pointer;transition:var(--tr)}
+.ltab:hover,.ltab.on{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-color:transparent}
+.lpanel{display:none;animation:su 0.3s ease}
+.lpanel.on{display:block}
+
+/* Assessment */
+.step-bar{display:flex;gap:5px;margin-bottom:28px;max-width:480px}
+.seg{flex:1;height:4px;border-radius:2px;background:var(--bg4);transition:background 0.4s}
+.seg.done{background:var(--primary)}
+.seg.active{background:linear-gradient(90deg,var(--primary),var(--secondary))}
+.q-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px;animation:su 0.3s ease}
+.q-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:50px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;background:var(--pl);color:var(--primary)}
+.q-card h3{font-size:1.1rem;margin-bottom:16px;line-height:1.4}
+.a-opts{display:flex;flex-direction:column;gap:9px}
+.a-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;cursor:pointer;transition:var(--tr);display:flex;align-items:center;gap:12px;font-size:0.88rem;color:var(--t)}
+.a-opt:hover,.a-opt.sel{border-color:var(--primary);background:var(--pl)}
+.a-oi{width:30px;height:30px;border-radius:8px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.a-opt.sel .a-oi{background:var(--primary)}
+.e-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.e-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:12px;padding:14px 9px;cursor:pointer;transition:var(--tr);text-align:center}
+.e-opt:hover,.e-opt.sel{border-color:var(--primary);background:var(--pl);transform:scale(1.03)}
+.e-opt .be{font-size:1.9rem;display:block;margin-bottom:5px}
+.e-opt span{font-size:0.72rem;color:var(--t2);font-weight:500}
+.e-opt.sel span{color:var(--primary)}
+
+/* Lesson */
+.l-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:50px;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
+.pi{background:var(--pl);color:var(--primary)}
+.pk{background:rgba(39,174,96,0.15);color:var(--green)}
+.pq{background:var(--sl);color:var(--secondary)}
+.pt{background:rgba(39,174,96,0.15);color:var(--green)}
+.pv{background:rgba(52,152,219,0.15);color:var(--blue)}
+.l-inner{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:18px;animation:su 0.3s ease}
+.l-inner h2{font-size:1.3rem;margin-bottom:11px;line-height:1.3}
+.l-inner p{color:var(--t2);line-height:1.75;font-size:0.88rem}
+.l-big{font-size:3.8rem;text-align:center;margin:16px 0;display:block}
+.l-pre{white-space:pre-line}
+.ksl-f{background:rgba(39,174,96,0.08);border:1.5px solid rgba(39,174,96,0.3);border-radius:14px;padding:22px;text-align:center;margin:13px 0}
+.ksl-h{font-size:3.8rem;animation:kp 2s ease-in-out infinite;display:block;margin-bottom:9px}
+.ksl-w{font-size:1.25rem;font-weight:800;color:var(--green);margin-bottom:5px}
+.ksl-d{font-size:0.8rem;color:var(--t2);line-height:1.6}
+.vis-g{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:13px 0}
+.vis-i{background:var(--bg3);border:1.5px solid var(--border);border-radius:11px;padding:12px 8px;text-align:center;cursor:pointer;transition:var(--tr)}
+.vis-i:hover,.vis-i.sel{border-color:var(--green);background:rgba(39,174,96,0.1);transform:scale(1.04)}
+.vis-e{font-size:1.85rem;display:block;margin-bottom:4px}
+.vis-i span{font-size:0.7rem;color:var(--t2);font-weight:500}
+.q-opts{display:flex;flex-direction:column;gap:9px;margin:13px 0}
+.q-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:11px;padding:12px 15px;cursor:pointer;transition:var(--tr);display:flex;align-items:center;gap:11px;font-size:0.86rem;color:var(--t);text-align:left}
+.q-opt:hover{border-color:var(--primary);background:var(--pl)}
+.q-opt.ok{border-color:var(--green);background:rgba(39,174,96,0.1);color:var(--green)}
+.q-opt.err{border-color:#EF4444;background:rgba(239,68,68,0.08);color:#EF4444}
+.o-l{width:26px;height:26px;border-radius:7px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;flex-shrink:0;color:var(--t3)}
+.q-opt.ok .o-l{background:var(--green);color:white}
+.q-opt.err .o-l{background:#EF4444;color:white}
+.fb-box{border-radius:11px;padding:12px 15px;margin-top:11px;font-size:0.83rem;font-weight:500;display:none;animation:su 0.2s ease}
+.fb-ok{background:rgba(39,174,96,0.12);border:1px solid rgba(39,174,96,0.3);color:var(--green)}
+.fb-err{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#EF4444}
+.l-nav-bar{display:flex;gap:10px;margin-top:16px}
+.l-segs{display:flex;gap:4px;margin-bottom:14px}
+.ls{flex:1;height:3px;border-radius:2px;background:var(--bg4);transition:background 0.3s}
+.ls.done{background:var(--primary)}
+.ls.active{background:linear-gradient(90deg,var(--primary),var(--secondary))}
+
+/* ══════════════════════════════════════════
+   KSL HUB
+══════════════════════════════════════════ */
+.ksl-hub{padding:90px 5%}
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:10px;margin:36px 0}
+.alpha-card{aspect-ratio:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;transition:var(--tr);cursor:pointer;position:relative}
+.alpha-card:hover{transform:scale(1.07);border-color:var(--primary);box-shadow:var(--glow)}
+.alpha-card .gb{position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.55rem}
+.ksl-nums{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}
+.ksl-num{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:var(--tr);cursor:pointer}
+.ksl-num:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--glow)}
+.ksl-num .ne{font-size:2.4rem;display:block;margin-bottom:6px}
+.ksl-num .nl{font-size:0.75rem;color:var(--t2);font-weight:600}
+
+/* ══════════════════════════════════════════
+   DASHBOARD LOGIN + GRID
+══════════════════════════════════════════ */
+.dashboard-section{padding:90px 5%;background:var(--bg2)}
+.login-screen{max-width:400px;margin:0 auto 50px;background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:36px;box-shadow:var(--shadow)}
+.login-screen h3{text-align:center;margin-bottom:26px;font-size:1.3rem}
+.login-input{width:100%;padding:13px 15px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;color:var(--t);font-size:0.95rem;margin-bottom:16px;outline:none;transition:border-color 0.2s;font-family:"Inter",sans-serif}
+.login-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(235,0,27,0.15)}
+.login-input::placeholder{color:var(--t4)}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:0 auto}
+.dash-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;transition:var(--tr);cursor:pointer}
+.dash-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:var(--glow)}
+.dash-ico{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:white;margin:0 auto 14px}
+.dash-card h4{font-size:1rem;margin-bottom:6px}
+.dash-card p{color:var(--t3);font-size:0.82rem}
+
+/* ══════════════════════════════════════════
+   IMPACT / CHARTS
+══════════════════════════════════════════ */
+.charts-section{padding:90px 5%}
+.charts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:36px}
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:28px}
+.chart-card h3{font-size:1.2rem;margin-bottom:8px}
+.counter-num{font-size:2.4rem;font-weight:800;color:var(--primary);text-align:center;margin:16px 0}
+.prog-item{margin-bottom:18px}
+.prog-hdr{display:flex;justify-content:space-between;margin-bottom:7px;color:var(--t2);font-size:0.88rem}
+
+/* ══════════════════════════════════════════
+   CAREGIVER HUB
+══════════════════════════════════════════ */
+.cg-section{padding:90px 5%;background:var(--bg2)}
+.tip-card{background:linear-gradient(135deg,rgba(247,158,27,0.12),rgba(247,158,27,0.04));border:1px solid rgba(247,158,27,0.25);border-radius:16px;padding:20px;margin-bottom:16px}
+.tip-badge{display:inline-block;background:var(--sl);color:var(--secondary);padding:2px 10px;border-radius:50px;font-size:0.65rem;font-weight:700;margin-bottom:8px}
+.tip-card h4{font-size:0.95rem;margin-bottom:7px;color:var(--secondary)}
+.tip-card p{font-size:0.82rem;color:var(--t2);line-height:1.7}
+.cg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px}
+.cg-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;transition:var(--tr)}
+.cg-card:hover{border-color:var(--primary)}
+.cg-i{font-size:1.7rem;margin-bottom:9px}
+.cg-card h4{font-size:0.9rem;font-weight:700;margin-bottom:5px}
+.cg-card p{font-size:0.78rem;color:var(--t2);line-height:1.6}
+.res-list{display:flex;flex-direction:column;gap:9px}
+.res-i{background:var(--bg);border:1px solid var(--border);border-radius:11px;padding:13px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:var(--tr)}
+.res-i:hover{border-color:var(--primary);background:var(--pl)}
+.res-i i{color:var(--primary);font-size:1rem;width:18px;text-align:center}
+.res-info h4{font-size:0.84rem;font-weight:600}
+.res-info p{font-size:0.72rem;color:var(--t2)}
+.res-arr{margin-left:auto;color:var(--t4);font-size:0.75rem}
+
+/* ══════════════════════════════════════════
+   PROGRAMS / FORMSPREE FORMS
+══════════════════════════════════════════ */
+.forms-section{padding:90px 5%}
+.forms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+.form-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:var(--tr)}
+.form-card:hover{border-color:var(--primary)}
+.fc-hdr{padding:20px 22px;border-bottom:1px solid var(--border)}
+.fc-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:50px;font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:9px}
+.fc-hdr h3{font-size:1.05rem;margin-bottom:5px}
+.fc-hdr p{font-size:0.8rem;color:var(--t2);line-height:1.6}
+.fc-meta{display:flex;gap:10px;margin-top:11px;flex-wrap:wrap}
+.fc-mi{background:var(--bg3);border-radius:7px;padding:5px 10px}
+.fc-mi .pml{font-size:0.6rem;color:var(--t4);text-transform:uppercase;letter-spacing:0.04em}
+.fc-mi .pmv{font-size:0.8rem;font-weight:700;color:var(--t)}
+.fc-body{padding:20px 22px}
+.fc-body h4{font-size:0.82rem;font-weight:700;margin-bottom:12px;color:var(--t2)}
+
+/* ══════════════════════════════════════════
+   PILOT SECTION
+══════════════════════════════════════════ */
+.pilot-section{padding:90px 5%;background:var(--bg2)}
+.pilot-wrap{max-width:660px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:22px;overflow:hidden}
+.pilot-hdr{padding:32px 32px 24px;text-align:center;background:linear-gradient(135deg,rgba(235,0,27,0.12),rgba(247,158,27,0.07))}
+.pilot-hdr h3{font-size:1.6rem;margin-bottom:8px}
+.pilot-hdr p{color:var(--t2);font-size:0.88rem;max-width:400px;margin:0 auto;line-height:1.7}
+.pilot-perks{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.plt-p{background:var(--pl);border:1px solid rgba(235,0,27,0.2);color:var(--primary);padding:4px 12px;border-radius:50px;font-size:0.72rem;font-weight:600}
+.pilot-body{padding:28px 32px 32px}
+.pilot-body h4{font-size:0.95rem;margin-bottom:5px}
+.pilot-body>p{font-size:0.8rem;color:var(--t2);margin-bottom:16px}
+
+/* ══════════════════════════════════════════
+   PROGRESS TRACKER
+══════════════════════════════════════════ */
+.progress-section{padding:90px 5%}
+.xp-hero{text-align:center;padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:18px;margin-bottom:28px}
+.big-xp{font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin:10px 0 2px}
+.xp-lbl{font-size:0.72rem;color:var(--t4);text-transform:uppercase;letter-spacing:0.08em}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.ach{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;transition:var(--tr)}
+.ach.un{border-color:rgba(235,0,27,0.3)}
+.ach.lk{opacity:0.35;filter:grayscale(1)}
+.ach-i{font-size:1.8rem;margin-bottom:6px;display:block}
+.ach h4{font-size:0.72rem;font-weight:700;margin-bottom:2px}
+.ach p{font-size:0.62rem;color:var(--t2)}
+.mp-item{margin-bottom:14px}
+.mp-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.mp-n{font-size:0.85rem;font-weight:600}
+.mp-p{font-size:0.75rem;color:var(--t2)}
+
+/* ══════════════════════════════════════════
+   AI CHAT PANEL
+══════════════════════════════════════════ */
+.chat-bubble{position:fixed;bottom:170px;right:26px;z-index:9999;width:64px;height:64px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;cursor:pointer;box-shadow:var(--glow);transition:var(--tr);border:none;animation:pulse 2s infinite}
+.chat-bubble:hover{transform:scale(1.1) translateY(-4px)}
+.chat-panel{position:fixed;bottom:250px;right:26px;width:360px;background:var(--bg2);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);z-index:10000;overflow:hidden;display:none}
+.chat-hdr{background:linear-gradient(135deg,var(--primary),var(--secondary));padding:18px 20px;color:white;display:flex;justify-content:space-between;align-items:center}
+.chat-hdr h4{color:white;margin:0;font-size:1rem}
+.chat-close{background:none;border:none;color:white;cursor:pointer;font-size:1.1rem;opacity:0.8}
+.chat-close:hover{opacity:1}
+.chat-msgs{padding:16px;height:260px;overflow-y:auto;background:var(--bg3)}
+.chat-msg{margin-bottom:13px}
+.msg-bub{max-width:82%;padding:11px 14px;border-radius:14px;font-size:0.85rem;line-height:1.55}
+.bot .msg-bub{background:var(--bg2);border:1px solid var(--border);color:var(--t);border-bottom-left-radius:3px}
+.user-msg{display:flex;justify-content:flex-end}
+.user-msg .msg-bub{background:var(--primary);color:white;border-bottom-right-radius:3px}
+.t-dots{display:flex;gap:3px;align-items:center;padding:2px 0}
+.t-dots span{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:td 1.2s infinite}
+.t-dots span:nth-child(2){animation-delay:0.2s}
+.t-dots span:nth-child(3){animation-delay:0.4s}
+.chat-qr{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px}
+.qrc{background:var(--bg2);border:1px solid var(--border);color:var(--t2);padding:5px 11px;border-radius:50px;font-size:0.73rem;cursor:pointer;transition:var(--tr);font-family:"Inter",sans-serif}
+.qrc:hover{border-color:var(--primary);color:var(--primary);background:var(--pl)}
+.chat-inp{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:9px}
+.chat-ta{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:10px 13px;color:var(--t);font-size:0.84rem;outline:none;resize:none;min-height:42px;max-height:100px;transition:border-color 0.2s;font-family:"Inter",sans-serif}
+.chat-ta:focus{border-color:var(--primary)}
+.chat-ta::placeholder{color:var(--t4)}
+.chat-sb{width:42px;height:42px;background:var(--primary);border:none;border-radius:10px;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;transition:var(--tr);flex-shrink:0}
+.chat-sb:hover{background:var(--pd);transform:scale(1.05)}
+
+/* ══════════════════════════════════════════
+   WHATSAPP FLOAT
+══════════════════════════════════════════ */
+.wa-float{position:fixed;bottom:95px;right:26px;z-index:9999;width:64px;height:64px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;cursor:pointer;box-shadow:0 8px 22px rgba(37,211,102,0.35);transition:var(--tr);text-decoration:none}
+.wa-float:hover{transform:scale(1.1) translateY(-4px)}
+
+/* ══════════════════════════════════════════
+   RESOURCES
+══════════════════════════════════════════ */
+.resources-section{padding:90px 5%;background:var(--bg2)}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.res-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:26px;transition:var(--tr)}
+.res-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:var(--glow)}
+.res-ico{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:white;margin-bottom:18px}
+.res-cat{display:inline-block;padding:3px 11px;background:var(--bg3);border-radius:50px;font-size:0.7rem;color:var(--t3);margin:12px 0}
+.vid-ph{width:100%;height:130px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:10px;margin:13px 0;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;cursor:pointer;transition:var(--tr)}
+.vid-ph:hover{transform:scale(1.02)}
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+.contact-section{padding:90px 5%}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:1100px;margin:0 auto}
+.contact-form{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:36px}
+.contact-form h3{margin-bottom:26px;font-size:1.3rem}
+.c-input,.c-ta{width:100%;padding:13px 15px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--t);font-size:0.9rem;margin-bottom:16px;outline:none;transition:border-color 0.2s;font-family:"Inter",sans-serif}
+.c-input:focus,.c-ta:focus{border-color:var(--primary)}
+.c-input::placeholder,.c-ta::placeholder{color:var(--t4)}
+.c-ta{height:110px;resize:none}
+.contact-info{padding:36px 0}
+.ci-item{display:flex;align-items:center;gap:14px;margin-bottom:22px;color:var(--t2)}
+.ci-item i{width:38px;height:38px;background:var(--bg2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1rem}
+
+/* ══════════════════════════════════════════
+   SCROLL UP
+══════════════════════════════════════════ */
+.scroll-up{position:fixed;bottom:95px;left:26px;z-index:9999;width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;cursor:pointer;transition:var(--tr);border:none;opacity:0;visibility:hidden}
+.scroll-up.vis{opacity:1;visibility:visible}
+.scroll-up:hover{transform:scale(1.1)}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:74px 5% 26px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;max-width:1400px;margin:0 auto 44px}
+.footer-col h4{color:var(--t);margin-bottom:22px;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:var(--t2);text-decoration:none;font-size:0.88rem;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--primary);padding-left:4px;transition:all 0.2s}
+.footer-desc{color:var(--t2);line-height:1.8;font-size:0.88rem}
+.social-links{display:flex;gap:11px;margin-top:18px}
+.social-link{width:38px;height:38px;background:var(--bg3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--t);text-decoration:none;transition:var(--tr);font-size:0.95rem}
+.social-link:hover{background:var(--primary);transform:translateY(-2px)}
+.footer-bottom{text-align:center;padding-top:28px;border-top:1px solid var(--border);color:var(--t3);font-size:0.84rem}
+
+/* ══════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════ */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.82);z-index:20000;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.modal-box{background:var(--bg2);max-width:500px;width:90%;border-radius:20px;padding:40px;position:relative;border:1px solid var(--border)}
+.modal-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--t2);font-size:1.5rem;cursor:pointer}
+.modal-close:hover{color:var(--primary)}
+.modal-ico{width:70px;height:70px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;color:white}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.stats-grid,.programs-grid,.dash-grid,.cg-cards,.ach-grid,.forms-grid,.res-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}.charts-grid,.contact-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.stats-grid,.programs-grid,.dash-grid,.cg-cards,.forms-grid,.res-grid,.footer-grid,.ksl-nums,.alpha-grid{grid-template-columns:repeat(2,1fr)}.ach-grid{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:2.2rem}.chat-panel{width:calc(100vw - 40px);right:20px}}
+</style>
 </head>
 <body>
-    <!-- Sticky Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo-3d">
-                <div class="logo-icon">🧠</div>
-                <span class="logo-text">NEUROBRIDGE</span>
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#join" class="nav-cta">Join Platform</a></li>
-            </ul>
-            
-            <button class="hamburger" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+<div id="toast"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>
-                <span class="hero-gradient-text">Empowering Neurodiversity</span><br>
-                Across Africa
-            </h1>
-            <p class="hero-subtitle">A complete inclusive platform for neurodivergent and deaf learners. Kenyan Sign Language, AI assistance, counselor access, and comprehensive support tools.</p>
-            <div class="hero-buttons">
-                <a href="#join" class="btn btn-primary">Get Support</a>
-                <a href="#dashboard" class="btn btn-secondary">Join Platform</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Stats Section -->
-    <section class="impact-section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" data-target="950">0</div>
-                <div class="stat-label">Learners Supported</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="12">0</div>
-                <div class="stat-label">Schools Reached</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="150">0</div>
-                <div class="stat-label">Parents Engaged</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="25">0</div>
-                <div class="stat-label">Counselors Onboarded</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs Section - 6 Core Pillars -->
-    <section id="programs" class="programs-section">
-        <div class="section-header">
-            <h2>Our <span style="color: var(--primary);">6 Core Pillars</span></h2>
-            <p>Complete inclusion built from the ground up</p>
-        </div>
-        
-        <div class="programs-grid">
-            <div class="program-card" onclick="openModal('learner')">
-                <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3>Learner Support</h3>
-                <p>Focus-friendly modules, visual learning, and personalized paths for neurodivergent minds.</p>
-            </div>
-            <div class="program-card" onclick="openModal('parent')">
-                <div class="program-icon"><i class="fas fa-heart"></i></div>
-                <h3>Parent Support</h3>
-                <p>Resources, community, and daily guidance for caregivers of neurodivergent children.</p>
-            </div>
-            <div class="program-card" onclick="openModal('counselor')">
-                <div class="program-icon"><i class="fas fa-hands-helping"></i></div>
-                <h3>Counselor Access</h3>
-                <p>Direct connection to trained counselors specializing in neurodiversity.</p>
-            </div>
-            <div class="program-card" onclick="openModal('sensory')">
-                <div class="program-icon"><i class="fas fa-brain"></i></div>
-                <h3>Sensory Tools</h3>
-                <p>Low-stimulation interface, break reminders, and calming features.</p>
-            </div>
-            <div class="program-card" onclick="openModal('cbc')">
-                <div class="program-icon"><i class="fas fa-book"></i></div>
-                <h3>CBC Support</h3>
-                <p>Kenyan curriculum adapted for diverse learning needs.</p>
-            </div>
-            <div class="program-card" onclick="openModal('ksl')">
-                <div class="program-icon"><i class="fas fa-hands"></i></div>
-                <h3>KSL Learning Hub</h3>
-                <p>Kenyan Sign Language alphabet, numbers, and full lessons.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- KSL Learning Hub -->
-    <section class="ksl-hub">
-        <div class="section-header">
-            <h2>KSL <span style="color: var(--secondary);">Learning Hub</span></h2>
-            <p>26 gestures · Numbers 1-10 · Full video library</p>
-        </div>
-
-        <div class="alphabet-grid">
-            <div class="alphabet-card">A<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">B<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">C<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">D<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">E<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">F<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">G<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">H<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">I<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">J<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">K<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">L<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">M<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">N<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">O<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">P<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">Q<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">R<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">S<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">T<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">U<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">V<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">W<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">X<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">Y<span class="gesture-badge">✋</span></div>
-            <div class="alphabet-card">Z<span class="gesture-badge">✋</span></div>
-        </div>
-    </section>
-
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard-section">
-        <div class="login-screen">
-            <h3>Access Your Dashboard</h3>
-            <div class="form-group">
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password">
-            </div>
-            <button class="login-btn" onclick="showDashboard()">Sign In</button>
-            <p style="text-align: center; margin-top: 20px; color: var(--text-secondary);">Demo: Use any credentials</p>
-        </div>
-
-        <div class="dashboard-grid" id="dashboardGrid" style="display: none;">
-            <div class="dashboard-card" onclick="openModal('learning')">
-                <div class="dashboard-icon"><i class="fas fa-book-open"></i></div>
-                <h4>Access Learning Tools</h4>
-                <p style="color: var(--text-secondary);">1,000+ interactive lessons</p>
-            </div>
-            <div class="dashboard-card" onclick="openModal('counselor')">
-                <div class="dashboard-icon"><i class="fas fa-comments"></i></div>
-                <h4>Talk to a Counselor</h4>
-                <p style="color: var(--text-secondary);">Direct support access</p>
-            </div>
-            <div class="dashboard-card" onclick="openModal('parent')">
-                <div class="dashboard-icon"><i class="fas fa-users"></i></div>
-                <h4>Parent Guidance</h4>
-                <p style="color: var(--text-secondary);">Resources & community</p>
-            </div>
-            <div class="dashboard-card" onclick="openModal('sensory')">
-                <div class="dashboard-icon"><i class="fas fa-brain"></i></div>
-                <h4>Sensory Support Tools</h4>
-                <p style="color: var(--text-secondary);">Calming features</p>
-            </div>
-            <div class="dashboard-card" onclick="openModal('ksl')">
-                <div class="dashboard-icon"><i class="fas fa-hands"></i></div>
-                <h4>KSL Learning Hub</h4>
-                <p style="color: var(--text-secondary);">Sign language lessons</p>
-            </div>
-            <div class="dashboard-card" onclick="openModal('cbc')">
-                <div class="dashboard-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h4>CBC Curriculum</h4>
-                <p style="color: var(--text-secondary);">Adapted learning</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Data Visualization Section -->
-    <section class="charts-section">
-        <div class="section-header">
-            <h2>Our <span style="color: var(--primary);">Impact</span></h2>
-            <p>Measurable results in learner engagement</p>
-        </div>
-
-        <div class="charts-grid">
-            <div class="chart-card">
-                <h3>Learner Engagement</h3>
-                <div class="counter-number" id="engagementCounter">75%</div>
-                <div class="progress-bars">
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>Focus Improvement</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>KSL Mastery</span>
-                            <span>72%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 72%"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>Parent Satisfaction</span>
-                            <span>94%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 94%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="chart-card">
-                <h3>Growth Metrics</h3>
-                <div class="counter-number" id="familiesCounter">500+</div>
-                <p style="color: var(--text-secondary); text-align: center;">Families Supported</p>
-                <div style="margin-top: 30px;">
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>Year 1 Target</span>
-                            <span>1,200</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 79%"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>Schools Partnered</span>
-                            <span>12</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="resources-section">
-        <div class="section-header">
-            <h2>Resources & <span style="color: var(--secondary);">Guides</span></h2>
-            <p>For parents, teachers, and learners</p>
-        </div>
-
-        <div class="resources-grid">
-            <div class="resource-card">
-                <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                <h4>Parent's Guide to Neurodiversity</h4>
-                <span class="resource-category">Parents</span>
-                <p style="color: var(--text-secondary); margin-top: 10px;">Understanding and supporting your neurodivergent child.</p>
-                <div class="video-placeholder">
-                    <i class="fas fa-play"></i>
-                </div>
-            </div>
-            <div class="resource-card">
-                <div class="resource-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                <h4>Inclusive Classroom Strategies</h4>
-                <span class="resource-category">Teachers</span>
-                <p style="color: var(--text-secondary); margin-top: 10px;">Practical techniques for diverse learners.</p>
-                <div class="video-placeholder">
-                    <i class="fas fa-play"></i>
-                </div>
-            </div>
-            <div class="resource-card">
-                <div class="resource-icon"><i class="fas fa-hands"></i></div>
-                <h4>KSL Basics for Families</h4>
-                <span class="resource-category">Learners</span>
-                <p style="color: var(--text-secondary); margin-top: 10px;">Learn Kenyan Sign Language together.</p>
-                <div class="video-placeholder">
-                    <i class="fas fa-play"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-grid">
-            <div class="contact-form">
-                <h3>Request Support</h3>
-                <form onsubmit="submitContact(event)">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <textarea placeholder="How can we help you?" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-            <div class="contact-info">
-                <h3 style="margin-bottom: 30px;">Get in Touch</h3>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@neurobridge.co.ke</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+254 100 403 629</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+254 100 403 629</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Nairobi, Kenya</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-                    <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.2rem;">🧠</div>
-                    <span style="font-size: 1.2rem; font-weight: 700;">NEUROBRIDGE AFRICA</span>
-                </div>
-                <p style="color: var(--text-secondary); line-height: 1.8;">A women-led initiative of Ability Inclusion Alliance, registered in Kenya. Building inclusive education for neurodivergent and deaf learners across Africa.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#programs">Programs</a></li>
-                    <li><a href="#dashboard">Dashboard</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#resources">Parent Guides</a></li>
-                    <li><a href="#resources">Teacher Tools</a></li>
-                    <li><a href="#ksl">KSL Library</a></li>
-                    <li><a href="#research">Research</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Accessibility</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Ability Inclusion Alliance. All rights reserved. Proud applicant for Mastercard Foundation EdTech Fellowship.</p>
-        </div>
-    </footer>
-
-    <!-- Floating Elements -->
-    <button class="chat-bubble" onclick="toggleChat()">
-        <i class="fas fa-robot"></i>
-    </button>
-
-    <a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="nav-wrap">
+    <a href="/" class="logo-3d">
+      <div class="logo-icon">
+        <img src="/logo.png" alt="NeuroBridge" style="height:32px;width:auto;display:block" onerror="this.style.display='none';this.parentElement.innerHTML='🧠'">
+      </div>
+      <span class="logo-txt">NEUROBRIDGE</span>
     </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#learn">Learn</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#pilot" class="nav-cta"><i class="fas fa-rocket"></i> Join Pilot</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-    <button class="scroll-up" onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollUp">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- ══ HERO ══ -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-fire"></i> Built from Lived Experience · Nairobi, Kenya</div>
+    <h1><span class="grad">Empowering Neurodiversity</span><br>Across Africa</h1>
+    <p class="hero-sub">A complete inclusive platform for neurodivergent and deaf learners. Kenyan Sign Language, AI-powered tutoring, counselor access, and comprehensive caregiver support — all in one place.</p>
+    <div class="hero-btns">
+      <button class="btn btn-p" onclick="scrollTo('#learn')"><i class="fas fa-rocket"></i> Start Learning</button>
+      <button class="btn btn-o" onclick="scrollTo('#pilot')"><i class="fas fa-users"></i> Join Pilot Program</button>
+    </div>
+  </div>
+</section>
 
-    <!-- Chat Panel -->
-    <div class="chat-panel" id="chatPanel">
-        <div class="chat-header">
-            <h4><i class="fas fa-robot"></i> NeuroBridge Assistant</h4>
-            <button onclick="toggleChat()" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+<!-- ══ IMPACT STATS ══ -->
+<section class="impact-section">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num" data-target="950">0</div><div class="stat-lbl">Learners Supported</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="12">0</div><div class="stat-lbl">Schools Reached</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="200000">0</div><div class="stat-lbl">Community Reach</div></div>
+    <div class="stat-card"><div class="stat-num" data-target="24">0</div><div class="stat-lbl">KSL Modules Built</div></div>
+  </div>
+</section>
+
+<!-- ══ 6 CORE PILLARS ══ -->
+<section id="programs" class="programs-section">
+  <div class="section-hdr">
+    <h2>Our <span class="grad">6 Core Pillars</span></h2>
+    <p>Complete inclusion built from the ground up — for learners, families, teachers, and counselors across Kenya.</p>
+  </div>
+  <div class="programs-grid">
+    <div class="program-card" onclick="openModal('learner')"><div class="prog-icon"><i class="fas fa-graduation-cap"></i></div><h3>Learner Support</h3><p>Focus-friendly modules, visual learning, and personalized paths for neurodivergent minds including ADHD, autism, and dyslexia.</p></div>
+    <div class="program-card" onclick="openModal('parent')"><div class="prog-icon"><i class="fas fa-heart"></i></div><h3>Parent Support</h3><p>Resources, WhatsApp community, daily guidance, and expert advice for caregivers of neurodivergent children in Kenya.</p></div>
+    <div class="program-card" onclick="openModal('counselor')"><div class="prog-icon"><i class="fas fa-hands-helping"></i></div><h3>Counselor Access</h3><p>Direct connection to trained counselors specializing in neurodiversity, available via WhatsApp within 2 hours.</p></div>
+    <div class="program-card" onclick="toggleSensory()"><div class="prog-icon"><i class="fas fa-brain"></i></div><h3>Sensory Tools</h3><p>Low-stimulation interface, reduced animations, calming colors, and distraction-free learning environment. Click to toggle.</p></div>
+    <div class="program-card" onclick="openModal('cbc')"><div class="prog-icon"><i class="fas fa-book"></i></div><h3>CBC Support</h3><p>Kenya's Competency-Based Curriculum adapted for neurodivergent learners with visual supports and modified assessments.</p></div>
+    <div class="program-card" onclick="scrollTo('#ksl')"><div class="prog-icon"><i class="fas fa-hands"></i></div><h3>KSL Learning Hub</h3><p>Full Kenyan Sign Language alphabet, numbers 1–10, and 24+ video lessons developed with deaf consultants.</p></div>
+  </div>
+</section>
+
+<!-- ══ INTERACTIVE LEARNING ══ -->
+<section id="learn" class="learn-section">
+  <div class="section-hdr">
+    <h2>Interactive <span class="grad">Learning Platform</span></h2>
+    <p>Start with an assessment, then explore structured lessons built for your learning style.</p>
+  </div>
+  <div class="learn-tabs">
+    <button class="ltab on" onclick="switchTab('assessment')">📋 Assessment</button>
+    <button class="ltab" onclick="switchTab('lessons')">📚 Lessons</button>
+    <button class="ltab" onclick="switchTab('result')">🎯 My Profile</button>
+    <button class="ltab" onclick="switchTab('complete')">🏆 Achievements</button>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div id="tab-assessment" class="lpanel on" style="max-width:640px;margin:0 auto">
+    <div class="step-bar" id="sbars"></div>
+    <div id="q-area"></div>
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <button class="btn btn-o btn-sm" id="btn-prev" onclick="aPrev()" style="display:none"><i class="fas fa-arrow-left"></i></button>
+      <button class="btn btn-p" id="btn-next" onclick="aNext()" style="margin-left:auto">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- LESSONS -->
+  <div id="tab-lessons" class="lpanel" style="max-width:900px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:28px" id="mod-grid-learn"></div>
+    <div id="lesson-view" style="display:none;max-width:640px;margin:0 auto">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <button class="btn btn-o btn-sm" onclick="closeLesson()"><i class="fas fa-arrow-left"></i> Back</button>
+        <span style="font-weight:700;font-size:0.95rem" id="lesson-title-bar">Lesson</span>
+        <div style="margin-left:auto;background:var(--pl);border:1px solid rgba(235,0,27,0.2);color:var(--primary);padding:4px 11px;border-radius:50px;font-size:0.72rem;font-weight:700" id="lesson-xp-bar">⭐ 0 XP</div>
+      </div>
+      <div class="l-segs" id="lsegs"></div>
+      <div id="lca"></div>
+      <div class="fb-box" id="lfb"></div>
+      <div class="l-nav-bar">
+        <button class="btn btn-o btn-sm" id="lprev" onclick="lPrev()" style="display:none"><i class="fas fa-arrow-left"></i></button>
+        <button class="btn btn-p" id="lnext" onclick="lNext()" style="margin-left:auto">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="tab-result" class="lpanel" style="max-width:540px;margin:0 auto;text-align:center">
+    <div style="font-size:4.5rem;margin-bottom:14px;animation:bi 0.6s cubic-bezier(0.175,0.885,0.32,1.275)" id="ri">🎯</div>
+    <h2 id="rt" style="margin-bottom:8px">Complete assessment first</h2>
+    <p id="rd" style="color:var(--t2);margin-bottom:22px;font-size:0.9rem">Answer all 5 questions to generate your learning profile.</p>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:left;margin-bottom:22px">
+      <h3 id="rpt" style="font-size:0.95rem;margin-bottom:13px;color:var(--primary)">Your Learning Style</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px" id="rtags"></div>
+      <ul style="list-style:none" id="rrecs"></ul>
+    </div>
+    <button class="btn btn-p" onclick="scrollTo('#pilot')"><i class="fas fa-rocket"></i> Join Pilot — It's Free</button>
+  </div>
+
+  <!-- COMPLETE -->
+  <div id="tab-complete" class="lpanel" style="max-width:640px;margin:0 auto;text-align:center">
+    <div style="font-size:4.5rem;margin-bottom:14px;animation:bi 0.7s cubic-bezier(0.175,0.885,0.32,1.275)">🎉</div>
+    <h2 style="margin-bottom:8px" id="comp-title">Lesson Complete!</h2>
+    <p style="color:var(--t2);margin-bottom:20px;font-size:0.9rem" id="comp-msg">Keep building your skills!</p>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--pl);border:1.5px solid rgba(235,0,27,0.25);padding:10px 22px;border-radius:50px;font-size:1.05rem;font-weight:800;color:var(--primary);margin-bottom:22px" id="comp-xp">+20 XP</div>
+    <div style="display:flex;gap:11px;flex-wrap:wrap;justify-content:center">
+      <button class="btn btn-p" onclick="switchTab('lessons')"><i class="fas fa-book"></i> More Lessons</button>
+      <button class="btn btn-o" onclick="openChat()"><i class="fas fa-robot"></i> Ask Bridge AI</button>
+      <button class="btn" style="background:var(--bg2);color:var(--t2);border:1px solid var(--border)" onclick="shareP()"><i class="fas fa-share"></i> Share</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KSL HUB ══ -->
+<section id="ksl" class="ksl-hub">
+  <div class="section-hdr">
+    <h2>KSL <span class="grad">Learning Hub</span></h2>
+    <p>26 alphabet gestures · Numbers 1–10 · Full KSL lessons. Developed with Deaf consultants from Nairobi and Garissa.</p>
+  </div>
+  <h3 style="margin-bottom:16px;font-size:1rem;color:var(--t2);font-weight:600">KSL Alphabet — A to Z</h3>
+  <div class="alpha-grid" id="alpha-grid"></div>
+  <h3 style="margin:28px 0 16px;font-size:1rem;color:var(--t2);font-weight:600">Numbers 1–10 in KSL</h3>
+  <div class="ksl-nums" id="ksl-nums"></div>
+</section>
+
+<!-- ══ DASHBOARD ══ -->
+<section id="dashboard" class="dashboard-section">
+  <div class="section-hdr" style="margin-bottom:32px">
+    <h2>Your <span class="grad">Dashboard</span></h2>
+    <p>Access all learning tools, counselor support, and resources from one place.</p>
+  </div>
+  <div id="login-wrap">
+    <div class="login-screen">
+      <h3>Access Your Dashboard</h3>
+      <input type="email" class="login-input" placeholder="Email Address">
+      <input type="password" class="login-input" placeholder="Password">
+      <button class="btn btn-p btn-full" onclick="showDash()"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+      <p style="text-align:center;margin-top:14px;color:var(--t3);font-size:0.82rem">Demo: use any credentials to explore</p>
+    </div>
+  </div>
+  <div id="dash-grid-wrap" style="display:none">
+    <div class="dash-grid">
+      <div class="dash-card" onclick="switchTab('lessons');scrollTo('#learn')"><div class="dash-ico"><i class="fas fa-book-open"></i></div><h4>Learning Modules</h4><p>5 interactive lessons</p></div>
+      <div class="dash-card" onclick="openWA('Hello NeuroBridge! I need counselor support.')"><div class="dash-ico"><i class="fas fa-comments"></i></div><h4>Talk to a Counselor</h4><p>Direct WhatsApp support</p></div>
+      <div class="dash-card" onclick="scrollTo('#caregiver')"><div class="dash-ico"><i class="fas fa-users"></i></div><h4>Caregiver Hub</h4><p>Resources & community</p></div>
+      <div class="dash-card" onclick="toggleSensory()"><div class="dash-ico"><i class="fas fa-brain"></i></div><h4>Sensory Mode</h4><p>Toggle calm interface</p></div>
+      <div class="dash-card" onclick="scrollTo('#ksl')"><div class="dash-ico"><i class="fas fa-hands"></i></div><h4>KSL Learning Hub</h4><p>Alphabet & numbers</p></div>
+      <div class="dash-card" onclick="scrollTo('#pilot')"><div class="dash-ico"><i class="fas fa-rocket"></i></div><h4>Join Pilot</h4><p>Free full access</p></div>
+    </div>
+    <div style="text-align:center;margin-top:22px">
+      <div style="display:inline-flex;gap:20px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:16px 28px;align-items:center">
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:var(--primary)" id="db-xp">0</div><div style="font-size:0.7rem;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em">XP Earned</div></div>
+        <div style="width:1px;height:36px;background:var(--border)"></div>
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:var(--secondary)" id="db-mods">0</div><div style="font-size:0.7rem;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em">Modules Done</div></div>
+        <div style="width:1px;height:36px;background:var(--border)"></div>
+        <div style="text-align:center"><div style="font-size:1.6rem;font-weight:800;color:var(--green)" id="db-streak">1</div><div style="font-size:0.7rem;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em">Day Streak</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT CHARTS ══ -->
+<section class="charts-section">
+  <div class="section-hdr">
+    <h2>Our <span class="grad">Impact</span></h2>
+    <p>Measurable results in learner engagement and community reach across Kenya.</p>
+  </div>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>Learner Engagement</h3>
+      <div class="counter-num">75%</div>
+      <div class="prog-item"><div class="prog-hdr"><span>Focus Improvement</span><span>85%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:85%"></div></div></div>
+      <div class="prog-item"><div class="prog-hdr"><span>KSL Mastery Rate</span><span>72%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:72%"></div></div></div>
+      <div class="prog-item"><div class="prog-hdr"><span>Parent Satisfaction</span><span>94%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:94%"></div></div></div>
+    </div>
+    <div class="chart-card">
+      <h3>Growth Metrics</h3>
+      <div class="counter-num">500+</div>
+      <p style="color:var(--t2);text-align:center;margin-bottom:20px;font-size:0.85rem">Families Supported</p>
+      <div class="prog-item"><div class="prog-hdr"><span>Year 1 Learner Target</span><span>79%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:79%"></div></div></div>
+      <div class="prog-item"><div class="prog-hdr"><span>Schools Partnered</span><span>60%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:60%"></div></div></div>
+      <div class="prog-item"><div class="prog-hdr"><span>Community Reach</span><span>200k+</span></div><div class="pb-wrap"><div class="pb-fill" style="width:88%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAREGIVER HUB ══ -->
+<section id="caregiver" class="cg-section">
+  <div class="section-hdr">
+    <h2>Caregiver <span class="grad">Hub</span></h2>
+    <p>Daily tips, strategies, and resources to support your neurodivergent or Deaf child at home in Kenya.</p>
+  </div>
+  <div class="tip-card"><div class="tip-badge">💡 Today's Tip</div><h4 id="tit">Loading...</h4><p id="tib">Loading today's tip for caregivers...</p></div>
+  <div class="cg-cards">
+    <div class="cg-card"><div class="cg-i">📋</div><h4>Visual Schedules</h4><p>Picture-based daily routines reduce anxiety and build independence for neurodivergent children at home.</p></div>
+    <div class="cg-card"><div class="cg-i">🎯</div><h4>Task Chunking</h4><p>Break big tasks into 3–5 minute micro-steps with clear visual checkpoints and rewards.</p></div>
+    <div class="cg-card"><div class="cg-i">🌬️</div><h4>Calm-Down Kits</h4><p>Prepare a sensory box: fidget tools, stress balls, ear defenders, and a comfort item.</p></div>
+    <div class="cg-card"><div class="cg-i">🌟</div><h4>Reward Systems</h4><p>Token economy with stickers, stamps, or digital badges builds positive behaviour patterns.</p></div>
+    <div class="cg-card"><div class="cg-i">⏰</div><h4>Transition Warnings</h4><p>Give 5-minute and 2-minute warnings before changes. Predictability prevents meltdowns.</p></div>
+    <div class="cg-card"><div class="cg-i">🤟</div><h4>Learn KSL Together</h4><p>Start with 3 signs per week. Learning KSL with your Deaf child builds deep connection and communication.</p></div>
+  </div>
+  <h3 style="font-size:0.9rem;color:var(--t2);margin-bottom:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Downloads & Resources</h3>
+  <div class="res-list">
+    <div class="res-i" onclick="toast('📥 KSL Parent Guide downloading...')"><i class="fas fa-file-pdf"></i><div class="res-info"><h4>KSL Parent Guide (PDF)</h4><p>10 essential signs to learn with your child</p></div><span class="res-arr"><i class="fas fa-download"></i></span></div>
+    <div class="res-i" onclick="toast('📋 Visual Schedule Template opening...')"><i class="fas fa-calendar-check"></i><div class="res-info"><h4>Visual Schedule Template</h4><p>Printable daily routine for ages 4–12</p></div><span class="res-arr"><i class="fas fa-external-link-alt"></i></span></div>
+    <div class="res-i" onclick="toast('🧠 ADHD Guide loading...')"><i class="fas fa-brain"></i><div class="res-info"><h4>Understanding ADHD in Kenya (PDF)</h4><p>Practical guide for Kenyan families</p></div><span class="res-arr"><i class="fas fa-external-link-alt"></i></span></div>
+    <div class="res-i" onclick="openWA('I want to join the NeuroBridge caregiver community!')"><i class="fab fa-whatsapp"></i><div class="res-info"><h4>Caregiver WhatsApp Community</h4><p>45 active members · Nairobi & online</p></div><span class="res-arr"><i class="fas fa-arrow-right"></i></span></div>
+  </div>
+  <div style="text-align:center;margin-top:22px">
+    <button class="btn btn-g" onclick="openWA()"><i class="fab fa-whatsapp"></i> Direct Line to Anab's Support Team</button>
+  </div>
+</section>
+
+<!-- ══ PROGRAMS / FORMSPREE ══ -->
+<section class="forms-section">
+  <div class="section-hdr">
+    <h2>Transformation <span class="grad">Programs</span></h2>
+    <p>Multi-week guided programs for learners, families, and schools across Kenya. All free during pilot phase.</p>
+  </div>
+  <div class="forms-grid">
+
+    <!-- PARENT SUPPORT — xqeyjbzj -->
+    <div class="form-card">
+      <div class="fc-hdr">
+        <div class="fc-badge" style="background:rgba(235,0,27,0.12);color:var(--primary)"><i class="fas fa-heart"></i> Family Program</div>
+        <h3>Parent Support Program</h3>
+        <p>6-week guided program helping caregivers understand neurodivergence, build supportive home environments, and connect with community.</p>
+        <div class="fc-meta">
+          <div class="fc-mi"><div class="pml">Duration</div><div class="pmv">6 Weeks</div></div>
+          <div class="fc-mi"><div class="pml">Format</div><div class="pmv">Online + WA</div></div>
+          <div class="fc-mi"><div class="pml">Cost</div><div class="pmv">Free Pilot</div></div>
         </div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="chat-message bot">
-                <div class="message-bubble">Hello! I'm your NeuroBridge assistant. How can I help you today?</div>
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="chatInput" placeholder="Type your message...">
-            <button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
+      </div>
+      <div class="fc-body">
+        <h4><i class="fas fa-clipboard-list" style="color:var(--primary);margin-right:5px"></i>Apply — Parent Support Program</h4>
+        <form class="nb-form" onsubmit="subForm(event,'xqeyjbzj','fb-psp','fs-psp')">
+          <div class="f-row">
+            <div class="fg"><label class="fl">Full Name *</label><input type="text" class="fi" name="name" placeholder="Your name" required></div>
+            <div class="fg"><label class="fl">WhatsApp *</label><input type="tel" class="fi" name="phone" placeholder="+254 7XX XXX XXX" required></div>
+          </div>
+          <div class="fg"><label class="fl">Email *</label><input type="email" class="fi" name="email" placeholder="your@email.com" required></div>
+          <div class="f-row">
+            <div class="fg"><label class="fl">Child's Age</label><input type="number" class="fi" name="child_age" placeholder="e.g. 8" min="1" max="18"></div>
+            <div class="fg"><label class="fl">Diagnosis / Needs</label><select class="fs" name="diagnosis"><option value="">Select...</option><option>ADHD</option><option>Autism</option><option>Dyslexia</option><option>Deaf/HoH</option><option>Multiple Needs</option><option>Unsure</option></select></div>
+          </div>
+          <div class="fg"><label class="fl">Biggest challenge?</label><textarea class="fta" name="challenge" placeholder="Briefly describe what you need support with..."></textarea></div>
+          <input type="hidden" name="program" value="Parent Support Program">
+          <button type="submit" class="btn btn-p btn-full" id="fb-psp"><i class="fas fa-paper-plane"></i> Apply — It's Free</button>
+        </form>
+        <div class="f-ok" id="fs-psp"><i class="fas fa-check-circle"></i><h4>Application Received!</h4><p>Anab's team will contact you on WhatsApp within 24 hours.</p></div>
+      </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal" id="infoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 20000; align-items: center; justify-content: center;">
-        <div style="background: var(--bg-card); max-width: 500px; width: 90%; border-radius: 20px; padding: 40px; position: relative;">
-            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer;">✕</button>
-            <div id="modalIcon" style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: white;"></div>
-            <h3 id="modalTitle" style="text-align: center; margin-bottom: 15px;"></h3>
-            <p id="modalDescription" style="color: var(--text-secondary); text-align: center; margin-bottom: 25px;"></p>
-            <button onclick="closeModal()" class="btn btn-primary" style="width: 100%;">Close</button>
+    <!-- SCHOOL INCLUSION — xzdjwgpn -->
+    <div class="form-card">
+      <div class="fc-hdr">
+        <div class="fc-badge" style="background:rgba(39,174,96,0.12);color:var(--green)"><i class="fas fa-school"></i> School Program</div>
+        <h3>School Inclusion Training</h3>
+        <p>8-week institutional program equipping teachers with inclusive pedagogy, sensory tools, and KSL basics to transform classrooms.</p>
+        <div class="fc-meta">
+          <div class="fc-mi"><div class="pml">Duration</div><div class="pmv">8 Weeks</div></div>
+          <div class="fc-mi"><div class="pml">Format</div><div class="pmv">School + Online</div></div>
+          <div class="fc-mi"><div class="pml">Cohort</div><div class="pmv">April 2026</div></div>
         </div>
+      </div>
+      <div class="fc-body">
+        <h4><i class="fas fa-clipboard-list" style="color:var(--green);margin-right:5px"></i>Register Your School</h4>
+        <form class="nb-form" onsubmit="subForm(event,'xzdjwgpn','fb-sit','fs-sit')">
+          <div class="f-row">
+            <div class="fg"><label class="fl">Contact Person *</label><input type="text" class="fi" name="name" placeholder="Principal or Teacher" required></div>
+            <div class="fg"><label class="fl">Role</label><select class="fs" name="role"><option value="">Select...</option><option>Principal</option><option>Class Teacher</option><option>SENCO</option><option>Administrator</option><option>NGO Rep</option></select></div>
+          </div>
+          <div class="fg"><label class="fl">School / Organization *</label><input type="text" class="fi" name="school" placeholder="e.g. Eastleigh Primary School" required></div>
+          <div class="f-row">
+            <div class="fg"><label class="fl">Email *</label><input type="email" class="fi" name="email" placeholder="school@email.com" required></div>
+            <div class="fg"><label class="fl">Phone *</label><input type="tel" class="fi" name="phone" placeholder="+254 7XX XXX XXX" required></div>
+          </div>
+          <div class="f-row">
+            <div class="fg"><label class="fl">Location</label><input type="text" class="fi" name="location" placeholder="e.g. Eastleigh, Nairobi"></div>
+            <div class="fg"><label class="fl">No. Teachers</label><input type="number" class="fi" name="teachers" placeholder="e.g. 12" min="1"></div>
+          </div>
+          <div class="fg"><label class="fl">Main inclusion challenges?</label><textarea class="fta" name="challenges" placeholder="Describe challenges your school faces..."></textarea></div>
+          <input type="hidden" name="program" value="School Inclusion Training">
+          <button type="submit" class="btn btn-full" style="background:linear-gradient(135deg,var(--green),#1e8449);color:white;border-radius:50px;font-weight:600;padding:13px;font-size:0.88rem" id="fb-sit"><i class="fas fa-school"></i> Register My School</button>
+        </form>
+        <div class="f-ok" id="fs-sit"><i class="fas fa-check-circle"></i><h4>School Registered!</h4><p>We'll reach out to schedule an onboarding call within 48 hours.</p></div>
+      </div>
     </div>
 
-    <script>
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-                hamburger.classList.remove('active');
-            } else {
-                menu.style.display = 'flex';
-                menu.style.flexDirection = 'column';
-                menu.style.position = 'absolute';
-                menu.style.top = '80px';
-                menu.style.left = '0';
-                menu.style.width = '100%';
-                menu.style.background = 'var(--bg-card)';
-                menu.style.padding = '20px';
-                menu.style.zIndex = '1000';
-                hamburger.classList.add('active');
-            }
-        }
+    <!-- NEURODIVERGENT PATHWAY — xkoqebnj -->
+    <div class="form-card">
+      <div class="fc-hdr">
+        <div class="fc-badge" style="background:rgba(247,158,27,0.12);color:var(--secondary)"><i class="fas fa-star"></i> Learner Pathway</div>
+        <h3>Neurodivergent Success Pathway</h3>
+        <p>10-week self-paced journey for neurodivergent learners ages 8–18. Build confidence, life skills, and a personal learning identity.</p>
+        <div class="fc-meta">
+          <div class="fc-mi"><div class="pml">Duration</div><div class="pmv">10 Weeks</div></div>
+          <div class="fc-mi"><div class="pml">Ages</div><div class="pmv">8 – 18 yrs</div></div>
+          <div class="fc-mi"><div class="pml">Cost</div><div class="pmv">Free Pilot</div></div>
+        </div>
+      </div>
+      <div class="fc-body">
+        <h4><i class="fas fa-clipboard-list" style="color:var(--secondary);margin-right:5px"></i>Enroll in the Pathway</h4>
+        <form class="nb-form" onsubmit="subForm(event,'xkoqebnj','fb-nsp','fs-nsp')">
+          <div class="f-row">
+            <div class="fg"><label class="fl">Learner's Name *</label><input type="text" class="fi" name="learner_name" placeholder="Child's full name" required></div>
+            <div class="fg"><label class="fl">Age *</label><input type="number" class="fi" name="age" placeholder="Age (8–18)" min="8" max="18" required></div>
+          </div>
+          <div class="f-row">
+            <div class="fg"><label class="fl">Guardian Name *</label><input type="text" class="fi" name="name" placeholder="Parent/Guardian" required></div>
+            <div class="fg"><label class="fl">WhatsApp *</label><input type="tel" class="fi" name="phone" placeholder="+254 7XX XXX XXX" required></div>
+          </div>
+          <div class="fg"><label class="fl">Email *</label><input type="email" class="fi" name="email" placeholder="your@email.com" required></div>
+          <div class="f-row">
+            <div class="fg"><label class="fl">Learner Profile</label><select class="fs" name="profile"><option value="">Select...</option><option>ADHD</option><option>Autism</option><option>Dyslexia</option><option>Deaf/HoH</option><option>Multiple/Unsure</option></select></div>
+            <div class="fg"><label class="fl">Location</label><input type="text" class="fi" name="location" placeholder="e.g. Nairobi"></div>
+          </div>
+          <div class="fg"><label class="fl">Hoped outcome?</label><textarea class="fta" name="goal" placeholder="e.g. better focus, reading confidence, self-expression..."></textarea></div>
+          <input type="hidden" name="program" value="Neurodivergent Success Pathway">
+          <button type="submit" class="btn btn-full" style="background:linear-gradient(135deg,var(--secondary),#e67e22);color:white;border-radius:50px;font-weight:600;padding:13px;font-size:0.88rem" id="fb-nsp"><i class="fas fa-rocket"></i> Enroll in Pathway</button>
+        </form>
+        <div class="f-ok" id="fs-nsp"><i class="fas fa-check-circle"></i><h4>Enrolled!</h4><p>Check WhatsApp for your welcome message. Your journey starts now! 🎉</p></div>
+      </div>
+    </div>
 
-        // Counter animation
-        function animateNumbers() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                let current = 0;
-                const increment = target / 50;
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.round(current);
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        counter.textContent = target + '+';
-                    }
-                };
-                updateCounter();
-            });
-        }
+    <!-- PROGRESS TRACKER -->
+    <div class="form-card">
+      <div class="fc-hdr">
+        <div class="fc-badge" style="background:rgba(155,89,182,0.12);color:var(--purple)"><i class="fas fa-chart-bar"></i> Progress Tracker</div>
+        <h3>My Learning Progress</h3>
+        <p>Track your XP, completed modules, achievements, and personal learning milestones on NeuroBridge.</p>
+      </div>
+      <div class="fc-body" id="prog-section">
+        <div class="xp-hero">
+          <div style="font-size:0.7rem;color:var(--t4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">Total XP Earned</div>
+          <span class="big-xp" id="pgxp">0</span>
+        </div>
+        <div class="ach-grid" id="ag"></div>
+        <div style="margin-top:16px" id="mpl"><div style="font-size:0.7rem;color:var(--t4);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;font-weight:600">Module Progress</div></div>
+        <div style="margin-top:14px;display:flex;gap:9px;flex-wrap:wrap">
+          <button class="btn btn-o btn-sm" onclick="scrollTo('#learn')"><i class="fas fa-book"></i> Go to Lessons</button>
+          <button class="btn btn-sm" style="background:var(--bg3);color:#EF4444;border:1px solid rgba(239,68,68,0.3)" onclick="doReset()"><i class="fas fa-trash"></i> Reset</button>
+        </div>
+      </div>
+    </div>
 
-        // Start animation when section is visible
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateNumbers();
-                }
-            });
-        }, { threshold: 0.5 });
+  </div>
+</section>
 
-        const statsSection = document.querySelector('.impact-section');
-        if (statsSection) observer.observe(statsSection);
+<!-- ══ PILOT REGISTRATION — xojkbwaq ══ -->
+<section id="pilot" class="pilot-section">
+  <div class="section-hdr" style="margin-bottom:28px">
+    <h2>Join the <span class="grad">Pilot Program</span></h2>
+    <p>15 spots available for families in Nairobi and Eastleigh. Free access to everything on NeuroBridge.</p>
+  </div>
+  <div class="pilot-wrap">
+    <div class="pilot-hdr">
+      <div style="font-size:3rem;margin-bottom:12px">🚀</div>
+      <h3>Pilot Registration Form</h3>
+      <p>Fill in your details and we'll reach out within 24 hours to confirm your spot.</p>
+      <div class="pilot-perks">
+        <span class="plt-p">✅ Free Access</span><span class="plt-p">🤟 KSL Lessons</span><span class="plt-p">🧠 AI Tutor</span><span class="plt-p">👪 Support Group</span><span class="plt-p">📊 Progress Reports</span>
+      </div>
+    </div>
+    <div class="pilot-body">
+      <h4>Pilot Registration</h4>
+      <p>All fields marked * are required. We'll contact you within 24 hours.</p>
+      <form class="nb-form" onsubmit="subForm(event,'xojkbwaq','fb-plt','fs-plt')">
+        <div class="f-row">
+          <div class="fg"><label class="fl">Full Name *</label><input type="text" class="fi" name="name" placeholder="Your full name" required></div>
+          <div class="fg"><label class="fl">WhatsApp *</label><input type="tel" class="fi" name="phone" placeholder="+254 7XX XXX XXX" required></div>
+        </div>
+        <div class="fg"><label class="fl">Email Address *</label><input type="email" class="fi" name="email" placeholder="your@email.com" required></div>
+        <div class="f-row">
+          <div class="fg"><label class="fl">Location</label><input type="text" class="fi" name="location" placeholder="e.g. Eastleigh, Nairobi"></div>
+          <div class="fg"><label class="fl">I am a...</label><select class="fs" name="role"><option value="">Select...</option><option>Parent/Caregiver</option><option>Teacher</option><option>Learner</option><option>School Admin</option><option>NGO</option></select></div>
+        </div>
+        <div class="f-row">
+          <div class="fg"><label class="fl">No. of Learners</label><input type="number" class="fi" name="learners" placeholder="e.g. 1" min="1"></div>
+          <div class="fg"><label class="fl">Learner's Needs</label><select class="fs" name="needs"><option value="">Select...</option><option>ADHD</option><option>Autism</option><option>Dyslexia</option><option>Deaf/HoH</option><option>Multiple</option><option>Unsure</option></select></div>
+        </div>
+        <div class="fg"><label class="fl">Why do you want to join? *</label><textarea class="fta" name="motivation" placeholder="Tell us briefly why you want to be part of the NeuroBridge pilot..." required></textarea></div>
+        <div class="fg"><label class="fl">How did you hear about us?</label><select class="fs" name="source"><option value="">Select...</option><option>WhatsApp</option><option>Facebook/Instagram</option><option>School or Teacher</option><option>Friend/Family</option><option>Google</option><option>iHUB/Mastercard Foundation</option><option>Other</option></select></div>
+        <input type="hidden" name="program" value="Pilot Registration">
+        <input type="hidden" name="_subject" value="New NeuroBridge Pilot Application 🚀">
+        <button type="submit" class="btn btn-p btn-full" style="font-size:1rem;padding:15px" id="fb-plt"><i class="fas fa-rocket"></i> Submit My Application</button>
+      </form>
+      <div class="f-ok" id="fs-plt"><i class="fas fa-check-circle"></i><h4>Application Submitted! 🎉</h4><p>Asante sana! Anab's team will contact you on WhatsApp within 24 hours to confirm your spot.</p></div>
+      <p style="text-align:center;color:var(--t4);font-size:0.74rem;margin-top:14px">Your data is safe and never shared.</p>
+      <div style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.25);border-radius:14px;padding:18px;text-align:center;margin-top:16px">
+        <i class="fab fa-whatsapp" style="font-size:1.6rem;color:#25D366;margin-bottom:7px;display:block"></i>
+        <h4 style="font-size:0.9rem;margin-bottom:4px">Prefer WhatsApp?</h4>
+        <p style="font-size:0.78rem;color:var(--t2);margin-bottom:11px">Apply directly and we'll register you immediately.</p>
+        <button class="btn btn-g" onclick="openWA('I want to join the NeuroBridge pilot program!')"><i class="fab fa-whatsapp"></i> Apply via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Dashboard login
-        function showDashboard() {
-            document.getElementById('dashboardGrid').style.display = 'grid';
-            document.querySelector('.login-screen').style.display = 'none';
-            alert('Welcome to your dashboard!');
-        }
+<!-- ══ RESOURCES ══ -->
+<section id="resources" class="resources-section">
+  <div class="section-hdr">
+    <h2>Resources & <span class="grad">Guides</span></h2>
+    <p>For parents, teachers, and learners across Kenya. All materials developed by inclusive education experts.</p>
+  </div>
+  <div class="res-grid">
+    <div class="res-card"><div class="res-ico"><i class="fas fa-file-pdf"></i></div><h4>Parent's Guide to Neurodiversity</h4><span class="res-cat">Parents</span><p style="color:var(--t2);font-size:0.85rem;margin-top:9px;line-height:1.6">Understanding and supporting your neurodivergent child in Kenya.</p><div class="vid-ph" onclick="toast('▶ Video loading...')"><i class="fas fa-play"></i></div></div>
+    <div class="res-card"><div class="res-ico"><i class="fas fa-chalkboard-teacher"></i></div><h4>Inclusive Classroom Strategies</h4><span class="res-cat">Teachers</span><p style="color:var(--t2);font-size:0.85rem;margin-top:9px;line-height:1.6">Practical techniques for supporting diverse learners in Kenyan classrooms.</p><div class="vid-ph" onclick="toast('▶ Video loading...')"><i class="fas fa-play"></i></div></div>
+    <div class="res-card"><div class="res-ico"><i class="fas fa-hands"></i></div><h4>KSL Basics for Families</h4><span class="res-cat">Learners</span><p style="color:var(--t2);font-size:0.85rem;margin-top:9px;line-height:1.6">Learn Kenyan Sign Language together with your Deaf child. 10 essential signs.</p><div class="vid-ph" onclick="toast('▶ Video loading...')"><i class="fas fa-play"></i></div></div>
+  </div>
+</section>
 
-        // Chat functions
-        function toggleChat() {
-            const panel = document.getElementById('chatPanel');
-            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-        }
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="contact-section">
+  <div class="section-hdr"><h2>Get in <span class="grad">Touch</span></h2><p>Our team responds within 24 hours. For urgent support, use WhatsApp.</p></div>
+  <div class="contact-grid">
+    <div class="contact-form">
+      <h3>Request Support</h3>
+      <form onsubmit="subContact(event)">
+        <input type="text" class="c-input" placeholder="Full Name" required>
+        <input type="email" class="c-input" placeholder="Email Address" required>
+        <textarea class="c-ta" placeholder="How can we help you?" required></textarea>
+        <button type="submit" class="btn btn-p btn-full"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h3 style="margin-bottom:28px;font-size:1.3rem">Contact NeuroBridge</h3>
+      <div class="ci-item"><i class="fas fa-envelope"></i><span>info@neurobridge.co.ke</span></div>
+      <div class="ci-item"><i class="fas fa-phone"></i><span>+254 100 403 629</span></div>
+      <div class="ci-item"><i class="fab fa-whatsapp"></i><span>+254 100 403 629</span></div>
+      <div class="ci-item"><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya · Garissa · Mombasa</span></div>
+      <div style="margin-top:22px">
+        <button class="btn btn-g" onclick="openWA()"><i class="fab fa-whatsapp"></i> Chat on WhatsApp Now</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const msg = input.value.trim();
-            if (!msg) return;
-            
-            const chatMessages = document.getElementById('chatMessages');
-            
-            // Add user message
-            const userDiv = document.createElement('div');
-            userDiv.className = 'chat-message user';
-            userDiv.innerHTML = `<div class="message-bubble">${msg}</div>`;
-            chatMessages.appendChild(userDiv);
-            
-            input.value = '';
-            
-            // Bot response based on keywords
-            setTimeout(() => {
-                let response = "Thank you for your message. A counselor will respond within 24 hours.";
-                
-                if (msg.toLowerCase().includes('autism') || msg.toLowerCase().includes('support')) {
-                    response = "I can connect you with our autism support specialists. Would you like to schedule a consultation?";
-                } else if (msg.toLowerCase().includes('ksl') || msg.toLowerCase().includes('sign')) {
-                    response = "Our KSL Learning Hub has 26 alphabet gestures and numbers 1-10. Would you like me to guide you?";
-                } else if (msg.toLowerCase().includes('parent') || msg.toLowerCase().includes('caregiver')) {
-                    response = "We have a parent support group and resources. Would you like to join our WhatsApp community?";
-                }
-                
-                const botDiv = document.createElement('div');
-                botDiv.className = 'chat-message bot';
-                botDiv.innerHTML = `<div class="message-bubble">${response}</div>`;
-                chatMessages.appendChild(botDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);
-        }
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px">
+        <div class="logo-icon" style="width:42px;height:42px;font-size:1.3rem">
+          <img src="/logo.png" alt="NB" style="height:28px;width:auto;display:block" onerror="this.parentElement.innerHTML='🧠'">
+        </div>
+        <span style="font-size:1.1rem;font-weight:700">NEUROBRIDGE AFRICA</span>
+      </div>
+      <p class="footer-desc">A women-led initiative of Ability Inclusion Alliance, registered in Kenya (April 2025). Building inclusive education for neurodivergent and deaf learners across Africa. Proud applicant for Mastercard Foundation EdTech Fellowship Cohort 4.</p>
+      <div class="social-links">
+        <a href="https://wa.me/254100403629" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#learn">Learning Hub</a></li>
+        <li><a href="#ksl">KSL Library</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#pilot">Join Pilot</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#programs">6 Core Pillars</a></li>
+        <li><a href="#caregiver">Caregiver Hub</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal & Contact</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="mailto:info@neurobridge.co.ke">info@neurobridge.co.ke</a></li>
+        <li><a href="tel:+254100403629">+254 100 403 629</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ability Inclusion Alliance · All rights reserved · Mastercard Foundation EdTech Fellowship · Deadline April 10, 2026</p>
+  </div>
+</footer>
 
-        // Modal functions
-        function openModal(type) {
-            const modal = document.getElementById('infoModal');
-            const icon = document.getElementById('modalIcon');
-            const title = document.getElementById('modalTitle');
-            const desc = document.getElementById('modalDescription');
-            
-            const content = {
-                learner: {
-                    icon: '<i class="fas fa-graduation-cap"></i>',
-                    title: 'Learner Support',
-                    desc: 'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds.'
-                },
-                parent: {
-                    icon: '<i class="fas fa-heart"></i>',
-                    title: 'Parent Support',
-                    desc: 'Resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children.'
-                },
-                counselor: {
-                    icon: '<i class="fas fa-comments"></i>',
-                    title: 'Counselor Access',
-                    desc: 'Direct connection to trained counselors specializing in neurodiversity and family support.'
-                },
-                sensory: {
-                    icon: '<i class="fas fa-brain"></i>',
-                    title: 'Sensory Tools',
-                    desc: 'Low-stimulation interface, break reminders, calming colors, and distraction-free learning environment.'
-                },
-                cbc: {
-                    icon: '<i class="fas fa-book"></i>',
-                    title: 'CBC Support',
-                    desc: 'Kenyan Competency-Based Curriculum adapted for neurodivergent learners with visual supports.'
-                },
-                ksl: {
-                    icon: '<i class="fas fa-hands"></i>',
-                    title: 'KSL Learning Hub',
-                    desc: 'Kenyan Sign Language alphabet, numbers 1-10, and full video lessons with quizzes.'
-                },
-                learning: {
-                    icon: '<i class="fas fa-book-open"></i>',
-                    title: 'Learning Tools',
-                    desc: 'Access 1,000+ interactive lessons across mathematics, science, language, and life skills.'
-                }
-            };
-            
-            const selected = content[type] || content.learner;
-            icon.innerHTML = selected.icon;
-            title.textContent = selected.title;
-            desc.textContent = selected.desc;
-            
-            modal.style.display = 'flex';
-        }
+<!-- ══ FLOATING ELEMENTS ══ -->
+<button class="chat-bubble" onclick="openChat()" aria-label="AI Assistant"><i class="fas fa-robot"></i></button>
+<a href="https://wa.me/254100403629?text=Hello%20NeuroBridge%20Africa%2C%20I%20need%20support." target="_blank" class="wa-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-up" id="scrollUp" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 
-        function closeModal() {
-            document.getElementById('infoModal').style.display = 'none';
-        }
+<!-- ══ AI CHAT PANEL ══ -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-hdr">
+    <h4><i class="fas fa-robot"></i> Bridge — NeuroBridge AI</h4>
+    <button class="chat-close" onclick="closeChat()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="chat-msg bot"><div class="msg-bub">👋 Habari! I'm Bridge, NeuroBridge's AI assistant. Ask me about KSL, ADHD, autism support, or our programs. Naongea Kiswahili na English! 🇰🇪</div></div>
+  </div>
+  <div class="chat-qr" id="chat-qr">
+    <span class="qrc" onclick="sendQ('Nifundishe ishara ya KSL ya leo')">🤟 KSL sign</span>
+    <span class="qrc" onclick="sendQ('ADHD ni nini?')">🧠 ADHD info</span>
+    <span class="qrc" onclick="sendQ('Nisaidie kuzingatia zaidi')">🎯 Focus tips</span>
+    <span class="qrc" onclick="sendQ('Je, NeuroBridge ni nini?')">❓ About us</span>
+  </div>
+  <div class="chat-inp">
+    <textarea class="chat-ta" id="cin" placeholder="Uliza Bridge chochote..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAI()}"></textarea>
+    <button class="chat-sb" onclick="sendAI()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
 
-        // Contact form
-        function submitContact(event) {
-            event.preventDefault();
-            alert('Thank you for reaching out! We will contact you within 24 hours.');
-            event.target.reset();
-        }
+<!-- ══ MODAL ══ -->
+<div class="modal" id="infoModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-ico" id="mIco"><i class="fas fa-graduation-cap"></i></div>
+    <h3 id="mTitle" style="text-align:center;margin-bottom:13px"></h3>
+    <p id="mDesc" style="color:var(--t2);text-align:center;margin-bottom:24px;line-height:1.7;font-size:0.9rem"></p>
+    <div style="display:flex;gap:10px;justify-content:center">
+      <button class="btn btn-p" onclick="scrollTo('#pilot');closeModal()"><i class="fas fa-rocket"></i> Join Pilot</button>
+      <button class="btn btn-o" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
 
-        // Scroll to top button
-        window.addEventListener('scroll', function() {
-            const scrollUp = document.getElementById('scrollUp');
-            if (window.scrollY > 500) {
-                scrollUp.classList.add('visible');
-            } else {
-                scrollUp.classList.remove('visible');
-            }
-        });
+<script>
+/* ═══════════ STATE ═══════════ */
+let S={ltype:'neurodivergent',xp:0,streak:1,done:[],curLesson:null,curStep:0,qAns:false,asAns:{},asStep:0,chat:[],lastL:null,lastS:0};
+const save=()=>{try{localStorage.setItem('nb2',JSON.stringify(S))}catch(e){}};
+const load=()=>{try{const d=localStorage.getItem('nb2');if(d)S={...S,...JSON.parse(d)}}catch(e){}};
+load();
 
-        // Alphabet card clicks
-        document.querySelectorAll('.alphabet-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const letter = this.textContent.trim()[0];
-                openModal('ksl');
-            });
-        });
+/* ═══════════ LESSONS ═══════════ */
+const LESSONS={
+  emotions:{title:'😊 Understanding Emotions',xp:20,emoji:'😊',tag:'Neurodivergent',tc:'var(--primary)',bg:'var(--pl)',desc:'Identify and express feelings safely',
+    steps:[
+      {type:'intro',title:'Understanding Emotions',body:'Emotions are feelings we carry inside — every emotion is valid. Today we learn to name them so we can respond instead of react.',icon:'😊'},
+      {type:'visual',title:'How are you feeling RIGHT NOW?',body:'Tap the emoji that matches your current feeling.',items:[{e:'😊',l:'Happy'},{e:'😢',l:'Sad'},{e:'😡',l:'Angry'},{e:'😰',l:'Worried'},{e:'😐',l:'Calm'},{e:'🤩',l:'Excited'}]},
+      {type:'ksl',title:'KSL: Happy / Furaha 😊',body:'Place both flat hands on your chest, then move them outward and upward — like letting joy flow out of your heart.',hand:'🤲',word:'HAPPY / FURAHA',desc:'Both hands on chest → move outward and upward'},
+      {type:'quiz',title:'Quick Quiz',q:'Your heart races before something new. What might you be feeling?',opts:['Sleepy and tired','Nervous or Excited','Very angry','Extremely bored'],correct:1,ok:'✅ Yes! That butterfly feeling is nervous excitement — completely normal!',err:'Think again — a racing heart before something new usually means nervous excitement.'},
+      {type:'tip',title:'5-4-3-2-1 Grounding 💡',body:'When overwhelmed:\n\n👀 5 things you SEE\n👂 4 things you HEAR\n✋ 3 things you TOUCH\n👃 2 things you SMELL\n👅 1 thing you TASTE\n\nBrings you back to the present in under 2 minutes.'}
+    ]},
+  ksl_greetings:{title:'🤟 KSL: Greetings',xp:25,emoji:'🤟',tag:'KSL',tc:'var(--green)',bg:'rgba(39,174,96,0.12)',desc:'Learn Hello, Asante & Good Morning in KSL',
+    steps:[
+      {type:'intro',title:'KSL Daily Greetings',body:'KSL (Kenyan Sign Language) is the full language of Kenya\'s Deaf community. Today: 3 greetings used every day.',icon:'🤟'},
+      {type:'ksl',title:'Hello / Habari 👋',body:'Raise your dominant hand near your forehead, palm out. Move it gently forward — like a salute.',hand:'🖐️',word:'HELLO / HABARI',desc:'Flat hand near forehead → move forward'},
+      {type:'ksl',title:'Thank You / Asante 🙏',body:'Fingertips of flat hand touch your chin. Move hand forward and slightly down.',hand:'🙏',word:'THANK YOU / ASANTE',desc:'Fingertips on chin → move hand forward and down'},
+      {type:'ksl',title:'Good Morning / Asubuhi ☀️',body:'Point both index fingers upward together. Arc dominant hand outward like the sun rising.',hand:'☀️',word:'GOOD MORNING / ASUBUHI',desc:'Index fingers up → arc dominant hand like sunrise'},
+      {type:'quiz',title:'Quiz: KSL Thank You',q:'How do you sign "Asante" (Thank You) in KSL?',opts:['Wave hand near forehead','Fingertips on chin, move hand forward','Both fingers arc upward','Tap chest twice'],correct:1,ok:'✅ Fingertips on chin, hand forward = Asante! 🙏',err:'Not quite — Thank You in KSL starts at the chin.'},
+      {type:'visual',title:'Where would you use these signs?',body:'Tap all situations where today\'s KSL greetings would be useful:',items:[{e:'🏫',l:'At school'},{e:'🏪',l:'At a shop'},{e:'🤝',l:'Meeting someone'},{e:'📱',l:'Video call'},{e:'🏠',l:'At home'},{e:'🚌',l:'On matatu'}]}
+    ]},
+  daily_routine:{title:'🌅 My Daily Routine',xp:20,emoji:'🌅',tag:'Life Skills',tc:'var(--secondary)',bg:'var(--sl)',desc:'Build visual schedules and daily independence',
+    steps:[
+      {type:'intro',title:'My Daily Routine',body:'Predictable routines help the neurodivergent brain feel safe. When we know what comes next, anxiety decreases and learning improves.',icon:'🌅'},
+      {type:'visual',title:'Build your morning sequence',body:'Tap activities in the order you do them in the morning:',items:[{e:'🛏️',l:'Wake Up'},{e:'🚿',l:'Shower'},{e:'🦷',l:'Brush Teeth'},{e:'👕',l:'Get Dressed'},{e:'🍳',l:'Breakfast'},{e:'🎒',l:'Pack Bag'}]},
+      {type:'tip',title:'Why Visual Schedules Work 📋',body:'Visual schedules for neurodivergent learners:\n\n✅ Reduce anxiety about transitions\n✅ Build independence step by step\n✅ Decrease arguments and meltdowns\n✅ Help with time blindness (ADHD)\n\nAsk a caregiver to print one for your wall!'},
+      {type:'ksl',title:'KSL: Morning / Asubuhi ☀️',body:'Make a fist (non-dominant hand = horizon). Bring dominant hand up behind it — like the sun rising.',hand:'🌅',word:'MORNING / ASUBUHI',desc:'Non-dominant fist = horizon. Dominant hand rises behind it.'},
+      {type:'quiz',title:'Quiz: Routines',q:'Why are daily routines especially helpful for neurodivergent learners?',opts:['Make everything boring','Help the brain feel safe by knowing what comes next','Only useful for young children','Replace need for school'],correct:1,ok:'✅ Predictability reduces anxiety so the brain can focus on learning.',err:'Think: what does predictability do to anxiety?'}
+    ]},
+  ksl_numbers:{title:'🔢 KSL: Numbers 1–10',xp:25,emoji:'🔢',tag:'KSL',tc:'var(--green)',bg:'rgba(39,174,96,0.12)',desc:'Count 1 to 10 in Kenyan Sign Language',
+    steps:[
+      {type:'intro',title:'KSL Numbers 1 to 10',body:'Once you learn these hand shapes, you can count, tell time, and share quantities with Deaf friends and family across Kenya.',icon:'🔢'},
+      {type:'ksl',title:'Numbers 1–5',body:'1 = Index finger up\n2 = Index + middle (peace sign)\n3 = Thumb + index + middle\n4 = Four fingers up, thumb tucked\n5 = All five fingers spread open',hand:'✋',word:'1 · 2 · 3 · 4 · 5',desc:'Use dominant hand. Keep fingers clear.'},
+      {type:'ksl',title:'Numbers 6–10',body:'6 = Pinky touches thumb, 3 fingers up\n7 = Ring finger touches thumb\n8 = Middle finger touches thumb\n9 = Index touches thumb (OK sign)\n10 = Closed fist, gentle shake',hand:'🤙',word:'6 · 7 · 8 · 9 · 10',desc:'Each uses a different finger touching the thumb.'},
+      {type:'quiz',title:'Quiz: Number 10',q:'How do you sign number 10 in KSL?',opts:['All five fingers spread open','Closed fist with gentle side-to-side shake','Index finger pointing up','Ring finger touching thumb'],correct:1,ok:'✅ Closed fist gently shaking = 10 in KSL! 🤜',err:'Not that one — 10 = all fingers tucked in, fist shakes.'},
+      {type:'visual',title:'Match the hand to the number',body:'Tap each emoji and say the KSL number it represents:',items:[{e:'☝️',l:'One'},{e:'✌️',l:'Two'},{e:'🤟',l:'Three'},{e:'🖐️',l:'Five'},{e:'🤙',l:'Six'},{e:'🤜',l:'Ten'}]}
+    ]},
+  focus_breathing:{title:'🌬️ Focus & Breathing',xp:15,emoji:'🌬️',tag:'Life Skills',tc:'var(--secondary)',bg:'var(--sl)',desc:'Reset your nervous system and find calm',
+    steps:[
+      {type:'intro',title:'Focus & Breathing Techniques',body:'When thoughts race and your body feels overwhelmed, breathing exercises reset your nervous system in under 2 minutes — used by Olympic athletes and surgeons.',icon:'🌬️'},
+      {type:'tip',title:'Box Breathing — 4x4 Reset 📦',body:'Used by Navy SEALs and Olympic athletes:\n\n1️⃣ Breathe IN — 4 counts\n⏸️ HOLD — 4 counts\n2️⃣ Breathe OUT — 4 counts\n⏸️ HOLD empty — 4 counts\n\nRepeat 4 cycles RIGHT NOW. Feel the difference.'},
+      {type:'visual',title:'When does breathing help?',body:'Tap all situations where box breathing could help you reset:',items:[{e:'😰',l:'Before a test'},{e:'😡',l:'Feeling angry'},{e:'🤯',l:'Overwhelmed'},{e:'😴',l:'Can\'t sleep'},{e:'😞',l:'Feeling sad'},{e:'🙀',l:'Panic mode'}]},
+      {type:'ksl',title:'KSL: Breathe / Pumua 🫁',body:'Both flat hands on chest. Slowly move them outward and downward while exhaling — physically letting tension leave your body.',hand:'🫁',word:'BREATHE / PUMUA',desc:'Hands on chest → move outward and down slowly'},
+      {type:'quiz',title:'Quiz: Box Breathing',q:'In box breathing, how many counts does each phase last?',opts:['2 counts','4 counts','8 counts','10 counts'],correct:1,ok:'✅ 4 counts each — In, Hold, Out, Hold. Four equal sides, like a box!',err:'Not quite — think of a square box, 4 equal sides = 4 counts each step.'}
+    ]}
+};
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+/* ═══════════ ASSESSMENT QUESTIONS ═══════════ */
+const QS=[
+  {id:'focus',type:'emoji',badge:'🧠 About You',text:'When you need to concentrate, what helps you MOST?',opts:[{e:'🎵',l:'Music'},{e:'🤫',l:'Quiet'},{e:'🖊️',l:'Writing'},{e:'👀',l:'Videos'},{e:'🏃',l:'Movement'},{e:'🎨',l:'Drawing'}]},
+  {id:'style',type:'choice',badge:'📚 Learning Style',text:'How do you best understand new information?',opts:[{i:'fas fa-eye',t:'Seeing pictures & diagrams'},{i:'fas fa-headphones',t:'Listening to explanations'},{i:'fas fa-hand-paper',t:'Hands-on practice'},{i:'fas fa-book-open',t:'Reading step by step'}]},
+  {id:'challenge',type:'emoji',badge:'🎯 Your Challenges',text:'What is your biggest challenge when learning?',opts:[{e:'⏰',l:'Time management'},{e:'😰',l:'Anxiety'},{e:'📖',l:'Reading'},{e:'🎯',l:'Focus'},{e:'👥',l:'Groups'},{e:'🔤',l:'Writing'}]},
+  {id:'goal',type:'choice',badge:'🌟 Your Goal',text:'What do you most want to achieve?',opts:[{i:'fas fa-brain',t:'Understand my learning style'},{i:'fas fa-hands',t:'Learn Kenyan Sign Language'},{i:'fas fa-heart',t:'Build emotional skills'},{i:'fas fa-graduation-cap',t:'Improve school results'}]},
+  {id:'support',type:'emoji',badge:'👪 Your Support',text:'Who helps you most with your learning?',opts:[{e:'👩',l:'Mum'},{e:'👨',l:'Dad'},{e:'👴',l:'Grandparent'},{e:'👩‍🏫',l:'Teacher'},{e:'🙋',l:'Myself'},{e:'👫',l:'Friends'}]}
+];
 
-        // Enter key for chat
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendChatMessage();
-            }
-        });
+/* ═══════════ ACHIEVEMENTS ═══════════ */
+const ACHS=[
+  {id:'first',icon:'🌟',title:'First Step',desc:'Completed first lesson'},
+  {id:'ksl',icon:'🤟',title:'KSL Learner',desc:'Completed a KSL module'},
+  {id:'xp50',icon:'⭐',title:'XP Collector',desc:'Earned 50 XP'},
+  {id:'mod3',icon:'🏆',title:'Hat Trick',desc:'3 modules completed'},
+  {id:'xp100',icon:'💎',title:'Diamond',desc:'Earned 100 XP'},
+  {id:'streak3',icon:'🔥',title:'On Fire!',desc:'3-day streak'}
+];
 
-        // Initial load
-        console.log('NeuroBridge Africa - Complete Inclusive Platform Loaded');
-    </script>
+/* ═══════════ TIPS ═══════════ */
+const TIPS=[
+  {title:'Celebrate micro-wins today',body:'For neurodivergent learners, even small achievements deserve recognition. Finished one step? That\'s a win worth celebrating! 🎉'},
+  {title:'Visual timers reduce anxiety',body:'Instead of "5 more minutes", show it. A visible timer helps children with ADHD understand time passing concretely, not abstractly.'},
+  {title:'Give transition warnings',body:'"In 5 minutes we stop playing and eat dinner." Predictability prevents meltdowns by removing the element of surprise.'},
+  {title:'Movement breaks boost focus',body:'A 5-minute movement break resets the nervous system and INCREASES attention span for the next 30–60 minutes. Build them in!'},
+  {title:'Praise the process, not result',body:'"I saw how hard you tried" lands better than "You\'re so smart." Process praise builds resilience and growth mindset.'},
+  {title:'KSL benefits all learners',body:'Learning basic KSL signs benefits ALL children. It builds empathy, communication confidence, and inclusive thinking from a young age.'},
+  {title:'Choice reduces resistance',body:'"Before or after your snack?" gives a sense of control that dramatically reduces avoidance and demand resistance.'}
+];
+
+/* ═══════════ INIT ═══════════ */
+window.addEventListener('load',()=>{
+  renderKSL();renderNums();renderModGrid();renderTip();renderProgress();renderAssess();
+  animateStats();
+  document.getElementById('db-xp').textContent=S.xp;
+  document.getElementById('db-mods').textContent=S.done.length;
+  document.getElementById('db-streak').textContent=S.streak;
+});
+
+/* ═══════════ KSL ALPHABET & NUMBERS ═══════════ */
+const KSL_ALPHA={'A':'Closed fist, thumb to side','B':'Flat hand, fingers together upright','C':'Curved hand like letter C','D':'Index up, others curl to thumb','E':'Fingers curl down to palm','F':'Index+thumb circle, others up','G':'Index points side, thumb out','H':'Two fingers point sideways','I':'Pinky up','J':'Pinky up, draw J in air','K':'Index+middle up, thumb between','L':'L-shape: index up, thumb out','M':'Three fingers over thumb','N':'Two fingers over thumb','O':'Fingers+thumb form O shape','P':'K-shape pointing down','Q':'G-shape pointing down','R':'Crossed index+middle fingers','S':'Fist with thumb over fingers','T':'Index between index+middle','U':'Index+middle together up','V':'Peace sign, V shape','W':'Three fingers spread up','X':'Index finger hooks','Y':'Thumb+pinky out (hang loose)','Z':'Index draws Z in air'};
+const KSL_NUMS=[{n:'1',e:'☝️',d:'Index finger up'},{n:'2',e:'✌️',d:'Index + middle'},{n:'3',e:'🤟',d:'Thumb + index + middle'},{n:'4',e:'🖖',d:'Four fingers up'},{n:'5',e:'🖐️',d:'All five spread'},{n:'6',e:'🤙',d:'Pinky touches thumb'},{n:'7',e:'🖐️',d:'Ring touches thumb'},{n:'8',e:'✋',d:'Middle touches thumb'},{n:'9',e:'👌',d:'Index touches thumb'},{n:'10',e:'🤜',d:'Closed fist, shake'}];
+
+function renderKSL(){
+  const g=document.getElementById('alpha-grid');if(!g)return;
+  g.innerHTML=Object.entries(KSL_ALPHA).map(([l,d])=>`<div class="alpha-card" onclick="toast('${l}: ${d}')" title="${d}">${l}<span class="gb">✋</span></div>`).join('');
+}
+function renderNums(){
+  const g=document.getElementById('ksl-nums');if(!g)return;
+  g.innerHTML=KSL_NUMS.map(n=>`<div class="ksl-num" onclick="toast('KSL ${n.n}: ${n.d}')"><span class="ne">${n.e}</span><div style="font-size:1.2rem;font-weight:800;color:var(--primary);margin-bottom:4px">${n.n}</div><div class="nl">${n.d}</div></div>`).join('');
+}
+
+/* ═══════════ MODULE GRID ═══════════ */
+function renderModGrid(){
+  const g=document.getElementById('mod-grid-learn');if(!g)return;
+  g.innerHTML=Object.entries(LESSONS).map(([id,l])=>{
+    const done=S.done.includes(id);
+    return`<div style="background:var(--bg2);border:1.5px solid ${done?'rgba(39,174,96,0.4)':'var(--border)'};border-radius:14px;padding:16px;cursor:pointer;transition:all 0.2s;position:relative" onclick="startL('${id}')" onmouseover="this.style.borderColor='var(--primary)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='${done?'rgba(39,174,96,0.4)':'var(--border)'}';this.style.transform='none'">
+      ${done?'<div style="position:absolute;top:11px;right:11px;color:var(--green);font-size:0.85rem"><i class="fas fa-check-circle"></i></div>':''}
+      <div style="font-size:1.65rem;margin-bottom:8px">${l.emoji}</div>
+      <div style="font-size:0.88rem;font-weight:700;margin-bottom:4px">${l.title}</div>
+      <div style="font-size:0.72rem;color:var(--t2);margin-bottom:9px;line-height:1.5">${l.desc}</div>
+      <span style="display:inline-block;padding:2px 9px;border-radius:50px;font-size:0.62rem;font-weight:700;background:${l.bg};color:${l.tc}">${done?'✅ ':''}${l.tag}</span>
+    </div>`;
+  }).join('');
+}
+
+/* ═══════════ ASSESSMENT ═══════════ */
+function renderAssess(){
+  const q=QS[S.asStep];
+  document.getElementById('sbars').innerHTML=QS.map((_,i)=>`<div class="seg ${i<S.asStep?'done':i===S.asStep?'active':''}"></div>`).join('');
+  document.getElementById('btn-prev').style.display=S.asStep>0?'flex':'none';
+  document.getElementById('btn-next').innerHTML=S.asStep===QS.length-1?'See My Profile <i class="fas fa-arrow-right"></i>':'Next <i class="fas fa-arrow-right"></i>';
+  let html=`<div class="q-card"><div class="q-badge">${q.badge}</div><h3>${q.text}</h3>`;
+  if(q.type==='emoji'){html+=`<div class="e-grid">`+q.opts.map((o,i)=>`<div class="e-opt ${S.asAns[q.id]===i?'sel':''}" onclick="selA('${q.id}',${i},this)"><span class="be">${o.e}</span><span>${o.l}</span></div>`).join('')+`</div>`}
+  else{html+=`<div class="a-opts">`+q.opts.map((o,i)=>`<div class="a-opt ${S.asAns[q.id]===i?'sel':''}" onclick="selA('${q.id}',${i},this)"><div class="a-oi"><i class="${o.i||'fas fa-circle'}"></i></div>${o.t}</div>`).join('')+`</div>`}
+  document.getElementById('q-area').innerHTML=html+`</div>`;
+}
+function selA(id,i,el){S.asAns[id]=i;el.closest('.e-grid,.a-opts').querySelectorAll('.e-opt,.a-opt').forEach(e=>e.classList.remove('sel'));el.classList.add('sel')}
+function aNext(){if(S.asStep<QS.length-1){S.asStep++;renderAssess()}else showResult()}
+function aPrev(){if(S.asStep>0){S.asStep--;renderAssess()}}
+
+function showResult(){
+  const p={neurodivergent:{icon:'🧠',title:'Visual & Kinesthetic Learner',tags:['ADHD-Friendly','Visual Thinker','Hands-On'],recs:['Start with Focus & Breathing module','Try the Daily Routine visual planner','Use Bridge AI for personalised support']},deaf:{icon:'🤟',title:'Visual-Language Learner',tags:['KSL Learner','Visual Communication'],recs:['Begin with KSL Greetings module','Explore the full KSL alphabet library','Connect with the Deaf community group']},caregiver:{icon:'👪',title:'Supportive Caregiver',tags:['Family Advocate','Home Educator'],recs:['Visit Caregiver Hub daily','Apply for Parent Support Program','Download visual schedule templates']},teacher:{icon:'👩‍🏫',title:'Inclusive Educator',tags:['CBC Expert','Inclusive Teaching'],recs:['Register for School Inclusion Training','Explore the KSL library','Download teacher resource guides']}}[S.ltype]||{icon:'🌟',title:'Unique Learner',tags:['Inclusive'],recs:['Explore all modules']};
+  document.getElementById('ri').textContent=p.icon;
+  document.getElementById('rt').textContent='Your Learning Profile';
+  document.getElementById('rd').textContent='Based on your answers, here\'s your personalised path on NeuroBridge Africa.';
+  document.getElementById('rpt').textContent=p.title;
+  document.getElementById('rtags').innerHTML=p.tags.map(t=>`<span style="padding:3px 11px;border-radius:50px;font-size:0.72rem;font-weight:700;background:var(--pl);color:var(--primary)">${t}</span>`).join('');
+  document.getElementById('rrecs').innerHTML=p.recs.map(r=>`<li style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;font-size:0.83rem;color:var(--t2)"><i class="fas fa-check-circle" style="color:var(--green);flex-shrink:0"></i>${r}</li>`).join('');
+  S.xp+=10;save();switchTab('result');
+}
+
+/* ═══════════ LESSON ENGINE ═══════════ */
+function startL(id){
+  const l=LESSONS[id];if(!l)return;
+  S.curLesson=id;S.curStep=0;S.qAns=false;S.lastL=id;S.lastS=0;save();
+  document.getElementById('lesson-title-bar').textContent=l.title;
+  document.getElementById('mod-grid-learn').style.display='none';
+  document.getElementById('lesson-view').style.display='block';
+  renderL();
+}
+function closeLesson(){document.getElementById('mod-grid-learn').style.display='grid';document.getElementById('lesson-view').style.display='none'}
+function renderL(){
+  const l=LESSONS[S.curLesson];if(!l)return;
+  const step=l.steps[S.curStep],total=l.steps.length,isLast=S.curStep===total-1;
+  document.getElementById('lsegs').innerHTML=l.steps.map((_,i)=>`<div class="ls ${i<S.curStep?'done':i===S.curStep?'active':''}"></div>`).join('');
+  const fb=document.getElementById('lfb');fb.style.display='none';fb.className='fb-box';S.qAns=false;
+  document.getElementById('lnext').innerHTML=isLast?'🎉 Finish Lesson':'Next <i class="fas fa-arrow-right"></i>';
+  document.getElementById('lprev').style.display=S.curStep>0?'flex':'none';
+  document.getElementById('lesson-xp-bar').textContent='⭐ '+S.xp+' XP';
+  const area=document.getElementById('lca');let html='<div class="l-inner">';
+  if(step.type==='intro')html+=`<div class="l-pill pi"><i class="fas fa-play-circle"></i> Introduction</div><span class="l-big">${step.icon}</span><h2>${step.title}</h2><p>${step.body}</p>`;
+  else if(step.type==='visual')html+=`<div class="l-pill pv"><i class="fas fa-eye"></i> Visual Activity</div><h2>${step.title}</h2><p style="margin-bottom:0">${step.body}</p><div class="vis-g">${step.items.map(it=>`<div class="vis-i" onclick="this.classList.toggle('sel')"><span class="vis-e">${it.e}</span><span>${it.l}</span></div>`).join('')}</div>`;
+  else if(step.type==='ksl')html+=`<div class="l-pill pk"><i class="fas fa-hands"></i> KSL Sign</div><h2>${step.title}</h2><p class="l-pre">${step.body}</p><div class="ksl-f"><span class="ksl-h">${step.hand}</span><div class="ksl-w">${step.word}</div><div class="ksl-d">${step.desc}</div></div>`;
+  else if(step.type==='quiz')html+=`<div class="l-pill pq"><i class="fas fa-question-circle"></i> Quick Quiz</div><h2>${step.q}</h2><div class="q-opts">${step.opts.map((o,i)=>`<button class="q-opt" onclick="ansQ(this,${i},${step.correct},'${encodeURIComponent(step.ok)}','${encodeURIComponent(step.err)}')"><div class="o-l">${['A','B','C','D'][i]}</div>${o}</button>`).join('')}</div>`;
+  else if(step.type==='tip')html+=`<div class="l-pill pt"><i class="fas fa-lightbulb"></i> Pro Tip</div><h2>${step.title}</h2><p class="l-pre">${step.body}</p>`;
+  area.innerHTML=html+'</div>';
+}
+function ansQ(el,chosen,correct,okE,errE){
+  if(S.qAns)return;S.qAns=true;
+  document.querySelectorAll('.q-opt').forEach(o=>o.style.pointerEvents='none');
+  const fb=document.getElementById('lfb');
+  if(chosen===correct){el.classList.add('ok');document.querySelectorAll('.q-opt')[correct].classList.add('ok');fb.className='fb-box fb-ok';fb.textContent=decodeURIComponent(okE);S.xp+=5;save();document.getElementById('lesson-xp-bar').textContent='⭐ '+S.xp+' XP'}
+  else{el.classList.add('err');document.querySelectorAll('.q-opt')[correct].classList.add('ok');fb.className='fb-box fb-err';fb.textContent=decodeURIComponent(errE)}
+  fb.style.display='block';
+}
+function lNext(){const l=LESSONS[S.curLesson];if(S.curStep<l.steps.length-1){S.curStep++;S.lastS=S.curStep;save();renderL()}else completeL()}
+function lPrev(){if(S.curStep>0){S.curStep--;save();renderL()}}
+function completeL(){
+  const l=LESSONS[S.curLesson];
+  if(!S.done.includes(S.curLesson)){S.done.push(S.curLesson);S.xp+=l.xp}
+  save();
+  document.getElementById('comp-title').textContent='Lesson Complete! 🎉';
+  document.getElementById('comp-msg').textContent=`You completed "${l.title}". Keep building your skills!`;
+  document.getElementById('comp-xp').textContent=`+${l.xp} XP earned`;
+  closeLesson();switchTab('complete');renderProgress();
+  document.getElementById('db-xp').textContent=S.xp;
+  document.getElementById('db-mods').textContent=S.done.length;
+}
+
+/* ═══════════ UI HELPERS ═══════════ */
+function switchTab(id){
+  document.querySelectorAll('.lpanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('on'));
+  const panel=document.getElementById('tab-'+id);if(panel)panel.classList.add('on');
+  const tabs={'assessment':0,'lessons':1,'result':2,'complete':3};
+  const idx=tabs[id];
+  if(idx!==undefined){const tbs=document.querySelectorAll('.ltab');if(tbs[idx])tbs[idx].classList.add('on')}
+  if(id==='lessons')renderModGrid();
+}
+
+function scrollTo(sel){const el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+function toggleMenu(){
+  const m=document.getElementById('navLinks'),h=document.querySelector('.hamburger');
+  if(m.style.display==='flex'){m.style.display='none'}
+  else{Object.assign(m.style,{display:'flex',flexDirection:'column',position:'absolute',top:'70px',left:'0',width:'100%',background:'var(--bg2)',padding:'20px 5%',borderBottom:'1px solid var(--border)',zIndex:'999'})}
+}
+
+/* ═══════════ DASHBOARD ═══════════ */
+function showDash(){document.getElementById('login-wrap').style.display='none';document.getElementById('dash-grid-wrap').style.display='block';toast('Welcome to your NeuroBridge dashboard!')}
+
+/* ═══════════ STAT COUNTER ═══════════ */
+function animateStats(){
+  const counters=document.querySelectorAll('.stat-num[data-target]');
+  counters.forEach(c=>{
+    const target=parseInt(c.getAttribute('data-target'));
+    let current=0;const inc=target/60;
+    const u=()=>{if(current<target){current+=inc;c.textContent=Math.round(current)>999?Math.round(current/1000)+'k+':Math.round(current);setTimeout(u,16)}else{c.textContent=target>999?(target/1000)+'k+':target+'+'}};u();
+  });
+}
+const statsObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)animateStats()})},{threshold:0.5});
+const ss=document.querySelector('.impact-section');if(ss)statsObs.observe(ss);
+
+/* ═══════════ TIP ═══════════ */
+function renderTip(){const tip=TIPS[new Date().getDay()%TIPS.length];document.getElementById('tit').textContent=tip.title;document.getElementById('tib').textContent=tip.body}
+
+/* ═══════════ PROGRESS ═══════════ */
+function renderProgress(){
+  document.getElementById('pgxp').textContent=S.xp;
+  const un=new Set();
+  if(S.done.length>=1)un.add('first');
+  if(S.done.some(m=>m.startsWith('ksl')))un.add('ksl');
+  if(S.xp>=50)un.add('xp50');
+  if(S.done.length>=3)un.add('mod3');
+  if(S.xp>=100)un.add('xp100');
+  if(S.streak>=3)un.add('streak3');
+  document.getElementById('ag').innerHTML=ACHS.map(a=>`<div class="ach ${un.has(a.id)?'un':'lk'}"><span class="ach-i">${a.icon}</span><h4>${a.title}</h4><p>${a.desc}</p></div>`).join('');
+  document.getElementById('mpl').innerHTML='<div style="font-size:0.7rem;color:var(--t4);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;font-weight:600">Module Progress</div>'+
+  Object.entries(LESSONS).map(([id,l])=>{
+    const done=S.done.includes(id),pct=done?100:(S.curLesson===id?Math.round((S.curStep/l.steps.length)*100):0);
+    return`<div class="mp-item"><div class="mp-h"><span class="mp-n">${l.emoji} ${l.title}</span><span class="mp-p">${pct}%</span></div><div class="pb-wrap"><div class="pb-fill" style="width:${pct}%"></div></div></div>`;
+  }).join('');
+}
+function doReset(){if(confirm('Reset all progress?')){S={ltype:'neurodivergent',xp:0,streak:1,done:[],curLesson:null,curStep:0,qAns:false,asAns:{},asStep:0,chat:[],lastL:null,lastS:0};save();renderProgress();renderModGrid();renderAssess();toast('Progress reset.');}}
+
+/* ═══════════ AI TUTOR ═══════════ */
+let aiInit=false;
+function openChat(){document.getElementById('chatPanel').style.display='block';if(!aiInit)aiInit=true}
+function closeChat(){document.getElementById('chatPanel').style.display='none'}
+function addAIMsg(text){
+  const c=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg bot';
+  d.innerHTML=`<div class="msg-bub">${text.replace(/\n/g,'<br>')}</div>`;
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+function addUserMsg(text){
+  const c=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg user-msg';
+  d.innerHTML=`<div class="msg-bub">${esc(text)}</div>`;
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+function showTyping(){
+  const c=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg bot';d.id='typ';
+  d.innerHTML=`<div class="msg-bub"><div class="t-dots"><span></span><span></span><span></span></div></div>`;
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+function rmTyping(){const t=document.getElementById('typ');if(t)t.remove()}
+async function sendAI(){
+  const inp=document.getElementById('cin');const text=inp.value.trim();if(!text)return;
+  inp.value='';inp.style.height='42px';
+  document.getElementById('chat-qr').style.display='none';
+  addUserMsg(text);S.chat.push({role:'user',content:text});showTyping();
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',max_tokens:1000,
+      system:`You are Bridge, AI assistant for NeuroBridge Africa — inclusive EdTech for neurodivergent and Deaf learners in Kenya. Founded by Anab Mohamed.
+Help with: ADHD, autism, dyslexia, Deaf/HoH needs, KSL signs (describe hand movements), emotions, focus tips.
+Use Swahili naturally: habari, asante, pole, sawa, karibu.
+Keep responses under 100 words. Warm, encouraging. Use emojis sparingly.
+For urgent support: WhatsApp +254100403629.
+User: ${S.ltype} | XP: ${S.xp} | Done: ${S.done.join(',')||'none'}`,
+      messages:S.chat
+    })});
+    const data=await res.json();rmTyping();
+    const reply=data.content?.[0]?.text||'Pole! Tatizo kidogo. Jaribu tena. / Sorry, try again.';
+    addAIMsg(reply);S.chat.push({role:'assistant',content:reply});
+    if(S.chat.length>20)S.chat=S.chat.slice(-20);save();
+  }catch(e){rmTyping();addAIMsg('Pole! Connection issue. Check your internet or use WhatsApp: +254 100 403 629 🙏')}
+}
+function sendQ(t){document.getElementById('cin').value=t;sendAI();openChat()}
+
+/* ═══════════ FORMSPREE ═══════════ */
+async function subForm(e,fid,btnId,okId){
+  e.preventDefault();
+  const form=e.target,btn=document.getElementById(btnId),ok=document.getElementById(okId);
+  const req=form.querySelectorAll('[required]');let valid=true;
+  req.forEach(f=>{if(!f.value.trim()){f.style.borderColor='#EF4444';valid=false}else f.style.borderColor=''});
+  if(!valid){toast('⚠️ Please fill in all required fields','err');return}
+  btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting...';
+  try{
+    const res=await fetch(`https://formspree.io/f/${fid}`,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(res.ok){form.style.display='none';ok.style.display='block';S.xp+=15;save();renderProgress();toast('✅ Application submitted!')}
+    else throw new Error();
+  }catch{btn.disabled=false;btn.innerHTML=btn.innerHTML.replace(/<i.*?><\/i> Submitting\.\.\./,'Retry');toast('❌ Failed. Try WhatsApp instead.','err')}
+}
+function subContact(e){e.preventDefault();toast('✅ Message sent! We\'ll reply within 24 hours.');e.target.reset()}
+
+/* ═══════════ MODAL ═══════════ */
+const MODALS={learner:{icon:'<i class="fas fa-graduation-cap"></i>',title:'Learner Support',desc:'Focus-friendly modules with progress tracking, visual schedules, and interactive lessons designed for neurodivergent minds including ADHD, autism, and dyslexia.'},parent:{icon:'<i class="fas fa-heart"></i>',title:'Parent Support',desc:'Resources, WhatsApp community, daily tips, and expert advice for caregivers of neurodivergent children across Kenya.'},counselor:{icon:'<i class="fas fa-comments"></i>',title:'Counselor Access',desc:'Direct connection to trained counselors specializing in neurodiversity and family support. Available on WhatsApp within 2 hours.'},sensory:{icon:'<i class="fas fa-brain"></i>',title:'Sensory Tools',desc:'Low-stimulation interface, reduced animations, calming colors, and distraction-free learning environment for sensory-sensitive learners.'},cbc:{icon:'<i class="fas fa-book"></i>',title:'CBC Support',desc:'Kenya\'s Competency-Based Curriculum adapted for neurodivergent learners with visual supports, modified assessments, and individualized education plans.'},ksl:{icon:'<i class="fas fa-hands"></i>',title:'KSL Learning Hub',desc:'Kenyan Sign Language alphabet (A–Z), numbers 1–10, and 24+ video lessons developed with Deaf consultants from Nairobi and Garissa.'}};
+function openModal(type){const m=MODALS[type]||MODALS.learner;document.getElementById('mIco').innerHTML=m.icon;document.getElementById('mTitle').textContent=m.title;document.getElementById('mDesc').textContent=m.desc;document.getElementById('infoModal').classList.add('open')}
+function closeModal(){document.getElementById('infoModal').classList.remove('open')}
+document.getElementById('infoModal').addEventListener('click',function(e){if(e.target===this)closeModal()})
+
+/* ═══════════ SENSORY MODE ═══════════ */
+function toggleSensory(){document.body.classList.toggle('low-stim');toast(document.body.classList.contains('low-stim')?'🌙 Calm mode ON':'✨ Standard mode ON')}
+
+/* ═══════════ UTILS ═══════════ */
+function toast(msg,type='ok'){const t=document.getElementById('toast');t.textContent=msg;t.style.background=type==='err'?'rgba(239,68,68,0.92)':type==='ok'?'rgba(39,174,96,0.92)':'var(--bg2)';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
+function openWA(msg='Hello NeuroBridge Africa! I need support.'){window.open(`https://wa.me/254100403629?text=${encodeURIComponent(msg)}`,'_blank')}
+function shareP(){const m=`🧠 Learning on NeuroBridge Africa!\n⭐ ${S.xp} XP | ✅ ${S.done.length} modules\nhttps://neurobridge.co.ke/app`;if(navigator.share)navigator.share({title:'NeuroBridge',text:m}).catch(()=>{});else navigator.clipboard?.writeText(m).then(()=>toast('📋 Copied!'))}
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+window.addEventListener('scroll',()=>{document.getElementById('scrollUp').classList.toggle('vis',window.scrollY>500)});
+document.addEventListener('input',e=>{if(e.target.classList.contains('chat-ta')){e.target.style.height='42px';e.target.style.height=Math.min(e.target.scrollHeight,100)+'px'}});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+
+/* SENSORY MODE CSS */
+const sensoryStyle=document.createElement('style');
+sensoryStyle.textContent='.low-stim *{animation:none!important;transition:none!important}.low-stim .program-card:hover,.low-stim .stat-card:hover,.low-stim .form-card:hover,.low-stim .res-card:hover{transform:none}';
+document.head.appendChild(sensoryStyle);
+</script>
 </body>
 </html>
